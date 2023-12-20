@@ -1,0 +1,2254 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../abstract%20algebra/group%20theory/group/">
+      
+      
+        <link rel="next" href="../function%20series/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>数项级数 - xzqbear math notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"PT Serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="xzqbear math notes" class="md-header__button md-logo" aria-label="xzqbear math notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            xzqbear math notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              数项级数
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/xiong-ZH-zq/xzqbear-math-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xzqbear-math-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../abstract%20algebra/group%20theory/group/" class="md-tabs__link">
+          
+  
+  NKU抽象代数
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  NKU数学分析
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="xzqbear math notes" class="md-nav__button md-logo" aria-label="xzqbear math notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    xzqbear math notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/xiong-ZH-zq/xzqbear-math-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xzqbear-math-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mkdocs%20notes/site%20build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkdocs搭建流程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    NKU抽象代数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NKU抽象代数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../abstract%20algebra/group%20theory/group/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    群论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    NKU数学分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            NKU数学分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    级数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            级数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    数项级数
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    数项级数
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数的收敛性和基本性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="级数的收敛性和基本性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数通项和部分和
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数收敛及其性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数求和问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      正项级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="正项级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      正项级数的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      判别法总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="判别法总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      比较判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      达朗贝尔比值判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      柯西根值判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      柯西积分判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶的估计法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      比值比较判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raabe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raabe判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gauss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gauss判别法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      收敛快慢
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      任意项级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="任意项级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      绝对收敛与条件收敛
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leibniz" class="md-nav__link">
+    <span class="md-ellipsis">
+      交错级数与Leibniz判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abel求和、引理和判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirichlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dirichlet判别法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      组合级数与重排级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="组合级数与重排级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      组合级数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      重排级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="重排级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      重排级数的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件收敛和绝对收敛的性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷乘积
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无穷乘积">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷乘积的定义与收敛性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷乘积的简单计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷乘积的收敛性性质和与级数间的关系
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数的乘积、累次级数与二重级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="级数的乘积、累次级数与二重级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数的乘积
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      累次级数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      二重级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二重级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      二重级数定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      二重级数与累次级数的关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      二重级数敛散性判断
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../function%20series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数项级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数的收敛性和基本性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="级数的收敛性和基本性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数通项和部分和
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数收敛及其性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数求和问题
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      正项级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="正项级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      正项级数的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      判别法总结
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="判别法总结">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      比较判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      达朗贝尔比值判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      柯西根值判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      柯西积分判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      阶的估计法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      比值比较判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raabe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Raabe判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gauss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gauss判别法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      收敛快慢
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      任意项级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="任意项级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      绝对收敛与条件收敛
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leibniz" class="md-nav__link">
+    <span class="md-ellipsis">
+      交错级数与Leibniz判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abel求和、引理和判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirichlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dirichlet判别法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      组合级数与重排级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="组合级数与重排级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      组合级数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      重排级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="重排级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      重排级数的定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      条件收敛和绝对收敛的性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷乘积
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无穷乘积">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷乘积的定义与收敛性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷乘积的简单计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷乘积的收敛性性质和与级数间的关系
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数的乘积、累次级数与二重级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="级数的乘积、累次级数与二重级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数的乘积
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      累次级数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      二重级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="二重级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      二重级数定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      二重级数与累次级数的关系
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      二重级数敛散性判断
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">数项级数</h1>
+<h2 id="_2">级数</h2>
+<div class="admonition note">
+<p class="admonition-title">定义：级数</p>
+<p>我们把无穷多项相加的表达式<br />
+$$ \sum\limits_{n=1}^n=u_1+u_2+\cdots+u_n+\cdots $$ <br />
+称为一个<strong>无穷级数</strong>，简称<strong>级数</strong>。</p>
+</div>
+<h2 id="_3">级数的收敛性和基本性质</h2>
+<h3 id="_4">级数通项和部分和</h3>
+<p>设级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 为一个级数，称 <span class="arithmatex">\(u_n\)</span> 为级数的<strong>通项</strong>。且</p>
+<div class="arithmatex">\[
+S_n=\sum\limits_{i=1}^nu_k=u_1+\cdots+u_n
+\]</div>
+<p>为级数的第 <span class="arithmatex">\(n\)</span> 个部分和，并称数列 <span class="arithmatex">\(\{S_n\}\)</span> 为级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 为级数的部分和数列。</p>
+<h3 id="_5">级数收敛及其性质</h3>
+<div class="admonition note">
+<p class="admonition-title">定义：级数收敛性</p>
+<p>如果级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 的相应部分和数列 <span class="arithmatex">\(\{S_n\}\)</span> 收敛，则称级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> <strong>收敛</strong>，并把极限 <span class="arithmatex">\(\displaystyle\lim_{n\to\infty}S_n=S\)</span> 称为级数的和，记为<br />
+$$ \sum\limits_{n=1}^\infty u_n=\lim_{n\to\infty}S_n=S. $$ <br />
+如果数列发散，则称级数<strong>发散</strong>。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">性质：级数收敛的必要条件</p>
+<p>若级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 收敛，则其通项 <span class="arithmatex">\(u_n\)</span> 收敛于<strong>0</strong>，即有<br />
+$$ \lim_{n\to\infty}u_n=0 $$ </p>
+</div>
+<p>需要注意的是这个仅仅只是必要条件而非充要条件，调和级数就是典型的反例。</p>
+<p>利用数列极限的Cauchy收敛原理即有级数的Cauchy收敛原理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：级数的Cauchy收敛原理</p>
+<p>级数 <span class="arithmatex">\(\displaystyle \sum\limits_{n=1}^\infty u_n\)</span> 收敛的充要条件是：对任何 <span class="arithmatex">\(\varepsilon&gt;0\)</span> ，存在正整数 <span class="arithmatex">\(N&gt;0\)</span> 使得对一切 <span class="arithmatex">\(n&gt;N\)</span> 以及任何正整数 <span class="arithmatex">\(p\)</span> 都有<br />
+$$ |S_{n+p}-S_p|=|u_{n+1}+\cdots+u_{n+p}|&lt;\varepsilon $$ </p>
+</div>
+<p>下面利用Cauchy收敛原理证明调和级数发散。</p>
+<div class="admonition question">
+<p class="admonition-title">例题：证明调和级数发散</p>
+<p>证明调和级数<span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty\frac{1}{n}\)</span>发散.</p>
+</div>
+<p>取正整数 <span class="arithmatex">\(p=n\)</span> ，那么有<br />
+ $$ <br />
+\begin{aligned}<br />
+|S_{2n}-S_n|&amp;=\left|\frac{1}{n+1}+\cdots+\frac{1}{2n}\right|\\<br />
+&amp;&gt;n\times\frac{1}{2n}=\frac{1}{2}<br />
+\end{aligned}<br />
+ $$ </p>
+<p>根据Cauchy收敛原理知调和级数发散。</p>
+<p>提起调和级数有一个乐子论文可以放在这里：<br />
+<img alt="" src="../../../imgs/%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0-20231218.png" /></p>
+<p><img alt="" src="../../../imgs/%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0-20231218-7.png" /></p>
+<p><img alt="" src="../../../imgs/%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0-20231218-8.png" /></p>
+<p>可以说是数学人必读的乐子论文🤣。（虽然已经很老了）</p>
+<p>这篇论文里的最大笑话其实来自于作者最后对分母含有9的项所构成的级数敛散性的判断，因为当位数逐渐增大的时候，分母含有9的项的比例实际上是<strong>越来越大的</strong>，当位数为 <span class="arithmatex">\(n\)</span> 时，分母含有9的概率为 <span class="arithmatex">\(\displaystyle1-\left(\frac{8}{9}\right)^n\)</span> ，这就导致在后面位数增长的时候几乎所有项的分母都会包含9. 当然这只是一个直观理解，而非严格的证明。</p>
+<p>那么这个问题其实很有意思，调和级数中所有<strong>不包含</strong>数字 <span class="arithmatex">\(9\)</span> 的项构成的级数是否收敛？这个级数实际上早有研究，名为<strong>Kempner级数</strong>，它是收敛的，而且目前仍在探索收敛结果最佳的估计。</p>
+<h2 id="_6">级数求和问题</h2>
+<p>这个部分就是考察高中的基本功了，利用高中的方法即可，<strong>裂项相消</strong>在这个部分就是通法，后续学到更高级的方法的时候再做讨论。</p>
+<div class="admonition question">
+<p class="admonition-title">NKU练习14.1(2)</p>
+<p>求下列级数的和：<br />
+$$ \sum\limits_{n=1}^\infty\frac{2n-1}{2^n} $$ </p>
+</div>
+<p>这个级数可以非常轻松的裂项：<br />
+ $$ <br />
+\sum\limits_{n=1}^\infty \left(\frac{-2(n+1)-1}{2^n}-\frac{-2n-1}{2^{n-1}}\right)<br />
+ $$ <br />
+在高中没有出现过的反三角函数求和也可以使用裂项相消的方法进行求和。以下是几个常用的公式：</p>
+<div class="admonition example">
+<p class="admonition-title">反正切函数求和的几个裂项公式</p>
+<ul>
+<li><span class="arithmatex">\(\displaystyle\arctan(n+1)-\arctan(n) = \frac{1}{n^2+n+1}\)</span></li>
+<li><span class="arithmatex">\(\displaystyle\arctan\left(\frac{1}{2n-1}\right)-\arctan\left(\frac{1}{2n+1}\right)=\arctan\left(\frac{1}{2n^2}\right)\)</span></li>
+<li><span class="arithmatex">\(\displaystyle\arctan\left(\frac{1}{n-1}\right)-\arctan\left(\frac{1}{n+1}\right)=\arctan\left(\frac{2}{n^2}\right)\)</span></li>
+</ul>
+</div>
+<h2 id="_7">正项级数</h2>
+<h3 id="_8">正项级数的定义</h3>
+<div class="admonition note">
+<p class="admonition-title">定义：正项级数</p>
+<p>所有项均为<strong>非负项</strong>的级数叫<strong>正项级数</strong>。</p>
+</div>
+<p>正项级数的定义比较简单，在此不赘述。对于正项级数，由于每一项均为非负数，所以部分和随着项增多是单调递增的。所以我们有如下的性质：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：正项级数收敛的充要条件</p>
+<p>正项级数收敛的充分必要条件是它的部分和数列为有界数列。</p>
+</div>
+<h3 id="_9">判别法总结</h3>
+<h4 id="_10">比较判别法</h4>
+<p>利用上述的充要条件，我们可以有正项级数的<strong>比较判别法</strong>：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：比较判别法</p>
+<p>设 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 和 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_n\)</span> 为两个正项级数，且存在正整数 <span class="arithmatex">\(N\)</span> 使得 <span class="arithmatex">\(n\geq N\)</span> 的时候总有 <span class="arithmatex">\(u_n\leq v_n\)</span> ，则有如下的结论：<br />
+1. 若级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_n\)</span> 收敛，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 也收敛；<br />
+2. 若级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 发散，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_n\)</span> 也发散。</p>
+</div>
+<p>总结起来就一句话：<strong>若大和收敛则小和收敛，若小和发散则大和发散</strong>。<br />
+如果能选择正确的级数进行比较，那么比较判别法常常能有比较好的效果。接下来的判别法也主要是基于比较的判别法，这些判别法取的一般是比较特别的级数。</p>
+<h4 id="_11">达朗贝尔比值判别法</h4>
+<p>上面的比较判别法如果使用几何级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty q^n\)</span> 进行比较，可以得到达朗贝尔比值判别法：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：达朗贝尔（比值）判别法</p>
+<p>设级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 中 <span class="arithmatex">\(u_n&gt;0\)</span> 恒成立，考虑 <span class="arithmatex">\(\displaystyle D_n=\frac{u_{n+1}}{u_n}\)</span>：<br />
+1. 若存在 <span class="arithmatex">\(0&lt;q&lt;1\)</span> 以及正整数 <span class="arithmatex">\(N\)</span> 使得当 <span class="arithmatex">\(n\geq N\)</span> 时有 <span class="arithmatex">\(D_n\leq q\)</span>，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 收敛；<br />
+2. 若存在正整数 <span class="arithmatex">\(N\)</span> 使得当 <span class="arithmatex">\(n\leq N\)</span> 时有 <span class="arithmatex">\(D_n\geq 1\)</span> ，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 发散。</p>
+</div>
+<p>需要注意的是极限为 <span class="arithmatex">\(1\)</span> 的情况有可能收敛也有可能发散，不能判断敛散性。例如调和级数，<span class="arithmatex">\(\displaystyle D_n=\frac{n}{n+1}&lt;1\)</span> ，无法找到一个 <span class="arithmatex">\(q&lt;1\)</span> 使得 <span class="arithmatex">\(D_n\leq q\)</span> 对无穷项成立。</p>
+<p>下面是达朗贝尔判别法的极限形式：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：达朗贝尔（比值）判别法极限形式</p>
+<p>当 <span class="arithmatex">\(a_n&gt;0(n=1,2,\cdots)\)</span> 且 <span class="arithmatex">\(\displaystyle\lim_{n\to\infty}\frac{a_{n+1}}{a_n}=q\)</span>，则有<br />
+1. 当 <span class="arithmatex">\(\displaystyle\varlimsup_{n\to\infty}D_n&lt;1\)</span> 时级数收敛；<br />
+2. 当 <span class="arithmatex">\(\displaystyle\varliminf_{n\to\infty}D_n&gt;1\)</span> 时级数发散。</p>
+</div>
+<h4 id="_12">柯西根值判别法</h4>
+<p>柯西判别法同样也是针对几何级数比较进行证明的，柯西判别法如下所示：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：柯西（根值）判别法</p>
+<p>设级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 为正项级数且记 <span class="arithmatex">\(C_n=\sqrt[n]{u_n}\)</span>，则有<br />
+1. 若存在 <span class="arithmatex">\(0&lt;q&lt;1\)</span> 及正整数 <span class="arithmatex">\(N\)</span>，使得当 <span class="arithmatex">\(n\geq N\)</span> 时有 <span class="arithmatex">\(C_n\leq q\)</span>，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 收敛；<br />
+2. 若存在子列 <span class="arithmatex">\(\{n_k\}\)</span> 使得 <span class="arithmatex">\(C_{n_k}\geq 1\)</span> ，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 发散；</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">注：Cauchy判别法的优势</p>
+<p>达朗贝尔判别法、Raabe 判别法和 Gauss 判别法在判别的时候，或多或少都会要求级数的通项所成数列 <span class="arithmatex">\(\{a_n\}\)</span> 至少从某一项开始单调，但是柯西判别法并不受这个限制。</p>
+</div>
+<h4 id="_13">柯西积分判别法</h4>
+<div class="admonition note">
+<p class="admonition-title">柯西积分判别法</p>
+<p>设函数 <span class="arithmatex">\(f(x)\)</span> 在区间 <span class="arithmatex">\([0,+\infty)\)</span> 上非负且递减，<span class="arithmatex">\(\displaystyle A_n=\int_{1}^nf(x)\mathrm{d}x\)</span> ，那么级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty f(n)\)</span> 与数列 <span class="arithmatex">\(\{A_n\}\)</span> 的敛散性相同。<br />
+也可直接描述为：<br />
+$$ \displaystyle\sum\limits_{n=1}^\infty f(n)收敛(发散)\iff \int_1^{+\infty}f(x)\mathrm{d}x收敛(发散) $$ </p>
+</div>
+<p><img alt="Cauchy积分判别法" src="../../../imgs/%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0-20231218-9.png" /><br />
+原理其实非常简单，积分值可以被两个级数夹逼，从而有<br />
+ $$ <br />
+\sum\limits_{k=1}^n f(k)\leq \int_1^n f(x)\mathrm{d}x\leq \sum\limits_{k=2}^nf(k-1)<br />
+ $$ </p>
+<p>有了积分判别法，<span class="arithmatex">\(p\)</span> - 级数就能非常简单地判别敛散性了：</p>
+<div class="admonition question">
+<p class="admonition-title">例题：<span class="arithmatex">\(p\)</span> - 级数的敛散性</p>
+<p>讨论级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^{\infty}\frac{1}{n^p}(p&gt;0)\)</span> 的收敛性。</p>
+</div>
+<p>令 <span class="arithmatex">\(\displaystyle f(x)=\frac{1}{x^n}\)</span> ，当 <span class="arithmatex">\(p=1\)</span> 时有<br />
+ $$ <br />
+A_n=\int_1^n\frac{\mathrm{d}x}{x}=\ln(n)\to +\infty<br />
+ $$ <br />
+调和级数发散，利用比较判别法可知 <span class="arithmatex">\(0&lt;p&lt;1\)</span> 时也发散。</p>
+<p>当 <span class="arithmatex">\(p&gt;1\)</span> 时：<br />
+ $$ <br />
+\begin{aligned}<br />
+A_n &amp;= \int_1^n\frac{1}{x^p}\mathrm{d}x\\<br />
+&amp;= -\frac{1}{(p-1)x^{p-1}}\Bigg|^n_1\\<br />
+&amp;=-\frac{1}{(p-1)n^{p-1}}+\frac{1}{p-1}\to\frac{1}{p-1}<br />
+\end{aligned}<br />
+ $$ <br />
+故 <span class="arithmatex">\(p&gt;1\)</span> 时收敛。</p>
+<h4 id="_14">阶的估计法</h4>
+<p>有了 <span class="arithmatex">\(p\)</span> - 级数，回顾极限当中无穷小量的阶，如果我们可以比较出一个正项级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 中通项 <span class="arithmatex">\(u_n\)</span> 与 <span class="arithmatex">\(p\)</span> - 级数通项的阶的大小关系，会得到什么样的结果？利用比较判别法我们可以得到如下的阶的估计法：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：阶的估计法（比较判别法II）</p>
+<p>设 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 为正项级数，则：<br />
+1. 若存在 <span class="arithmatex">\(p&gt;1\)</span> 且存在正整数 <span class="arithmatex">\(N\)</span> 与正常数 <span class="arithmatex">\(K\)</span> ，使得 <span class="arithmatex">\(\displaystyle u_n\leq \frac{K}{n^p}(n\geq N)\)</span> ，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 收敛；<br />
+2. 若存在 <span class="arithmatex">\(p\leq 1\)</span> 且存在正整数 <span class="arithmatex">\(N\)</span> 与正常数 <span class="arithmatex">\(K\)</span> ，使得 <span class="arithmatex">\(\displaystyle u_n\geq \frac{K}{n^p}(n\geq N)\)</span> ，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 发散；</p>
+</div>
+<h4 id="_15">比值比较判别法</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：比值比较判别法</p>
+<p>设级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 和 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_n\)</span> 都是正项级数，且存在正整数 <span class="arithmatex">\(N\)</span> 使得当 <span class="arithmatex">\(n\geq N\)</span> 时，<span class="arithmatex">\(u_n&gt;0,v_n&gt;0\)</span> ，且有<br />
+$$ \frac{u_{n+1}}{u_n}\leq \frac{v_{n+1}}{v_n} $$ <br />
+则<br />
+1. 若 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_n\)</span> 收敛则 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 也收敛；<br />
+2. 若 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 发散则 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_n\)</span> 也发散。</p>
+</div>
+<h4 id="raabe">Raabe判别法</h4>
+<p>Raabe在不同的地方翻译不一样，教材翻译叫拉阿伯判别法，谢惠民上叫拉比判别法，在本笔记当中还是直接使用英文名以防混淆。（顺带一提个人觉得NKU教材翻译更土一点，还是喜欢后者）</p>
+<div class="admonition note">
+<p class="admonition-title">定理：Raabe判别法</p>
+<p>设 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 是正项级数且所有的项均为正数，记 <span class="arithmatex">\(\displaystyle R_n=n\left(\frac{u_n}{u_{n+1}}-1\right).\)</span><br />
+1. 若存在 <span class="arithmatex">\(q&gt;1\)</span> 及正整数 <span class="arithmatex">\(N\)</span> 使得当 <span class="arithmatex">\(n\geq N\)</span> 时有 <span class="arithmatex">\(R_n\leq q\)</span>，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 收敛；<br />
+2. 若存在正整数 <span class="arithmatex">\(N\)</span> 使得当 <span class="arithmatex">\(n\geq N\)</span> 有 <span class="arithmatex">\(R_n\leq 1\)</span> 则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 发散。</p>
+</div>
+<p>Raabe判别法包含了达朗贝尔比值判别法，但是要更精细。其理由在于比较的级数为 <span class="arithmatex">\(p\)</span>-级数，它比几何级数更加强力.</p>
+<div class="admonition note">
+<p class="admonition-title">定理：Raabe判别法的极限形式</p>
+<p>若数列 <span class="arithmatex">\(\{R_n\}\)</span> 收敛，设 <span class="arithmatex">\(\displaystyle\lim_{n\to \infty}R_n=r\)</span> .<br />
+1. 若 <span class="arithmatex">\(r&gt;1\)</span> ，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 收敛；<br />
+2. 若 <span class="arithmatex">\(r&lt;1\)</span> ，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 发散；</p>
+</div>
+<h4 id="gauss">Gauss判别法</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：Gauss判别法</p>
+<p>设 <span class="arithmatex">\(\sum\limits_{n=1}^\infty u_n\)</span> 是正项级数，且所有的项都是正数，则<br />
+$$ \frac{u_n}{u_{n+1}}=\lambda+\frac{\mu}{n}+\frac{\nu}{n\ln n}+o\left(\frac{1}{n\ln n}\right) $$ <br />
+则有<br />
+1. 若 <span class="arithmatex">\(\lambda&gt;1\)</span> 或者 <span class="arithmatex">\(\lambda=1,\mu&gt;1\)</span> 或者 <span class="arithmatex">\(\lambda=\mu=1,\nu&gt;1\)</span> ，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 收敛；<br />
+2. 若 <span class="arithmatex">\(\lambda&lt;1\)</span> 或者 <span class="arithmatex">\(\lambda=1,\mu&lt;1\)</span> 或者 <span class="arithmatex">\(\lambda=\mu=1,\nu&lt;1\)</span> ，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 发散.</p>
+</div>
+<p>Gauss判别法是目前学到的判别法中最强力的判别法，但是劣势显而易见：比较难算，而且上面的 Gauss 判别法实际上不够易用，下面的推论更常用：</p>
+<div class="admonition note">
+<p class="admonition-title">推论</p>
+<p>若 <span class="arithmatex">\(a_n&gt;0\)</span> 且 <br />
+$$ \frac{a_n}{a_{n+1}} = \lambda+\frac{\mu}{n}+\frac{\theta_n}{n^{1+\varepsilon}} $$ <br />
+其中 <span class="arithmatex">\(|\theta_n|&lt;C,\varepsilon&gt;0\)</span> ，则有<br />
+1. <span class="arithmatex">\(\lambda&gt;1\)</span> 时级数收敛；<br />
+2. <span class="arithmatex">\(\lambda&lt;1\)</span> 时级数发散；<br />
+3. 当 <span class="arithmatex">\(\lambda=1\)</span> 时，<span class="arithmatex">\(\mu&gt;1\)</span> 时级数收敛，<span class="arithmatex">\(\mu\leq 1\)</span> 时级数发散.</p>
+</div>
+<h3 id="_16">收敛快慢</h3>
+<div class="admonition note">
+<p class="admonition-title">定义：收敛更慢</p>
+<p>设 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 与 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u'_n\)</span> 是两个收敛的正项级数且它们的所有项都是正数，把它们的余级数分别记为 <span class="arithmatex">\(\gamma_n=\displaystyle\sum\limits_{k=n+1}^\infty u_k\)</span> 与 <span class="arithmatex">\(\gamma'_n=\displaystyle\sum\limits_{k=n+1}^\infty u_k'\)</span>. 如果 <span class="arithmatex">\(\gamma_n'\)</span> 是 <span class="arithmatex">\(\gamma_n\)</span> 的低阶无穷小，即<br />
+$$ \lim_{n\to\infty}\frac{\gamma_n}{\gamma'_n}= 0 $$ <br />
+则称级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n'\)</span> 比级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> <strong>收敛更慢</strong>.</p>
+</div>
+<p>需要注意的是收敛更慢 <span class="arithmatex">\(\ne\)</span> 收敛值更小，收敛的快慢不能判断收敛值的大小。</p>
+<p>收敛的快慢可以用来解释先前的判别法中，为什么后面的判别法往往优于前面的判别法。</p>
+<p>我们先来看四个判别法的原理：<br />
+- 同几何级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty aq^{n-1}\)</span> 比较的判别法：达朗贝尔判别法，柯西根值判别法；<br />
+- 同 <span class="arithmatex">\(p\)</span> - 级数比较的判别法：Raabe判别法；<br />
+- 同 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty \frac{1}{n\ln^p n}(p&gt;1)\)</span> 进行比较的判别法：Gauss判别法.<br />
+以上的判别法都是基于比较的判别法，如果我们选取的<strong>基准</strong>级数收敛比较慢，那么<strong>比它收敛更慢</strong>的级数我们是可以探测到的，例如达朗贝尔判别法可以检测出所有比几何级数收敛更快的级数，但是 <span class="arithmatex">\(p\)</span> - 级数是在 <span class="arithmatex">\(p&gt;1\)</span> 时收敛比几何级数更慢，这也就导致无法通过比较来判断是否收敛。</p>
+<p>从而我们有一个结论，当我们选取的基准收敛越慢，判别法也会越来越精细。但是代价就是计算会更麻烦。</p>
+<h2 id="_17">任意项级数</h2>
+<h3 id="_18">绝对收敛与条件收敛</h3>
+<div class="admonition note">
+<p class="admonition-title">定义：绝对收敛、条件收敛</p>
+<p>对于级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 若级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty |u_n|\)</span> 收敛，则称级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> <strong>绝对收敛</strong>，若级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 收敛而 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty |u_n|\)</span> 发散，则称级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> <strong>条件收敛</strong>。</p>
+</div>
+<p>利用绝对值不等式可以得到非常显然的结论：如果级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty |u_n|\)</span> 收敛，则 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 一定收敛。</p>
+<h3 id="leibniz">交错级数与Leibniz判别法</h3>
+<div class="admonition note">
+<p class="admonition-title">定义：交错级数</p>
+<p>正项和负项交错排列的级数称为交错级数，交错级数可写为 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty (-1)^{n+1}u_n\)</span> 或者 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty (-1)^nu_n\)</span> ，其中 <span class="arithmatex">\(u_n\geq 0,n=1,2,\cdots\)</span>.</p>
+</div>
+<p>为了判断交错级数的敛散性，需要利用下面的引理来估计 Cauchy 收敛准则的部分和：</p>
+<div class="admonition note">
+<p class="admonition-title">引理：交错级数部分和的估计</p>
+<p>设级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty (-1)^{n+1}u_n\)</span> 是交错级数，其中 <span class="arithmatex">\(u_n\geq0\)</span>, <span class="arithmatex">\(n=1,2,\cdots,\)</span> 且数列 <span class="arithmatex">\(\{u_n\}\)</span> 递减，则对任何自然数 <span class="arithmatex">\(n\)</span> 和任何正整数 <span class="arithmatex">\(p\)</span> 有<br />
+$$ \left|\sum\limits_{k=n+1}^{n+p}(-1)^{k+1}u_k\right|\leq u_{n+1}. $$ </p>
+</div>
+<p>分情况计算即可，在此略过。</p>
+<p>利用Leibniz判别法可以比较好地判断交错级数的敛散性，下面利用引理证明：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：Leibniz判别法</p>
+<p>设数列 <span class="arithmatex">\(\{u_n\}\)</span> 递减且收敛于0，则交错级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty (-1)^{n+1}u_n\)</span> 收敛。</p>
+</div>
+<p>因为 <span class="arithmatex">\(\displaystyle\lim_{n\to\infty}u_n=0\)</span> 故对任何的 <span class="arithmatex">\(\varepsilon&gt;0\)</span> 存在正整数 <span class="arithmatex">\(N\)</span> 使得当 <span class="arithmatex">\(n&gt;N\)</span> 时就有<br />
+ $$ <br />
+0\leq u_n&lt;\varepsilon.<br />
+ $$ <br />
+于是由引理对任何正整数 <span class="arithmatex">\(p\)</span> 均有<br />
+ $$ <br />
+\left|\sum\limits_{k=n+1}^{n+p}(-1)^{k+1}u_k\right|\leq u_{n+1}&lt;\varepsilon.<br />
+ $$ <br />
+由 Cauchy 收敛定理可知级数收敛。</p>
+<p>我们将满足Leibniz判别法的交错级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty (-1)^nu_n\)</span> 或 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty(-1)^{n+1}u_n\)</span> 称为<strong>Leibniz型级数</strong>。</p>
+<h3 id="abel">Abel求和、引理和判别法</h3>
+<p>Abel求和是针对有穷多项求和：<br />
+ $$ <br />
+S = \sum\limits_{k=1}^ma_kb_k<br />
+ $$ <br />
+的一个初等求和法，令<br />
+ $$ <br />
+B_j = \sum\limits_{k=1}^jb_k, j=1,2\cdots,m<br />
+ $$ <br />
+于是 <span class="arithmatex">\(b_1=B_1\)</span> 且<br />
+ $$ <br />
+b_k = B_k-B_{k-1}  ,k=2,3,\cdots,m<br />
+ $$ <br />
+记 <span class="arithmatex">\(B_0 = 0\)</span> ，则上式对 <span class="arithmatex">\(k=1\)</span> 也成立，进行拆分：<br />
+ $$ <br />
+\begin{aligned}<br />
+S &amp;= \sum\limits_{k=1}^m a_kb_k-\sum\limits_{k=1}^m a_k(B_k-B_{k-1})  \\<br />
+&amp;= \sum\limits_{k=1}^m a_k B_k-\sum\limits_{k=2}^m a_k B_{k-1} <br />
+\\<br />
+&amp;=  a_mB_m+\sum\limits_{k=1}^{m-1}a_{k}B_k-\sum\limits_{k=1}^{m-1}a_{k+1}B_k \\<br />
+&amp;=a_mB_m+\sum\limits_{k=1}^{m-1}(a_k-a_{k+1})B_k<br />
+\end{aligned}<br />
+ $$ <br />
+最终结果就是 Abel 求和公式，它适用于 <span class="arithmatex">\(B_k\)</span> 比较容易求出的情形，一个比较典型的例子就是<br />
+ $$ <br />
+\sum\limits_{k=1}^n (an+b)q^k<br />
+ $$ <br />
+利用 Abel 求和的流程就是先计算等比数列的和，再根据 Abel 求和公式可以简单地求和了。</p>
+<p>Abel 求和该怎么去简单记忆？或者说有没有更直观的理解？</p>
+<p>从代数的层面上，Abel 求和公式实际上就是分部积分的一个离散版本。我们知道分部积分：<br />
+ $$ <br />
+\int u \mathrm{d}v=uv-\int v \mathrm{d}u<br />
+ $$ <br />
+实际上就是微分法则 <span class="arithmatex">\(\mathrm{d}(uv)=u \mathrm{d}v+v \mathrm{d}u\)</span> 的一个逆向应用。如果我们仿照这样的思路应用在离散情形，</p>
+<p>从几何图形的层面上，它其实直观到令人难以置信：<br />
+<img alt="Abel求和几何解释" src="../../../imgs/%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0-20231218-10.png" /></p>
+<p>我们来看长为 <span class="arithmatex">\(a_k\)</span> 宽为 <span class="arithmatex">\(b_k\)</span> 的长方形列，它们的面积之和就是我们想要的结果，现在来看横向切出来的部分，我们可以发现这就是 Abel 公式右式的结果（对照图片来看）.</p>
+<p>有关更深层的应用：<a href="https://www.zhihu.com/question/319231555/answer/2659674593">什么是伯努利数？ - 知乎 (zhihu.com)</a></p>
+<p>利用 Abel 求和公式可以证明如下的 Abel 引理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：Abel引理</p>
+<p>如果有限数列 <span class="arithmatex">\(\{a_1,a_2,\cdots,a_m\}\)</span> 和 <span class="arithmatex">\(\{b_1,b_2,\cdots,b_n\}\)</span> 满足下列条件：<br />
+1. 数列 <span class="arithmatex">\(\{a_k\}\)</span> 单调；<br />
+2. <span class="arithmatex">\(|B_k|\leq M,k=1,2,\cdots,m,\)</span><br />
+则有估计式<br />
+$$ |S|=\left|\sum\limits_{k=1}^ma_kb_k\right|\leq M(|a_1|+2|a_m|). $$ </p>
+</div>
+<p>证明：<br />
+由 Abel 求和公式有：<br />
+ $$ <br />
+\begin{aligned}<br />
+|S|&amp;\leq\sum\limits_{k=1}^{m-1} |a_k-a_{k-1}||B_k|+|a_mB_m|\\<br />
+&amp;\leq M\left(\sum\limits_{k=1}^{m-1}|a_k-a_{k+1}|+|a_m|\right)<br />
+\end{aligned}<br />
+ $$ <br />
+因为 <span class="arithmatex">\(\{a_k\}\)</span> 单调，故所有的 <span class="arithmatex">\((a_k-a_{k-1}),(k=1,2,\cdots,m-1)\)</span> 都同号，从而<br />
+ $$ <br />
+\begin{aligned}<br />
+|S|&amp;\leq M\left(\sum\limits_{k=1}^{m-1}|a_k-a_{k-1}|+|a_m|\right)  \\<br />
+&amp;= M(|a_1-a_m|+|a_m|)\leq M(|a_1|+2|a_m|)<br />
+\end{aligned}<br />
+ $$ </p>
+<p>有了 Abel 引理，可以推导得出 Abel 判别法：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：Abel判别法</p>
+<p>设级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_nb_n\)</span> 满足下列条件：<br />
+1. 级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty b_n\)</span> <strong>收敛</strong>；<br />
+2. 数列 <span class="arithmatex">\(\{a_n\}\)</span> <strong>单调有界</strong>，</p>
+<p>则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_nb_n\)</span> 收敛.</p>
+</div>
+<p>由 Cauchy 收敛准则可得<br />
+ $$ <br />
+\left|\sum\limits_{k=n+1}^{n+p} b_k\right|&lt;\varepsilon<br />
+ $$ <br />
+由 Abel 引理可知<br />
+ $$ <br />
+\left|\sum\limits_{k=n+1}^{n+p}a_kb_k\right|\leq \varepsilon(|a_{n+1}|+2|a_{n+p}|)\leq 3M \varepsilon<br />
+ $$ <br />
+故由 Cauchy 收敛准则知收敛. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h3 id="dirichlet">Dirichlet判别法</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：Dirichlet判别法</p>
+<p>设级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_nb_n\)</span> 满足下列条件：<br />
+1. 级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty b_n\)</span> 的部分和数列 <span class="arithmatex">\(\{B_n\}\)</span> 有界；<br />
+2. 数列 <span class="arithmatex">\(\{a_n\}\)</span> 单调趋于0.</p>
+<p>则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_nb_n\)</span> 收敛.</p>
+</div>
+<p>证明：<br />
+因为 <span class="arithmatex">\(\{B_n\}\)</span> 有界，所以存在常数 <span class="arithmatex">\(M&gt;0\)</span> 使得 <span class="arithmatex">\(|B_n|\leq M\)</span> ，于是对任何正整数 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(p\)</span> 都有：<br />
+ $$ <br />
+\left|\sum\limits_{k=n+1}^{n+p}b_k\right| = |B_{n+p}-B_n|\leq 2M.<br />
+ $$ <br />
+又因 <span class="arithmatex">\(\{a_n\}\)</span> 趋于 0， 故对任意给的 <span class="arithmatex">\(\varepsilon&gt;0\)</span>，都有正整数 <span class="arithmatex">\(N\)</span>，使当 <span class="arithmatex">\(n&gt;N\)</span> 时就有：<br />
+ $$ <br />
+|a_n|&lt;\varepsilon.<br />
+ $$ <br />
+同时 <span class="arithmatex">\(\{a_n\}\)</span> 单调，从而由 Abel 引理可知 <span class="arithmatex">\(n&gt;N\)</span> 时有：<br />
+ $$ <br />
+\left|\sum\limits_{k=n+1}^{n+p}a_kb_k\right|\leq 2M(|a_{n+1}|+2|a_{n+p}|)&lt;6M \varepsilon.<br />
+ $$ <br />
+由 Cauchy 收敛原理可知级数收敛. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<p>上述两个判别法在后期会很常用，并且一般不会很明显区分，我们会直接称为 <strong>A-D 判别法</strong>.</p>
+<h2 id="_19">组合级数与重排级数</h2>
+<h3 id="_20">组合级数</h3>
+<div class="admonition note">
+<p class="admonition-title">定义：组合级数</p>
+<p>把一个级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 的项保序地分成无穷多组，并将每组的各项写在一个括号里进行求和合并，这样就得到一个新级数，其中<br />
+$$ v_k=u_{n_{k-1}+1}+u_{n_{k-1}+2}+\cdots+u_{n_k} $$ <br />
+$$ 0=n_0&lt;n_1&lt;\cdots&lt;n_{k-1}&lt;n_{k-1}&lt;n_k&lt;\cdots $$ <br />
+这个新级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_k\)</span> 称为原级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 的<strong>组合级数</strong>。</p>
+</div>
+<p>组合级数实际上就是对原有级数的一个求和方式的调整，但是这种求和方式上的调整可能会影响敛散性，例如：<br />
+ $$ <br />
+\displaystyle\sum\limits_{n=2}^\infty (-1)^n<br />
+ $$ <br />
+显然是发散的，但是我们令 <span class="arithmatex">\(n_k=2k\)</span> ，有组合级数：<br />
+ $$ <br />
+\displaystyle\sum\limits_{n=1}^\infty [(-1)^{2k}+(-1)^{2k+1}]<br />
+ $$ <br />
+这个时候就是收敛的了。换句话说，对于一个级数而言，求和方式不同，敛散性也是有可能不同的。但是我们能否利用组合级数得到敛散性的判别法？下面的定理可以帮助我们解决这个问题：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：组合级数的敛散性判别</p>
+<p>设级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 的组合级数 <span class="arithmatex">\(\displaystyle\sum\limits_{k=1}^\infty v_k\)</span> 收敛，其中<br />
+$$ v_k=u_{n_{k-1}+1}+u_{n_{k-1}+2}+\cdots+u_{n_k},k=1,2,\cdots $$ <br />
+且 <span class="arithmatex">\(u_{n_{k-1}+1},u_{n_{k-1}+2},\cdots,u_{n_k}\)</span> 各项不变号，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 收敛且与 <span class="arithmatex">\(\displaystyle\sum\limits_{k=1}^\infty v_k\)</span> 有相同的和。</p>
+</div>
+<p>这也就是说，只要我们组合部分地各项不会变号，我们就能直接进行组合求和.</p>
+<h3 id="_21">重排级数</h3>
+<h4 id="_22">重排级数的定义</h4>
+<div class="admonition note">
+<p class="admonition-title">定义：重排</p>
+<p>设映射 <span class="arithmatex">\(\alpha: \mathbb{N}^*\to \mathbb{N}^*\)</span> 是一个一一对应，令 <span class="arithmatex">\(v_n=u_{\alpha(n)}\)</span>，我们称级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_n\)</span> 为级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 的一个<strong>重排</strong>。</p>
+</div>
+<p>根据定义，一个重排级数实际上就是将原来的级数重新排列次序得到的级数。绝对收敛和条件收敛的本质区别就体现在其重排级数的性质上，为方便性质的研究，引入级数的正部和负部：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：级数的正部和负部</p>
+<p>对于 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n\)</span> 定义两个非负项级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n^+\)</span> 和 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n^-\)</span> ，其通项为：<br />
+$$ a_n^+=\max{a_n,0},a_n^- = -\min{a_n,0} $$ <br />
+这两个级数分别被称为级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n\)</span> 的<strong>正部</strong>和<strong>负部</strong>。</p>
+</div>
+<h4 id="_23">条件收敛和绝对收敛的性质</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：条件收敛与绝对收敛的条件</p>
+<p>对于 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n\)</span> 定义两个非负项级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n^+\)</span> 和 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n^-\)</span> ，其通项为：<br />
+$$ a_n^+=\max{a_n,0},a_n^- = -\min{a_n,0} $$ <br />
+则有：<br />
+1. <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n\)</span> 绝对收敛的充要条件是两个非负项级数均收敛。<br />
+2. 若 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n\)</span> 条件收敛，则同时有两个非负项级数发散于 <span class="arithmatex">\(+\infty\)</span> .</p>
+</div>
+<p>可以利用如下性质：<br />
+- <span class="arithmatex">\(|u_n|=u_n^++u_n^-\)</span> <br />
+- <span class="arithmatex">\(u_n=u_n^+-u_n^-\)</span> <br />
+- <span class="arithmatex">\(u_n^+ =\displaystyle \frac{|u_n|+u_n}{2}\)</span> <br />
+- <span class="arithmatex">\(u_n^-=\displaystyle\frac{|u_n|-u_n}{2}\)</span> .</p>
+<div class="admonition note">
+<p class="admonition-title">定理：绝对收敛的重排级数性质</p>
+<p>若级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 绝对收敛，则它的任意重排级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_n\)</span> 也是绝对收敛的，并且两者有相同的和。</p>
+</div>
+<p>根据上述的定理，绝对收敛的级数可以随意重排进行求和，其收敛结果不会发生改变，这是一个非常好的性质。但是对于条件收敛的级数来说，这个结论并不成立，因为重排可能会改变敛散性结果。</p>
+<p>例如，对于 Leibniz 型级数：<br />
+ $$ <br />
+\ln2 =\sum\limits_{n=1}^\infty (-1)^{n-1}\frac{1}{n}<br />
+ $$ <br />
+（可以利用 Taylor 展开来理解，后续也将讨论该级数的求和）</p>
+<p>但是如果我们对上述的级数进行重排，可能会有不一样的结果：<br />
+ $$ <br />
+\begin{aligned}<br />
+S_{3k}&amp;=\sum\limits_{i=1}^k\left(\frac{1}{2i-1}-\frac{1}{4i-2}-\frac{1}{4i}\right)\\<br />
+&amp;=\sum\limits_{i=1}^k\left(\frac{1}{4i-2}-\frac{1}{4i}\right)\\<br />
+&amp;=\frac{1}{2}\sum_{i=1}^k\left(\frac{1}{2i-1}-\frac{1}{2i}\right)\\<br />
+&amp;\to\frac{1}{2}\ln 2<br />
+\end{aligned}<br />
+ $$ </p>
+<p>这就说明条件收敛的级数会因为重排收敛到不一样的结果，更进一步，它可以通过重排收敛到任何一个值（乃至无穷），有如下定理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：Riemann定理</p>
+<p>设级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 条件收敛，则对任何实数 <span class="arithmatex">\(\alpha\)</span> （可以为正负无穷），都存在一个重排级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_n\)</span> 使得 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty v_n=\alpha\)</span> 成立。</p>
+</div>
+<p>证明略.</p>
+<h2 id="_24">无穷乘积</h2>
+<h3 id="_25">无穷乘积的定义与收敛性</h3>
+<div class="admonition note">
+<p class="admonition-title">定义：无穷乘积与部分积</p>
+<p>设 <span class="arithmatex">\(\{u_n\}\)</span> 为实数数列，我们把无穷多个数相乘的表达式：<br />
+$$ \prod_{n=1}^\infty u_n=u_1u_2\cdots u_n\cdots $$ <br />
+称为一个<strong>无穷乘积</strong>。<br />
+类似于部分和，定义<br />
+$$ P_n=\prod_{k=1}^n u_k,n=1,2,\cdots $$ <br />
+为无穷乘积的<strong>部分积</strong>。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定义：无穷乘积收敛</p>
+<p>同级数一样，若部分积数列 <span class="arithmatex">\(\{P_n\}\)</span> 收敛<strong>且极限不为0</strong>，则称无穷乘积<strong>收敛</strong>。并把极限 <span class="arithmatex">\(\displaystyle\lim_{n\to\infty}P_n=P\)</span> 称为无穷乘积的积，记为<br />
+$$ \prod_{n=1}^\infty u_n=P $$ <br />
+如果数列 <span class="arithmatex">\(\{P_n\}\)</span> 发散或收敛于0，则称无穷乘积 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty u_n\)</span> 发散，特别地，如果收敛于0，则称无穷乘积<strong>发散于0</strong>.</p>
+</div>
+<p>为什么无穷乘积的部分积收敛到0的时候，不是称无穷乘积收敛？如果我们对此时的无穷乘积取对数，那么对应的数项级数是发散到 <span class="arithmatex">\(-\infty\)</span> 的，这实际上就说明是发散的了。</p>
+<p>另一方面，部分积收敛到0并不能刻画原有的项的性质，对于一个收敛的无穷乘积，它的项是收敛到1的（由级数收敛的必要条件导出），但是如果部分积收敛到0，它的项可以是任意震荡的，举个例子，考虑下面的项：<br />
+ $$ <br />
+\frac{1}{2},\frac{1}{4},\frac{1}{2},\frac{1}{4},\cdots<br />
+ $$ <br />
+无穷乘积显然是0，但是它的项是震荡的，这实际上不利于我们研究。因此称其发散是有一定的理由的。</p>
+<h3 id="_26">无穷乘积的简单计算</h3>
+<div class="admonition question">
+<p class="admonition-title">例题1</p>
+<p>证明当 <span class="arithmatex">\(x\neq k\pi(k\in \mathbb{Z})\)</span> 时，有<br />
+$$ \prod_{n=1}^\infty \cos\frac{x}{2^n}=\frac{\sin x}{x}. $$ </p>
+</div>
+<p>考虑二倍角公式：<br />
+ $$ <br />
+2\cos\frac{x}{2^n}\sin\frac{x}{2^n}=\sin\frac{x}{2^{n-1}}<br />
+ $$ <br />
+则<br />
+ $$ <br />
+\frac{\displaystyle\sin\frac{x}{2^n}\prod_{n=1}^n \cos\frac{x}{2^n}}{\displaystyle\sin\frac{x}{2^n}}=\frac{\sin x}{2^n\displaystyle\sin\frac{x}{2^n}}<br />
+ $$ <br />
+令 <span class="arithmatex">\(n\to \infty\)</span> 可知趋于 <span class="arithmatex">\(\displaystyle\frac{\sin x}{x}\)</span> . <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<p>如果令 <span class="arithmatex">\(\displaystyle x=\frac{\pi}{2}\)</span> ，利用递推式 <span class="arithmatex">\(\displaystyle\cos\frac{x}{2}=\sqrt{\frac{1}{2}+\frac{1}{2}\cos x}\)</span> 可以推导出 <strong>Vieta 公式</strong>：<br />
+ $$ <br />
+\frac{2}{\pi}=\sqrt{\frac{1}{2}}\cdot\sqrt{\frac{1}{2}+\frac{1}{2}\sqrt{\frac{1}{2}}}\cdots<br />
+ $$ </p>
+<div class="admonition question">
+<p class="admonition-title">例题2:Wallis公式的推导</p>
+<p>证明：<br />
+$$ \prod_{n=1}^\infty \left(1-\frac{1}{4n^2}\right)=\frac{2}{\pi} $$ </p>
+</div>
+<p>首先由定积分的公式：<br />
+ $$ <br />
+\begin{aligned}<br />
+I_{2n} &amp;= \int_0^{\frac{\pi}{2}}\sin^{2n}x \mathrm{d}x=\frac{(2n-1)!!}{(2n)!!}\frac{\pi}{2}\\<br />
+I_{2n+1}&amp;=\int_0^{\frac{\pi}{2}}\sin^{2n+1}x \mathrm{d}x=\frac{(2n)!!}{(2n+1)!!}<br />
+\end{aligned}<br />
+ $$ <br />
+从而：<br />
+ $$ <br />
+\frac{\pi}{2}=\frac{[(2n)!!]^2}{(2n-1)!!(2n+1)!!}\frac{I_{2n}}{I_{2n+1}}<br />
+ $$ <br />
+根据<br />
+ $$ <br />
+\sin^{2n+1}x\leq \sin^{2n}x\leq \sin^{2n-1}x<br />
+ $$ <br />
+所以有<br />
+ $$ <br />
+I_{2n+1}\leq I_{2n}\leq I_{2n-1}<br />
+ $$ <br />
+从而：<br />
+ $$ <br />
+1\leq \frac{I_{2n}}{I_{2n+1}}\leq \frac{I_{2n-1}}{I_{2n+1}}=\frac{2n+1}{2n}<br />
+ $$ </p>
+<p>由两边夹定理可以得到：<br />
+ $$ <br />
+\lim_{n\to\infty}\frac{I_{2n}}{I_{2n+1}}=1<br />
+ $$ <br />
+故<br />
+ $$ <br />
+\lim_{n\to\infty}\frac{[(2n)!!]^2}{(2n-1)!!(2n+1)!!}=\frac{\pi}{2}<br />
+ $$ <br />
+于是<br />
+ $$ <br />
+P_n=\displaystyle\prod_{n=1}^n \frac{(2k-1)(2k+1)}{(2k)^2}\to\frac{2}{\pi}<br />
+ $$ <br />
+<span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<p>以上推导就是Wallis公式：<br />
+ $$ <br />
+\frac{\pi}{2}=\lim_{n\to\infty}\frac{[(2n)!!]^2}{(2n+1)!!(2n-1)!!}=\displaystyle\prod_{n=1}^\infty\frac{(2n)^2}{(2n+1)(2n-1)}<br />
+ $$ <br />
+的由来.</p>
+<h3 id="_27">无穷乘积的收敛性性质和与级数间的关系</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：无穷乘积收敛的必要条件</p>
+<p>若无穷乘积 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty u_n\)</span> 收敛，则<br />
+1. 对任何的 <span class="arithmatex">\(n\in \mathbb{N}^*\)</span> 都有 <span class="arithmatex">\(u_n\neq 0\)</span>;<br />
+2. <span class="arithmatex">\(\displaystyle\lim_{n\to \infty}u_n=1\)</span>;<br />
+3. <span class="arithmatex">\(\displaystyle\lim_{n\to \infty}\prod_{k=n+1}^\infty u_k=1\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理：无穷乘积和级数敛散性之间的关系</p>
+<p>无穷乘积 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty u_n\)</span> 收敛的充要条件是级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty \ln u_n\)</span> 收敛，且当二者之一收敛时，就有 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty \ln u_n=\ln \prod_{n=1}^\infty u_n\)</span> .</p>
+</div>
+<p>取极限即可得证，这个定理可以方便我们在无穷乘积和级数之间相互转换。</p>
+<div class="admonition note">
+<p class="admonition-title">定理：<span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty(1+\alpha_n)\)</span> 的收敛性</p>
+<p>设 <span class="arithmatex">\(\alpha_n\geq 0,n=1,2,\cdots\)</span>，则无穷乘积 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty(1+\alpha_n)\)</span> 收敛的充要条件是级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty \alpha_n\)</span> 收敛。</p>
+</div>
+<p>这个定理根据阶的比较判别法，利用 <span class="arithmatex">\(\ln(1+x)\sim x\)</span> 即可推出。</p>
+<p>同理，利用 <span class="arithmatex">\(\displaystyle x-\ln(1+x)\sim\frac{1}{2}x^2 (n\to \infty)\)</span> 即可得到下面的定理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：<span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty(1+\alpha_n)\)</span> 的收敛性 (2)</p>
+<p>设级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty \alpha_n\)</span> 收敛，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty \alpha_n^2\)</span> 与无穷乘积 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty (1+\alpha_n)\)</span> 的敛散性一致。</p>
+</div>
+<p>利用上面的定理可以得到：</p>
+<div class="admonition note">
+<p class="admonition-title">引理</p>
+<p>若 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty (1+|\alpha_n|)\)</span> 收敛，则 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty (1+\alpha_n)\)</span> 也收敛。</p>
+</div>
+<p>若 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty (1+|\alpha_n|)\)</span> 收敛，则 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty|\alpha_n|\)</span> 收敛 ，故 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty \alpha_n\)</span> 和 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty \alpha_n^2\)</span> 也收敛 (<span class="arithmatex">\(*\)</span>)，因此可知 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty (1+\alpha_n)\)</span> 收敛。</p>
+<div class="admonition warning">
+<p class="admonition-title">(<span class="arithmatex">\(*\)</span>)的批注</p>
+<ol>
+<li>平方项级数收敛的原因：<span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty |\alpha_n|^2\)</span> 为正项级数，由于 <span class="arithmatex">\(|\alpha_n|^2\)</span> 的阶比 <span class="arithmatex">\(|\alpha_n|\)</span> 更高，因此也必然收敛。</li>
+<li>注意事项： 如果 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty \alpha_n\)</span> 仅有条件收敛的性质，那么此时就不能成立，例如级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty (-1)^n\frac{1}{\sqrt{n}}\)</span> ，由Dirichlet判别法易知条件收敛，但是平方后不收敛。</li>
+</ol>
+</div>
+<p>对于一个无穷乘积，同样有条件收敛和绝对收敛：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：无穷乘积的条件收敛和绝对收敛</p>
+<p>若无穷乘积 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty (1+|\alpha_n|)\)</span> 收敛，则称 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty (1+\alpha_n)\)</span> <strong>绝对收敛</strong>，若 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty(1+\alpha_n)\)</span> 收敛而 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty(1+|\alpha_n|)\)</span> 发散，则称该级数<strong>条件收敛</strong>。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理：绝对收敛无穷乘积可任意重排</p>
+<p>若无穷乘积 <span class="arithmatex">\(\displaystyle\prod_{n=1}^\infty(1+\alpha_n)\)</span> 绝对收敛，则任意重排无穷乘积的因子次序，所得的新无穷乘积和原来的无穷乘积有相同的积。</p>
+</div>
+<h2 id="_28">级数的乘积、累次级数与二重级数</h2>
+<h3 id="_29">级数的乘积</h3>
+<p>考虑级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n\)</span> 与 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty b_n\)</span> 各项之间可能的乘积 <span class="arithmatex">\(a_ib_j\)</span> ，所有可能的乘积可以排成一个无穷的矩阵：<br />
+ $$ <br />
+\begin{pmatrix}<br />
+a_1b_1 &amp; a_1b_2 &amp; a_1b_3 &amp; \cdots &amp; a_1b_j &amp; \cdots \\ a_2b_1 &amp; a_2b_2 &amp; a_2b_3 &amp; \cdots &amp; a_2b_j &amp; \cdots \\ \vdots &amp; \vdots &amp; \vdots &amp; ~ &amp; \vdots &amp; ~ \\ a_ib_1 &amp; a_ib_2 &amp; a_ib_3 &amp; \cdots &amp; a_ib_j &amp; \cdots \\ \vdots &amp; \vdots &amp; \vdots &amp; ~ &amp; \vdots &amp; ~ \\ <br />
+\end{pmatrix}<br />
+ $$ <br />
+我们可以按各种方式将这些乘积排成数列，例如按照对角线的顺序来排列，或者按照正方形的方式来排列，例如对角线方式：<br />
+ $$ <br />
+a_1b_1;a_1b_2,a_2b_1;a_1b_3,a_2b_2,\cdots<br />
+ $$ <br />
+对于上述这样排列而成的数列，有 Cauchy 定理证明其敛散性。</p>
+<div class="admonition note">
+<p class="admonition-title">定理：Cauchy 定理</p>
+<p>如果级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n\)</span> 和 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty b_n\)</span> 都<strong>绝对收敛</strong>，级数的和分别是 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(B\)</span> ，则项的乘积 <span class="arithmatex">\(a_ib_j(i=1,2,\cdots;j=1,2,\cdots)\)</span> <strong>无论按什么方式</strong>排成数列，累加所得的级数必收敛，且该级数的和等于 <span class="arithmatex">\(AB\)</span> .</p>
+</div>
+<p>首先证明收敛：令 <span class="arithmatex">\(s=\max\{i_1,i_2,\cdots,i_n,j_1,\cdots,j_n\}\)</span>，<br />
+ $$ <br />
+\sum\limits_{k=1}^n|a_{i_k}b_{j_k}|\leq \left(\sum\limits_{i=1}^s|a_i|\right)\left(\sum\limits_{i=1}^s|b_j|\right)\leq \left(\displaystyle\sum\limits_{i=1}^\infty |a_i|\right)\left(\displaystyle\sum\limits_{j=1}^\infty |b_j|\right)<br />
+ $$ <br />
+由于两个级数均绝对收敛，从而 <span class="arithmatex">\(\displaystyle\sum\limits_{k=1}^\infty a_{i_k}b_{j_k}\)</span> 绝对收敛。</p>
+<p>再证收敛之和等于 <span class="arithmatex">\(AB\)</span> ，由于 <span class="arithmatex">\(\displaystyle\sum\limits_{k=1}^\infty a_{i_k}b_{j_k}\)</span> 绝对收敛，从而任何重排级数（从矩阵中任意取）都收敛且与它有相同的和，考虑按正方形排出的重排级数<br />
+ $$ <br />
+a_1b_1+a_1b_2+a_2b_2+a_2b_1+\cdots<br />
+ $$ <br />
+从而容易知道前 <span class="arithmatex">\(n^2\)</span> 项相加的部分和为<br />
+ $$ <br />
+\sum\limits_{i,j=1}^na_ib_j=\left(\sum\limits_{i=1}^n a_i\right)\left(\sum\limits_{j=1}^nb_j\right)<br />
+ $$ <br />
+其极限为 <span class="arithmatex">\(AB\)</span> ，从而级数之和可得为 <span class="arithmatex">\(AB\)</span> .</p>
+<p>下面引入特殊的一种级数乘积：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：Cauchy乘积</p>
+<p>定义级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n\)</span> 与 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty b_n\)</span> 的<strong>Cauchy乘积</strong>为 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty c_n\)</span>，其中 <br />
+$$ c_n=\sum\limits_{i+j=n+1}a_ib_j=a_1b_n+a_2b_{n-1}+\cdots+a_nb_1 $$ </p>
+</div>
+<h3 id="_30">累次级数</h3>
+<p>称定义域为 <span class="arithmatex">\(\mathbb{N}^*\times\mathbb{N}^*\)</span> 的二元实函数 <span class="arithmatex">\(f(i,j)\)</span> 为二重数列，用 <span class="arithmatex">\(a_{ij}\)</span> 来记 <span class="arithmatex">\(f(i,j)\)</span> 的值，我们有如下的无穷矩阵：<br />
+ $$ <br />
+\begin{pmatrix}<br />
+a_{11} &amp; a_{12} &amp; a_{13} &amp; \cdots &amp; a_{1j} &amp; \cdots \\ a_{21} &amp; a_{22} &amp; a_{23} &amp; \cdots &amp; a_{2j} &amp; \cdots \\ \vdots &amp; \vdots &amp; \vdots &amp; ~ &amp; \vdots &amp; ~ \\ a_{i1} &amp; a_{i2} &amp; a_{i3} &amp; \cdots &amp; a_{ij} &amp; \cdots \\ \vdots &amp; \vdots &amp; \vdots &amp; ~ &amp; \vdots &amp; ~ \\ <br />
+\end{pmatrix}<br />
+ $$ </p>
+<p>我们把每一行加起来，得到无穷序列 <span class="arithmatex">\(\displaystyle\left\{\sum\limits_{j=1}^\infty a_{ij}\right\}\)</span> ，将这个无穷序列累加，就得到累次级数 <span class="arithmatex">\(\displaystyle\sum\limits_{j=1}^\infty \displaystyle\sum\limits_{i=1}^\infty a_{ij}\)</span> ，若我们最开始先按列相加，则级数为 <span class="arithmatex">\(\displaystyle\sum\limits_{i=1}^\infty \displaystyle\sum\limits_{j=1}^\infty a_{ij}\)</span> ，这两个级数是否收敛？我们先引入定义：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：累次级数</p>
+<p>若对任意的正整数 <span class="arithmatex">\(i\)</span> 级数 <span class="arithmatex">\(\displaystyle\sum\limits_{j=1}^\infty a_{ij}\)</span> 都收敛，和记为 <span class="arithmatex">\(S_i\)</span> ，并且级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i=1}^\infty S_i\)</span> 也收敛，则称累次级数 <span class="arithmatex">\(\displaystyle\sum\limits_{j=1}^\infty \displaystyle\sum\limits_{i=1}^\infty a_{ij}\)</span> 是收敛的，级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i=1}^\infty S_i\)</span> 就是该累次级数的和。类似定义级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i=1}^\infty \displaystyle\sum\limits_{j=1}^\infty a_{ij}\)</span> 的和。</p>
+</div>
+<p>两个累次级数都收敛也不能保证两个累次级数相等，例如<br />
+ $$ <br />
+\begin{pmatrix}<br />
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\ -1 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots \\ 0 &amp; -1 &amp; 1 &amp; 0 &amp; 0 &amp; \cdots \\ 0 &amp; 0 &amp; -1 &amp; 1 &amp; 0 &amp; \cdots \\ \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots</p>
+<p>\end{pmatrix}<br />
+ $$ <br />
+如果先求行和，那么累次级数之和就为 1，如果先求列和，累次级数之和就为 0. 这就出现了不一样的结果。</p>
+<div class="admonition note">
+<p class="admonition-title">定理：绝对收敛使累次级数收敛并相等</p>
+<p>如果存在一个排法将 <span class="arithmatex">\(a_{ij}\quad(i=1,2,\cdots;j=1,2,\cdots)\)</span> 排成一个数列 <span class="arithmatex">\(\{u_k\}\)</span> ，使得所得的级数 <span class="arithmatex">\(\displaystyle\sum\limits_{k=1}^\infty u_k\)</span> 绝对收敛，记级数 <span class="arithmatex">\(\displaystyle\sum\limits_{k=1}^\infty u_k\)</span> 的和为 <span class="arithmatex">\(U\)</span> ，则两个累次级数都收敛于 <span class="arithmatex">\(U\)</span> .</p>
+</div>
+<p><strong>证明</strong>：<br />
+记级数 <span class="arithmatex">\(\displaystyle\sum\limits_{k=1}^\infty |u_k|\)</span> 的和为 <span class="arithmatex">\(U^*\)</span> ，因为对任意正整数 <span class="arithmatex">\(i\)</span> 和任意正整数 <span class="arithmatex">\(n\)</span> 都有<br />
+ $$ <br />
+\displaystyle\sum\limits_{j=1}^\infty|a_{ij}|\leq U^*<br />
+ $$ <br />
+所以正项级数 <span class="arithmatex">\(\displaystyle\sum\limits_{j=1}^\infty |a_{ij}|\)</span> 收敛，从而对任意的正整数 <span class="arithmatex">\(i\)</span> 级数 <span class="arithmatex">\(\displaystyle\sum\limits_{j=1}^\infty a_{ij}\)</span> 收敛，记级数的和 <span class="arithmatex">\(S_i\)</span> .</p>
+<p>因为 <span class="arithmatex">\(\displaystyle\sum\limits_{k=1}^\infty u_k\)</span> 绝对收敛，所以对任意的 <span class="arithmatex">\(\varepsilon&gt;0\)</span> 存在正整数 <span class="arithmatex">\(k_0\)</span> 使得<br />
+ $$ <br />
+\displaystyle\sum\limits_{k=k_0+1}^\infty |u_k|&lt;\varepsilon<br />
+ $$ <br />
+从而有<br />
+ $$ <br />
+\left|\sum\limits_{k=1}^{k_0}u_k-U\right|=\left|\sum\limits_{k=k_0+1}^\infty u_k\right|\leq \displaystyle\sum\limits_{k=k_0+1}^\infty|u_k|&lt;\varepsilon<br />
+ $$ <br />
+因为 <span class="arithmatex">\(u_1,\cdots,u_{k_0}\)</span> 是有限多项，所以存在正整数 <span class="arithmatex">\(m_0\)</span> 和正整数 <span class="arithmatex">\(n_0\)</span> 使得当 <span class="arithmatex">\(m&gt;m_0,n&gt;n_0\)</span> 的时候这有限多项都在无穷矩阵的前 <span class="arithmatex">\(m\)</span> 行和前 <span class="arithmatex">\(n\)</span> 列，于是<br />
+ $$ <br />
+\left|\sum\limits_{i=1}^m\sum\limits_{j=1}^na_{ij}-\sum\limits_{k=1}^{k_0}u_k\right|\leq \displaystyle\sum\limits_{k=k_0+1}^\infty |u_k|&lt;\varepsilon<br />
+ $$ <br />
+上式中令 <span class="arithmatex">\(n\to\infty\)</span> ，取极限得<br />
+ $$ <br />
+\left|\sum\limits_{i=1}^m S_i-\sum\limits_{k=1}^{k_0}u_k\right|\leq \varepsilon<br />
+ $$ </p>
+<p>从而当 <span class="arithmatex">\(m&gt;m_0\)</span> 时就有<br />
+ $$ <br />
+\left|\sum\limits_{i=1}^m S_i-U\right|\leq 2\varepsilon<br />
+ $$ <br />
+这就说明累次极限收敛于 <span class="arithmatex">\(U\)</span> .</p>
+<h3 id="_31">二重级数</h3>
+<h4 id="_32">二重级数定义</h4>
+<div class="admonition note">
+<p class="admonition-title">定义：二重级数</p>
+<p>记 <span class="arithmatex">\(\displaystyle A_{mn}=\sum\limits_{i=1}^m\sum\limits_{j=1}^n a_{ij},m,n\in \mathbb{N}^*\)</span> ，如果极限 <span class="arithmatex">\(\displaystyle\lim_{\substack{m\to\infty \\\\ n\to\infty}}A_{mn}\)</span> 存在，设极限值为 <span class="arithmatex">\(A\)</span> ，则记 <span class="arithmatex">\(A=\displaystyle\sum\limits_{i,j=1}^\infty a_{ij}\)</span> ，称二重级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i,j=1}^\infty a_{ij}\)</span> 收敛且 <span class="arithmatex">\(A\)</span> 为二重级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i,j=1}^\infty a_{ij}\)</span> 的和，如果极限不存在，则称二重级数发散。</p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">概念区分</p>
+<ul>
+<li>累次级数：<span class="arithmatex">\(\displaystyle \lim_{m\to \infty}\lim_{n\to\infty}A_{mn}\)</span> .</li>
+<li>二重级数：<span class="arithmatex">\(\displaystyle\lim_{\substack{m\to \infty \\\\ n\to \infty}}A_{mn}\)</span> .</li>
+</ul>
+</div>
+<p>二重级数的 <span class="arithmatex">\(\varepsilon-N\)</span> 定义如下：<br />
+如果对于任意的 <span class="arithmatex">\(\varepsilon&gt;0\)</span> 都存在正整数 <span class="arithmatex">\(M\)</span> 和 <span class="arithmatex">\(N\)</span> 使得当 <span class="arithmatex">\(m&gt;M,n&gt;N\)</span> 的时候都有<br />
+ $$ <br />
+|A_{mn}-A|-\varepsilon<br />
+ $$ <br />
+对于 Cauchy 收敛准则也类似：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：二重级数的Cauchy收敛原理</p>
+<p>二重级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i,j=1}^\infty a_{ij}\)</span> 收敛的充要条件为：对于任意的 <span class="arithmatex">\(\varepsilon&gt;0\)</span> 存在正整数 <span class="arithmatex">\(M\)</span> 和 <span class="arithmatex">\(N\)</span> 使得只要 <span class="arithmatex">\(m_1&gt;M,m_2&gt;M,n_1&gt;N,n_2&gt;N\)</span> 就有：<br />
+$$ |A_{m_1n_1}-A_{m_2n_2}|&lt;\varepsilon $$  </p>
+</div>
+<h4 id="_33">二重级数与累次级数的关系</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：二重级数与累次级数收敛</p>
+<p>如果二重级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i,j=1}^\infty a_{ij}\)</span> 收敛，且对<strong>任意</strong>正整数 <span class="arithmatex">\(i\)</span> ，<span class="arithmatex">\(\displaystyle\sum\limits_{j=1}^\infty a_{ij}\)</span> 都收敛，那么累次级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i=1}^\infty\displaystyle\sum\limits_{j=1}^\infty a_{ij}\)</span> 收敛且与二重级数有相同的和，同理，对 <span class="arithmatex">\(j\)</span> 也成立。</p>
+</div>
+<h4 id="_34">二重级数敛散性判断</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：正项二重级数收敛的充要条件</p>
+<p>如果二重级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i,j=1}^\infty a_{ij}\)</span> 的所有项 <span class="arithmatex">\(a_{ij}\)</span> 都非负，那么二重级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i,j=1}^\infty a_{ij}\)</span> 收敛的充要条件为它的部分和有界。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理：二重级数的绝对收敛</p>
+<p>如果二重级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i,j=1}^\infty |a_{ij}|\)</span> 收敛，那么二重级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i,j=1}^\infty a_{ij}\)</span> 收敛。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理：二重级数绝对收敛的充要条件</p>
+<p>二重级数 <span class="arithmatex">\(\displaystyle\sum\limits_{i,j=1}^\infty |a_{ij}|\)</span> 收敛的充分必要条件是：存在一种排法将 <span class="arithmatex">\(a_{ij}\ (i=1,2,\cdots;j=1,2,\cdots)\)</span> 排成一个数列 <span class="arithmatex">\(\{u_k\}\)</span> 使得所得的级数 <span class="arithmatex">\(\displaystyle\sum\limits_{k=1}^\infty u_k\)</span> 绝对收敛，此外有<br />
+$$ \displaystyle\sum\limits_{i,j=1}^\infty a_{ij}=\displaystyle\sum\limits_{k=1}^\infty u_k $$ </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+    
+  </body>
+</html>

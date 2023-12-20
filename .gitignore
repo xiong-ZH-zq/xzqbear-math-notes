@@ -1,12 +1,1 @@
-*~
-/benchmarks/
-/spell/
-/.vault.vim
-/.local.vimrc
-/.stignore
-/.stfolder
-/.stversions
-.vim
-.DS_Store
-site
-docs
+size/
