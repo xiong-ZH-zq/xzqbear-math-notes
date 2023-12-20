@@ -3,6 +3,7 @@ repo_url: https://github.com/xiong-ZH-zq/xzqbear-math-notes
 repo_name: xzqbear-math-notes
 theme:
   name: material
+  custom_dir: overrides
   palette: 
     # Palette toggle for light mode
     - scheme: default
