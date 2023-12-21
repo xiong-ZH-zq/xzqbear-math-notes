@@ -6,7 +6,7 @@ comments: true
 ## 级数
 >[!note] 定义：级数
 >我们把无穷多项相加的表达式
-> $$ \sum\limits_{n=1}^n=u_1+u_2+\cdots+u_n+\cdots $$ 
+> $$ \sum\limits_{n=1}^\infty=u_1+u_2+\cdots+u_n+\cdots $$ 
 >称为一个**无穷级数**，简称**级数**。
 
 ## 级数的收敛性和基本性质
@@ -623,11 +623,13 @@ $\rule{3pt}{10pt}$
 ## 级数的乘积、累次级数与二重级数
 ### 级数的乘积
 考虑级数 $\displaystyle\sum\limits_{n=1}^\infty a_n$ 与 $\displaystyle\sum\limits_{n=1}^\infty b_n$ 各项之间可能的乘积 $a_ib_j$ ，所有可能的乘积可以排成一个无穷的矩阵：
- $$ 
+ 
+$$ 
 \begin{pmatrix}
-a_1b_1 & a_1b_2 & a_1b_3 & \cdots & a_1b_j & \cdots \\\\ a_2b_1 & a_2b_2 & a_2b_3 & \cdots & a_2b_j & \cdots \\\\ \vdots & \vdots & \vdots & ~ & \vdots & ~ \\\\ a_ib_1 & a_ib_2 & a_ib_3 & \cdots & a_ib_j & \cdots \\\\ \vdots & \vdots & \vdots & ~ & \vdots & ~ \\\\ 
+a_1b_1 & a_1b_2 & a_1b_3 & \cdots & a_1b_j & \cdots \\\\ a_2b_1 & a_2b_2 & a_2b_3 & \cdots & a_2b_j & \cdots \\\\ \vdots & \vdots & \vdots & ~ & \vdots & ~ \\\\ a_ib_1 & a_ib_2 & a_ib_3 & \cdots & a_ib_j & \cdots \\\\ \vdots & \vdots & \vdots & ~ & \vdots & ~ \\\\  
 \end{pmatrix}
- $$ 
+$$ 
+
 我们可以按各种方式将这些乘积排成数列，例如按照对角线的顺序来排列，或者按照正方形的方式来排列，例如对角线方式：
  $$ 
 a_1b_1;a_1b_2,a_2b_1;a_1b_3,a_2b_2,\cdots
@@ -672,12 +674,12 @@ a_{11} & a_{12} & a_{13} & \cdots & a_{1j} & \cdots \\\\ a_{21} & a_{22} & a_{23
 >若对任意的正整数 $i$ 级数 $\displaystyle\sum\limits_{j=1}^\infty a_{ij}$ 都收敛，和记为 $S_i$ ，并且级数 $\displaystyle\sum\limits_{i=1}^\infty S_i$ 也收敛，则称累次级数 $\displaystyle\sum\limits_{j=1}^\infty \displaystyle\sum\limits_{i=1}^\infty a_{ij}$ 是收敛的，级数 $\displaystyle\sum\limits_{i=1}^\infty S_i$ 就是该累次级数的和。类似定义级数 $\displaystyle\sum\limits_{i=1}^\infty \displaystyle\sum\limits_{j=1}^\infty a_{ij}$ 的和。
 
 两个累次级数都收敛也不能保证两个累次级数相等，例如
- $$ 
+ 
+$$ 
 \begin{pmatrix}
 1 & 0 & 0 & 0 & 0 & \cdots \\\\ -1 & 1 & 0 & 0 & 0 & \cdots \\\\ 0 & -1 & 1 & 0 & 0 & \cdots \\\\ 0 & 0 & -1 & 1 & 0 & \cdots \\\\ \vdots & \vdots & \vdots & \vdots & \vdots
-
 \end{pmatrix}
- $$ 
+$$ 
 如果先求行和，那么累次级数之和就为 1，如果先求列和，累次级数之和就为 0. 这就出现了不一样的结果。
 
 >[!note] 定理：绝对收敛使累次级数收敛并相等

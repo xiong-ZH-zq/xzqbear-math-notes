@@ -22,6 +22,9 @@ theme:
     - navigation.tabs
   font:
     text: PT Serif
+  icon:
+    admonition:    # change icon of admonition
+      example: octicons/telescope-16
 
 markdown_extensions:
   - meta
@@ -58,3 +61,4 @@ nav:
     - 级数: 
       - 数项级数: Mathematical Analysis/Series/numerical series.md
       - 函数项级数: Mathematical Analysis/Series/function series.md
+      - 幂级数: Mathematical Analysis/Series/Power Series.md
