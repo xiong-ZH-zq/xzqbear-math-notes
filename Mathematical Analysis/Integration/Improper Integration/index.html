@@ -1,0 +1,1742 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../../abstract%20algebra/group%20theory/group/">
+      
+      
+        <link rel="next" href="../../Series/numerical%20series/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>广义积分/反常积分 - xzqbear math notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.184 1.143v-.001l1.422 2.464a1.75 1.75 0 0 1-.757 2.451L3.104 11.713a1.75 1.75 0 0 1-2.275-.702l-.447-.775a1.75 1.75 0 0 1 .53-2.32L11.682.573a1.748 1.748 0 0 1 2.502.57Zm-4.709 9.32h-.001l2.644 3.863a.75.75 0 1 1-1.238.848l-1.881-2.75v2.826a.75.75 0 0 1-1.5 0v-2.826l-1.881 2.75a.75.75 0 1 1-1.238-.848l2.049-2.992a.746.746 0 0 1 .293-.253l1.809-.87a.749.749 0 0 1 .944.252ZM9.436 3.92h-.001l-4.97 3.39.942 1.63 5.42-2.61Zm3.091-2.108h.001l-1.85 1.26 1.505 2.605 2.016-.97a.247.247 0 0 0 .13-.151.247.247 0 0 0-.022-.199l-1.422-2.464a.253.253 0 0 0-.161-.119.254.254 0 0 0-.197.038ZM1.756 9.157a.25.25 0 0 0-.075.33l.447.775a.25.25 0 0 0 .325.1l1.598-.769-.83-1.436-1.465 1Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"PT Serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="xzqbear math notes" class="md-header__button md-logo" aria-label="xzqbear math notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            xzqbear math notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              广义积分/反常积分
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/xiong-ZH-zq/xzqbear-math-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xzqbear-math-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../abstract%20algebra/group%20theory/group/" class="md-tabs__link">
+          
+  
+  NKU抽象代数
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  NKU数学分析
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Complex%20Analysis/Single%20Complex%20Analysis/Complex%20Number/" class="md-tabs__link">
+          
+  
+  NKU复变函数
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="xzqbear math notes" class="md-nav__button md-logo" aria-label="xzqbear math notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    xzqbear math notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/xiong-ZH-zq/xzqbear-math-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xzqbear-math-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mkdocs%20notes/site%20build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkdocs搭建流程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    NKU抽象代数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NKU抽象代数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../abstract%20algebra/group%20theory/group/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    群论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    NKU数学分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            NKU数学分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    积分学
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            积分学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    广义积分/反常积分
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    广义积分/反常积分
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷区间上的广义积分
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无穷区间上的广义积分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷区间广义积分定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷区间广义积分性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无穷区间广义积分性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      微积分基本公式和分部积分公式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      积分第二中值定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷区间广义积分敛散性判定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无穷区间广义积分敛散性判定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      比较判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      柯西判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abel判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirichlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dirichlet判别法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      有限区间上无界函数的广义积分
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="有限区间上无界函数的广义积分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      奇点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      无界函数的广义积分
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无界函数的广义积分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      无界函数广义积分定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      无界函数广义积分的计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      无界函数广义积分敛散性判别
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    级数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            级数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Series/numerical%20series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数项级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Series/function%20series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数项级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Series/Power%20Series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    幂级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fourier分析初步
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fourier分析初步
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Primary%20Fourier%20Analysis/Fourier%20Series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    NKU复变函数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            NKU复变函数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    单复变函数论
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            单复变函数论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Complex%20Analysis/Single%20Complex%20Analysis/Complex%20Number/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复数及其性质
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷区间上的广义积分
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无穷区间上的广义积分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷区间广义积分定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷区间广义积分性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无穷区间广义积分性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性运算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      微积分基本公式和分部积分公式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      积分第二中值定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      无穷区间广义积分敛散性判定
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无穷区间广义积分敛散性判定">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      比较判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      柯西判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      级数判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abel判别法
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirichlet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dirichlet判别法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      有限区间上无界函数的广义积分
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="有限区间上无界函数的广义积分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      奇点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      无界函数的广义积分
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="无界函数的广义积分">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      无界函数广义积分定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      无界函数广义积分的计算
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      无界函数广义积分敛散性判别
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">广义积分</h1>
+<h2 id="_2">无穷区间上的广义积分</h2>
+<h3 id="_3">无穷区间广义积分定义</h3>
+<div class="admonition note">
+<p class="admonition-title">定义：广义（反常）积分收敛</p>
+<p>设函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,+\infty)\)</span> 上有定义，对任何实数 <span class="arithmatex">\(A&gt;a\)</span> 函数在 <span class="arithmatex">\([a,A]\)</span> 上可积，如果极限<br />
+$$ \lim_{A\to +\infty}\int_{a}^A f(x)\mathrm{d}x=I $$<br />
+存在，则称 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,+\infty)\)</span> 上的<strong>广义（或反常）积分收敛</strong>，并称 <span class="arithmatex">\(I\)</span> 为广义积分的值，记为<br />
+$$ \int_{a}^{+\infty}f(x)\mathrm{d}x=\lim_{A\to +\infty}\int_a^A f(x)\mathrm{d}x=I $$<br />
+否则称广义积分发散，若 <span class="arithmatex">\(\displaystyle\lim_{A\to +\infty}\int_a^A f(x)\mathrm{d}x=+\infty\)</span> 或者 <span class="arithmatex">\(-\infty\)</span> 时，则称发散到 <span class="arithmatex">\(+\infty\)</span> （或者 <span class="arithmatex">\(-\infty\)</span>）.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定义：<span class="arithmatex">\((-\infty,+\infty)\)</span> 上的广义积分</p>
+<p>设对任何满足 <span class="arithmatex">\(A'&lt;A\)</span> 的实数 <span class="arithmatex">\(A\)</span> 和 <span class="arithmatex">\(A'\)</span> ，函数 <span class="arithmatex">\(f(x)\)</span> 都在 <span class="arithmatex">\([A',A]\)</span> 上可积，如果<strong>存在实数</strong> <span class="arithmatex">\(a\)</span>，使得广义积分 <span class="arithmatex">\(\displaystyle\int_{-\infty}^a f(x)\mathrm{d}x\)</span> 和 <span class="arithmatex">\(\displaystyle\int_{a}^{+\infty} f(x)\mathrm{d}x\)</span> <strong>都收敛</strong>，则称广义积分 <span class="arithmatex">\(\displaystyle\int_{-\infty}^{+\infty}f(x)\mathrm{d}x\)</span> 收敛，且有<br />
+$$ \int_{-\infty}^{+\infty} f(x)\mathrm{d}x=\int_{-\infty}^{a}f(x)\mathrm{d}+\int_{a}^{+\infty} f(x)\mathrm{d}x. $$<br />
+否则，当上式右端两个广义积分<strong>至少有一个发散</strong>，就称广义积分 <span class="arithmatex">\(\displaystyle\int_{-\infty}^{+\infty}f(x)\mathrm{d}x\)</span> 发散。</p>
+</div>
+<h3 id="_4">无穷区间广义积分性质</h3>
+<h4 id="_5">线性运算</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：收敛广义积分可线性运算</p>
+<p>如果广义积分 <span class="arithmatex">\(\displaystyle\int_{a}^{+\infty} f(x)\mathrm{d}x\)</span> 和 <span class="arithmatex">\(\displaystyle\int_{a}^{+\infty}g(x)\mathrm{d}x\)</span> 都收敛，<span class="arithmatex">\(\lambda,\mu\in \mathbb{R}\)</span> ，则广义积分 <span class="arithmatex">\(\displaystyle\int_{a}^{+\infty}[\lambda f(x)+\mu g(x)]\mathrm{d}x\)</span> 也收敛，且有<br />
+$$ \int_{a}^{+\infty}[\lambda f(x)+\mu g(x)]\mathrm{d}x=\lambda \int_{a}^{+\infty}f(x)\mathrm{d}x+\mu \int_{a}^{+\infty}g(x)\mathrm{d}x. $$</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理：广义积分积分域可加</p>
+<p>设实数 <span class="arithmatex">\(a&lt;b\)</span> 则广义积分 <span class="arithmatex">\(\displaystyle\int_a^{+\infty}f(x)\mathrm{d}x\)</span> 和 <span class="arithmatex">\(\displaystyle\int_b^{+\infty} f(x)\mathrm{d}x\)</span> 同时收敛或同时发散，收敛时有<br />
+$$ \int_{a}^{+\infty}f(x)\mathrm{d}x=\int_a^b f(x)\mathrm{d}x+\int_{b}^{+\infty}f(x)\mathrm{d}x $$</p>
+</div>
+<h4 id="_6">微积分基本公式和分部积分公式</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：广义积分的Newtom-Leibniz公式</p>
+<p>设对任何实数 <span class="arithmatex">\(A&gt;a\)</span> 函数 <span class="arithmatex">\(f(x)\)</span> 都在 <span class="arithmatex">\([a,A]\)</span> 上可积，<span class="arithmatex">\(F(x)\)</span> 是 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,+\infty]\)</span> 上的一个原函数，则广义积分 <span class="arithmatex">\(\displaystyle\int_a^{+\infty}f(x)\mathrm{d}x\)</span> 收敛当且仅当 <span class="arithmatex">\(F(+\infty)\)</span> 存在，且广义积分收敛或或 <span class="arithmatex">\(F(+\infty)\)</span> 存在时，有<br />
+$$ \int_{a}^{+\infty}f(x)\mathrm{d}x=F(+\infty)-F(a) $$</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理：分部积分公式</p>
+<p>设 <span class="arithmatex">\(F(x)\)</span> 和 <span class="arithmatex">\(g(x)\)</span> 都在 <span class="arithmatex">\([a,+\infty]\)</span> 上连续可导，且 <span class="arithmatex">\(F'(x)=f(x)\)</span>. 如果下面的等式中有两项存在，则第三项存在且有<br />
+$$ \int_{a}^{+\infty}f(x)g(x)\mathrm{d}x=[F(x)g(x)]\bigg|_a^{+\infty}-\int_a^{+\infty}F(x)g'(x)\mathrm{d}x $$</p>
+</div>
+<p>我们此处还没有说明广义积分的换元，因此还没有 <span class="arithmatex">\(f(x)\mathrm{d}x = \mathrm{d}F(x)\)</span> 的写法. 在后续说明了之后，就能换成习惯的写法了.</p>
+<h3 id="_7">积分第二中值定理</h3>
+<p>在进行敛散性判定法的记录之前，先考虑积分第二中值定理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：积分第二中值定理</p>
+<p>设 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上可积：<br />
+1. 若 <span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上非负递增，则存在 <span class="arithmatex">\(\xi\in[a,b]\)</span> 使得 $$ \int_a^bf(x)g(x)\mathrm{d}x=g(b)\int_\xi^bf(x)\mathrm{d}x $$<br />
+2. 若 <span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上非负递减，则存在 <span class="arithmatex">\(\xi\in[a,b]\)</span> 使得 $$ \int_a^bf(x)g(x)\mathrm{d}x=g(a)\int_a^\xi f(x)\mathrm{d}x $$<br />
+3. 若 <span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上单调，则存在 <span class="arithmatex">\(\xi\in[a,b]\)</span> 使得 $$ \int_a^bf(x)g(x)\mathrm{d}x=g(b)\int_\xi^bf(x)\mathrm{d}x+g(a)\int_a^\xi f(x)\mathrm{d}x $$</p>
+</div>
+<p>积分第二中值定理在之后将会发挥和 Abel 求和公式类似的作用。</p>
+<p>首先考虑 (1) 的证明：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\int_a^b f(x)g(x)\mathrm{d}x &amp;= \sum\limits_{k=1}^n\int_{x_{k}}^{x_{k+1}}f(x)g(x)\mathrm{d}x\\\\
+&amp;=\sum\limits_{k=1}^n g(x_k)\int_{x_k}^{x_{k+1}}f(x)\mathrm{d}x+\\\\
+&amp;\sum\limits_{k=1}^n \int_{x_k}^{x_{k+1}}f(x)[g(x)-g(x_k)]\mathrm{d}x
+\end{aligned}
+\]</div>
+<p>其中第二项为误差，估计误差有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\sum\limits_{k=1}^n \int_{x_k}^{x_{k+1}}f(x)[g(x)-g(x_k)]\mathrm{d}x &amp;\leqslant \sum\limits_{k=1}^n\int_{x_k}^{x_{k+1}}|f(x)|\cdot|g(x)-g(x_k)|\\\\
+&amp;\leqslant L\sum\limits_{k=1}^n \omega_k \Delta x_k
+\end{aligned}
+\]</div>
+<p>由于 <span class="arithmatex">\(g(x)\)</span> 可积，上面的误差自然趋于0.</p>
+<p>对于第一项，设 <span class="arithmatex">\(F(x)=\displaystyle\int_{x}^b f(x)\mathrm{d}x\)</span> ，那么 <span class="arithmatex">\(\displaystyle\int_{x_k}^{x_{k+1}}f(x)\mathrm{d}x=F(x_{k})-F(x_{k+1})\)</span> . 利用 Abel 求和公式有 </p>
+<div class="arithmatex">\[
+\begin{aligned}
+\sum\limits_{k=1}^n g({x_k})\int_{x_k}^{x_{k+1}} f(x)\mathrm{d}x&amp; =\sum_{k=1}^ng(x_k)[F(x_{k-1})-F(x_k)]  \\\\
+&amp;=g(x_1)F(x_0)+\sum_{k=1}^{n-1}[g(x_{k+1})-g(x_k)]F(x_k).
+\end{aligned}
+\]</div>
+<p>由于 <span class="arithmatex">\(F(x)\)</span> 连续，必有最小值 <span class="arithmatex">\(m\)</span> 和最大值 <span class="arithmatex">\(M\)</span> ，从而有：</p>
+<div class="arithmatex">\[
+mg(b)\leqslant \sum\limits_{k=1}^n g({x_k})\int_{x_k}^{x_{k+1}} f(x)\mathrm{d}x\leqslant Mg(b)
+\]</div>
+<p>利用介值定理，存在 <span class="arithmatex">\(\xi\in [a,b]\)</span> 使得<br />
+$$<br />
+\int_a^b f(x)g(x)\mathrm{d}x= F(\xi) g(b)= g(b)\int_\xi ^b f(x)\mathrm{d}x<br />
+$$</p>
+<p>从而 (1) 成立。</p>
+<h3 id="_8">无穷区间广义积分敛散性判定</h3>
+<p>上面的无穷区间广义积分的运算性质很大程度上要依赖于广义积分收敛，因此判断广义积分收敛性就成为必须要面对的一个问题。<br />
+首先是应用较广的 Cauchy 收敛原理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：Cauchy收敛原理</p>
+<p>广义积分 <span class="arithmatex">\(\displaystyle\int_a^{+\infty}f(x)\mathrm{d}x\)</span> 收敛的充要条件是：对任何 <span class="arithmatex">\(\varepsilon&gt;0\)</span> 都存在 <span class="arithmatex">\(M&gt;a\)</span> 使得当 <span class="arithmatex">\(A'&gt;A&gt;M\)</span> 时就有<br />
+$$ \left|\int_{A}^{A'}f(x)\mathrm{d}x\right|&lt;\varepsilon $$</p>
+</div>
+<p>从级数的 Cauchy 收敛的应用范围来看， Cauchy 收敛原理还是需要重点关注的。</p>
+<h4 id="_9">比较判别法</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：比较判别法</p>
+<p>设对于任何 <span class="arithmatex">\(A&gt;a\)</span> 函数 <span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(g(x)\)</span> 都在 <span class="arithmatex">\([a,A]\)</span> 上可积，且存在 <span class="arithmatex">\(b\geqslant a\)</span> 使得 <span class="arithmatex">\(g(x)\geqslant f(x)\geqslant 0(\forall x\geqslant b)\)</span> ，那么有：<br />
+1. 若 <span class="arithmatex">\(\displaystyle\int_{a}^{+\infty} g(x)\mathrm{d}x\)</span> 收敛，则 <span class="arithmatex">\(\displaystyle\int_{a}^{+\infty}f(x)\mathrm{d}x\)</span> 也收敛；<br />
+2. 若 <span class="arithmatex">\(\displaystyle\int_{a}^{+\infty} f(x)\mathrm{d}x\)</span> 发散则 <span class="arithmatex">\(\displaystyle\int_{a}^{+\infty}g(x)\mathrm{d}x\)</span> 也发散。</p>
+</div>
+<p>这里和级数的敛散性非常类似，简单概括就是：对于非负函数广义积分，小于收敛积分则积分收敛，大于发散积分则积分发散.</p>
+<h4 id="_10">柯西判别法</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：Cauchy判别法</p>
+<p>设函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,+\infty)\)</span> 上非负且对任何 <span class="arithmatex">\(A&gt;a,f(x)\)</span> 在 <span class="arithmatex">\([a,A]\)</span> 上可积，那么：<br />
+1. 若存在 <span class="arithmatex">\(p&gt;1\)</span> 和 <span class="arithmatex">\(C&gt;0\)</span>，使得在 <span class="arithmatex">\([a,+\infty)\)</span> 上有 <span class="arithmatex">\(\displaystyle0\leqslant f(x)\leqslant \frac{C}{x^p}\)</span> ，则广义积分 <span class="arithmatex">\(\displaystyle\int_a^{+\infty}f(x)\mathrm{d}x\)</span> 收敛；<br />
+2. 若存在 <span class="arithmatex">\(0&lt;p\leqslant 1\)</span> 和 <span class="arithmatex">\(C&gt;0\)</span> ，使得在 <span class="arithmatex">\([a,+\infty)\)</span> 上有 <span class="arithmatex">\(\displaystyle0\leqslant \frac{C}{x^p}\leqslant f(x)\)</span> 则广义积分 <span class="arithmatex">\(\displaystyle\int_a^{+\infty}f(x)\mathrm{d}x\)</span> 发散.</p>
+</div>
+<p>实质上，这就是阶的判别法，也就是利用 <span class="arithmatex">\(p\)</span>-积分的敛散性进行比较判别。</p>
+<h4 id="_11">级数判别法</h4>
+<p>对于级数而言，我们曾使用积分判别法来判断[[数项级数]]是否发散，积分判别法可以等价为如下的内容：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：级数收敛性的积分判别法（广义积分陈述）</p>
+<p>设函数 <span class="arithmatex">\(f(x)\)</span> 在区间 <span class="arithmatex">\([1,+\infty)\)</span> 上<strong>非负且递减</strong>，则级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty f(n)\)</span> 与广义积分 <span class="arithmatex">\(\displaystyle\int_1^{+\infty}f(x)\mathrm{d}x\)</span> 同时收敛或同时发散。</p>
+</div>
+<p>当然，现在从广义积分的视角来看，我们似乎也能利用这样的性质倒推为级数进行敛散性判别。</p>
+<div class="admonition note">
+<p class="admonition-title">定理：级数判别法</p>
+<p>设函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,+\infty)\)</span> 上<strong>非负</strong>且对任何 <span class="arithmatex">\(A&gt;a,f(x)\)</span> 都在 <span class="arithmatex">\([a,A]\)</span> 上<strong>可积</strong>，又设有<strong>严格递增</strong>数列 <span class="arithmatex">\(\{A_n\}:A_0=a,A_n\to+\infty(n\to\infty)\)</span>. 令<br />
+$$ u_n=\int_{A_{n-1}}^{A_n}f(x)\mathrm{d}x,n=1,2\cdots $$<br />
+则正项级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty u_n\)</span> 与广义积分 <span class="arithmatex">\(\displaystyle\int_{a}^{+\infty}f(x)\mathrm{d}x\)</span> 同时收敛或同时发散。</p>
+</div>
+<p>需要注意的是，尽管我们利用这个判别法将级数和广义积分建立了联系，但是广义积分的性质还是有所不同。例如对于级数而言，如果级数 <span class="arithmatex">\(\displaystyle\sum\limits_{n=1}^\infty a_n\)</span> 收敛，则有必要条件 <span class="arithmatex">\(\displaystyle\lim_{n\to \infty}a_n=0\)</span> ，但是对于广义积分而言，如果<br />
+$$<br />
+\int_{a}^{+\infty}f(x)\mathrm{d}x<br />
+$$<br />
+收敛，那么 <span class="arithmatex">\(\displaystyle\lim_{x\to+\infty}f(x)=0\)</span> 是<strong>不一定成立</strong>的（但是加上一致连续的条件后是成立的，见NKU习题15(A)T2、T3）。可以看下例：</p>
+<div class="admonition question">
+<p class="admonition-title">NKU课本例8</p>
+<p>讨论广义积分<br />
+$$ \int_0^{+\infty}\frac{x^p}{1+x^q\sin^2 x}\mathrm{d}x(p&gt;0,q&gt;0) $$的收敛性。</p>
+</div>
+<p>记 <span class="arithmatex">\(f(x)=\displaystyle\frac{x^p}{1+x^q\sin^2{x}}\)</span> ，当 <span class="arithmatex">\(n\pi\leqslant x\leqslant (n+1)\pi\)</span> 的时候有：<br />
+$$<br />
+\frac{(n\pi)^p}{1+[(n+1)\pi]^q\sin^2x}\leqslant f(x)\leqslant \frac{[(n+1)\pi]^p}{1+(n\pi)^q\sin^2 x}<br />
+$$<br />
+因为：<br />
+$$<br />
+\int_{n\pi}^{(n+1)\pi}\frac{\mathrm{d}x}{1+A\sin^2x}=\frac{\pi}{\sqrt{1+A}}<br />
+$$<br />
+所以利用上述不等式，有：<br />
+$$<br />
+\frac{n^p\pi^{p+1}}{\sqrt{1+(n+1)^q\pi^q}}\leqslant\int_{n\pi}^{(n+1)\pi}f(x)\mathrm{d}x\leqslant\frac{(n+1)^p\pi^{p+1}}{\sqrt{1+n^q\pi^q}}<br />
+$$</p>
+<p>上式说明 <span class="arithmatex">\(\displaystyle\int_{n\pi}^{(n+1)\pi}f(x)\mathrm{d}x\)</span> 为 <span class="arithmatex">\(\displaystyle\frac{1}{n^{\frac{q}{2}-p}}\)</span> 的同阶无穷小，从而令 <span class="arithmatex">\(A_n=n \pi\)</span> 由于级数判别法可知在 <span class="arithmatex">\(q&gt;2p+2\)</span> 的时候收敛，在 <span class="arithmatex">\(q\leqslant 2p+2\)</span> 的时候发散. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Remark.</p>
+<p>对于级数判别法，上面启发我们有如下的基本流程：</p>
+<ul>
+<li>找到合适的单调递增数列；</li>
+<li>如果相应的积分对应的级数已经好判断敛散性，直接判断完毕；</li>
+<li>如果不是，利用夹逼的方式简化积分结构，同时求出无穷小的阶。</li>
+</ul>
+</div>
+<p>同样，反过头来，对于判断级数的敛散性，利用广义积分也是一个比较合适的选择。</p>
+<h4 id="abel">Abel判别法</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：Abel判别法</p>
+<p>若广义积分 <span class="arithmatex">\(\displaystyle\int_a^{+\infty}f(x)\mathrm{d}x\)</span> <strong>收敛</strong>，函数 <span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a,+\infty)\)</span> 上<strong>单调有界</strong>，则广义积分 <span class="arithmatex">\(\displaystyle\int_a^{+\infty}f(x)g(x)\mathrm{d}x\)</span> 收敛。</p>
+</div>
+<h4 id="dirichlet">Dirichlet判别法</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：Dirichlet判别法</p>
+<p>若 <span class="arithmatex">\(F(A)=]\displaystyle\int_a^A f(x)\mathrm{d}x\)</span> 在 <span class="arithmatex">\([a,+\infty)\)</span> 上有界，函数 <span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a,+\infty)\)</span> 上单调且 <span class="arithmatex">\(\displaystyle\lim_{x\to+\infty}g(x)=0\)</span>，则广义积分<br />
+<span class="arithmatex">\(<span class="arithmatex">\(\int_a^{+\infty}f(x)g(x)\mathrm{d}x\)</span>\)</span>收敛。</p>
+</div>
+<h2 id="_12">有限区间上无界函数的广义积分</h2>
+<h3 id="_13">奇点</h3>
+<p>引入奇点的概念来研究无界函数：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：奇点</p>
+<p>如果对于点 <span class="arithmatex">\(x_0\in[a,b]\)</span> 的任何空心邻域 <span class="arithmatex">\(B_{\delta}^{\circ}(x_0)\)</span> ， <span class="arithmatex">\(f(x)\)</span> 都在 <span class="arithmatex">\(B_{\delta}^{\circ}(x_0)\cap [a,b]\)</span> 中无界，则称点 <span class="arithmatex">\(x_0\)</span> 为 <span class="arithmatex">\(f(x)\)</span> 的一个<strong>奇点</strong>（或<strong>瑕点</strong>）。</p>
+</div>
+<p>奇点可以简单理解为无界的点，在这样的点周围的 Riemann 积分需要扩展为广义积分进行计算。</p>
+<p>也可利用可积性判断奇点：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：可积性判断奇点</p>
+<p>设对任意 <span class="arithmatex">\(\delta\in (0,b-a)\)</span> ，函数 <span class="arithmatex">\(f(x)\)</span> 都在 <span class="arithmatex">\([a,b-\delta]\)</span> 上可积，但 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上不可积，则 <span class="arithmatex">\(b\)</span> 是 <span class="arithmatex">\(f(x)\)</span> 的一个奇点。</p>
+</div>
+<p>这个定理的证明方法是利用 Riemann 和进行拆解，在 <span class="arithmatex">\([a,b-\delta]\)</span> 上 Riemann 和小于 <span class="arithmatex">\(\varepsilon\)</span> ，而在 <span class="arithmatex">\([b-\delta,b]\)</span> 上假如不为奇点，则有界，可以利用 Riemann 和导出可积性，从而生成矛盾。</p>
+<p>下面来看<strong>可去奇点</strong>，这种奇点并不是真正的奇点，因为实际上它仅仅只是无定义，但其邻域内通常是有界的，例如对于下面的积分：<br />
+$$<br />
+\int_0^{+\infty}\frac{\sin x}{x}\mathrm{d}x<br />
+$$<br />
+可以知道 <span class="arithmatex">\(0\)</span> 的时候该函数无定义，但是极限显然为 <span class="arithmatex">\(1\)</span> ，从而可以说这是一个<strong>可去奇点</strong>。</p>
+<h3 id="_14">无界函数的广义积分</h3>
+<h4 id="_15">无界函数广义积分定义</h4>
+<div class="admonition note">
+<p class="admonition-title">定义：无界函数的广义积分</p>
+<p>设 <span class="arithmatex">\(b\)</span> 是 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上的唯一奇点，且对任何 <span class="arithmatex">\(\delta\in (0,b-a)\)</span> ，则 <span class="arithmatex">\(f(x)\)</span> 都在 <span class="arithmatex">\([a,b-\delta]\)</span> 上可积，如果函数极限 $$ \lim_{\delta\to 0^+}\int_a^{b-\delta}f(x)\mathrm{d}x=I $$<br />
+存在，则称 <span class="arithmatex">\(f(x)\)</span> 从 <span class="arithmatex">\(a\)</span> 到 <span class="arithmatex">\(b\)</span> 的<strong>广义积分（瑕积分）收敛</strong>，并称实数 <span class="arithmatex">\(I\)</span> 为此广义积分的值，记为 $$ \int_a^bf(x)\mathrm{d}x=\lim_{\delta\to 0^+}\int_a^{b-\delta}f(x)\mathrm{d}x=I $$ 否则就称广义积分 <span class="arithmatex">\(\displaystyle\int_a^b f(x)\mathrm{d}x\)</span> <strong>发散</strong>。如果极限值为 <span class="arithmatex">\(+\infty\)</span> 或 <span class="arithmatex">\(-\infty\)</span> ，称广义积分发散到 <span class="arithmatex">\(+\infty\)</span> 或 <span class="arithmatex">\(-\infty\)</span> .</p>
+</div>
+<p>如果 <span class="arithmatex">\(c\in (a,b)\)</span> 是区间上的唯一奇点，则定义：<br />
+$$<br />
+\int_a^bf(x)\mathrm{d}x=\int_a^cf(x)\mathrm{d}x+\int_c^b f(x)\mathrm{d}x<br />
+$$<br />
+右端两个积分都收敛时，左端的广义积分收敛，否则左端的广义积分发散。</p>
+<p>无界函数的广义积分的性质：线性可加，区间可加，Newton-Leibniz 公式依然成立，不再进行证明。</p>
+<h4 id="_16">无界函数广义积分的计算</h4>
+<p>除 Newton-Leibniz 公式之外，此处我们引入广义积分的换元公式：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：广义积分换元公式</p>
+<p>设 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,b)\)</span> 上连续，<span class="arithmatex">\(b\)</span> 是 <span class="arithmatex">\(f(x)\)</span> 的唯一奇点或 <span class="arithmatex">\(b=+\infty\)</span>，<span class="arithmatex">\(x=\varphi(t)\)</span> 在 <span class="arithmatex">\([\alpha,\beta)\)</span> 上<strong>严格递增且连续可导</strong> (<span class="arithmatex">\(\beta\)</span> 可以是 <span class="arithmatex">\(+\infty\)</span>) ，<span class="arithmatex">\(\varphi(\alpha)=a,\displaystyle\lim_{t\to \beta}\varphi(t)=b\)</span>，那么广义积分 <span class="arithmatex">\(\displaystyle\int_a^bf(x)\mathrm{d}x\)</span> 与 <span class="arithmatex">\(\displaystyle\int_\alpha^\beta f(\varphi(t))\varphi'(t)\mathrm{d}t\)</span> 同时收敛或同时发散，且在收敛时有： $$ \displaystyle\int_a^bf(x)\mathrm{d}x=\displaystyle\int_\alpha^\beta f(\varphi(t))\varphi'(t)\mathrm{d}t $$</p>
+</div>
+<p>当然，对于上述定理，<span class="arithmatex">\(\varphi(t)\)</span> 严格递减也可，但是如果不严格单调，换元公式可能会出现问题。<br />
+利用换元积分，我们可以将所有的瑕积分换为无界的广义积分，现考虑下面的瑕积分：<br />
+$$<br />
+\lim_{\varepsilon\to 0^+}\int_a^{b-\varepsilon}f(x)\mathrm{d}x<br />
+$$<br />
+其中 <span class="arithmatex">\(b\)</span> 为唯一奇点，那么作换元 <span class="arithmatex">\(x=\displaystyle b-\frac{1}{y}\)</span> 有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\lim_{\varepsilon\to 0^+}\int_a^{b-\varepsilon}f(x)\mathrm{d}x&amp;=\lim_{\varepsilon\to 0^+}\int_{\frac{1}{b-a}}^{\frac{1}{\varepsilon}}f(b-\frac{1}{y})\frac{1}{y^2}\mathrm{d}y \\\\
+&amp;=\int^{+\infty}_{\frac{1}{b-a}}f(b-\frac{1}{y})\frac{1}{y^2}\mathrm{d}y
+\end{aligned}
+\]</div>
+<p>从而瑕积分转变为了无穷区间的积分。</p>
+<h4 id="_17">无界函数广义积分敛散性判别</h4>
+<p>本部分的判别法可直接扩展无穷区间广义积分的敛散性判别法，以下直接进入例题：</p>
+<div class="admonition question">
+<p class="admonition-title">例题：Beta函数和Gamma函数的敛散性</p>
+<p>讨论收敛性：<br />
+1. Beta函数： $$ \mathrm{B}(a,b)=\int_0^1 x^{a-1}(1-x)^{b-1}\mathrm{d}x $$<br />
+2. Gamma函数： $$ \Gamma(p)=\int_0^{+\infty}x^{p-1}\mathrm{e}^{-x}\mathrm{d}x $$</p>
+</div>
+<p>先考察奇点状况，当 <span class="arithmatex">\(a&lt;1\)</span> 时，<span class="arithmatex">\(0\)</span> 为奇点，当 <span class="arithmatex">\(b&lt;1\)</span> 时，<span class="arithmatex">\(1\)</span> 为奇点，广义积分 <span class="arithmatex">\(\displaystyle\int_0^1 x^{a-1}(1-x)^{b-1}\mathrm{d}x\)</span> 收敛当且仅当 <span class="arithmatex">\(\displaystyle\int_0^{\frac{1}{2}}\)</span> 和 <span class="arithmatex">\(\displaystyle\int_\frac{1}{2}^1\)</span> 两段收敛。</p>
+<p>而由于 <span class="arithmatex">\(x^{a-1}(1-x)^{b-1}\sim x^{a-1}\quad(x\to 0)\)</span> 且 <span class="arithmatex">\(x^{a-1}(1-x)^{b-1}\sim (1-x)^{b-1}\quad (x\to 1)\)</span> ，由阶的估计法可知必须要 <span class="arithmatex">\(1-a&lt;1\)</span> 且 <span class="arithmatex">\(1-b&lt;1\)</span> ，故 <span class="arithmatex">\(a&gt;0\)</span> 且 <span class="arithmatex">\(b&gt;0\)</span> 为Beta函数收敛的充要条件。</p>
+<p>对于 Gamma 函数可分为两段： <span class="arithmatex">\(\displaystyle\int_0^1\)</span> 与 <span class="arithmatex">\(\displaystyle\int_1^{+\infty}\)</span> ，对于第一段，在 <span class="arithmatex">\(p&lt;1\)</span> 的时候 <span class="arithmatex">\(0\)</span> 为奇点，考虑 <span class="arithmatex">\(x^{p-1}\mathrm{e}^{-x}\sim x^{p-1}\quad(x\to 0)\)</span> ，则 <span class="arithmatex">\(p&gt;0\)</span> 的时候第一段收敛。对第二段， <span class="arithmatex">\(x^{p-1}\mathrm{e}^{-x}=o(x^{-2})\)</span> ，因此第二段必收敛，从而有 <span class="arithmatex">\(p&gt;0\)</span> 时收敛，<span class="arithmatex">\(p\leqslant 0\)</span> 时发散. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  <h2 id="__comments">Comments</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="xiong-ZH-zq/xzqbear-math-notes"
+        data-repo-id="R_kgDOK7C15g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOK7C15s4Cb365"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

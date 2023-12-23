@@ -1,0 +1,1936 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Series/Power%20Series/">
+      
+      
+        <link rel="next" href="../../../Complex%20Analysis/Single%20Complex%20Analysis/Complex%20Number/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>Fourier级数 - xzqbear math notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.184 1.143v-.001l1.422 2.464a1.75 1.75 0 0 1-.757 2.451L3.104 11.713a1.75 1.75 0 0 1-2.275-.702l-.447-.775a1.75 1.75 0 0 1 .53-2.32L11.682.573a1.748 1.748 0 0 1 2.502.57Zm-4.709 9.32h-.001l2.644 3.863a.75.75 0 1 1-1.238.848l-1.881-2.75v2.826a.75.75 0 0 1-1.5 0v-2.826l-1.881 2.75a.75.75 0 1 1-1.238-.848l2.049-2.992a.746.746 0 0 1 .293-.253l1.809-.87a.749.749 0 0 1 .944.252ZM9.436 3.92h-.001l-4.97 3.39.942 1.63 5.42-2.61Zm3.091-2.108h.001l-1.85 1.26 1.505 2.605 2.016-.97a.247.247 0 0 0 .13-.151.247.247 0 0 0-.022-.199l-1.422-2.464a.253.253 0 0 0-.161-.119.254.254 0 0 0-.197.038ZM1.756 9.157a.25.25 0 0 0-.075.33l.447.775a.25.25 0 0 0 .325.1l1.598-.769-.83-1.436-1.465 1Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"PT Serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fourier" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="xzqbear math notes" class="md-header__button md-logo" aria-label="xzqbear math notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            xzqbear math notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fourier级数
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/xiong-ZH-zq/xzqbear-math-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xzqbear-math-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  Home
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../abstract%20algebra/group%20theory/group/" class="md-tabs__link">
+          
+  
+  NKU抽象代数
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Integration/Improper%20Integration/" class="md-tabs__link">
+          
+  
+  NKU数学分析
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../Complex%20Analysis/Single%20Complex%20Analysis/Complex%20Number/" class="md-tabs__link">
+          
+  
+  NKU复变函数
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="xzqbear math notes" class="md-nav__button md-logo" aria-label="xzqbear math notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    xzqbear math notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/xiong-ZH-zq/xzqbear-math-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xzqbear-math-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Home
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mkdocs%20notes/site%20build/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    mkdocs搭建流程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    NKU抽象代数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NKU抽象代数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../abstract%20algebra/group%20theory/group/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    群论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    NKU数学分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            NKU数学分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    积分学
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            积分学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Integration/Improper%20Integration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    广义积分/反常积分
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    级数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            级数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Series/numerical%20series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数项级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Series/function%20series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数项级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Series/Power%20Series/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    幂级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fourier分析初步
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Fourier分析初步
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Fourier级数
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Fourier级数
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fourier_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      三角函数系的正交性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fourier_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier系数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bessel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bessel不等式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computer-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Lab
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourier_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier级数的收敛性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier级数的收敛性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      部分和
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cesarofejer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cesaro和与Fejer定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cesaro和与Fejer定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cesaro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cesaro求和
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      局部化定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="局部化定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riemann" class="md-nav__link">
+    <span class="md-ellipsis">
+      Riemann引理及其应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      局部化定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dini" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dini判别法及其推论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirichlet-jordan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dirichlet-Jordan判别法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourier_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier级数的逐项求积分和逐项求导
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier级数的逐项求积分和逐项求导">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      积分公式的拓展
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      逐项求导和逐项求积分
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weierstrass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weierstrass第二逼近定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourier_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier级数的一致收敛性
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    NKU复变函数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            NKU复变函数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    单复变函数论
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            单复变函数论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Complex%20Analysis/Single%20Complex%20Analysis/Complex%20Number/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复数及其性质
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fourier_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier级数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier级数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      三角函数系的正交性
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fourier_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier系数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bessel" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bessel不等式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computer-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Computer Lab
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourier_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier级数的收敛性
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier级数的收敛性">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      部分和
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cesarofejer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cesaro和与Fejer定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Cesaro和与Fejer定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cesaro" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cesaro求和
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      局部化定理
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="局部化定理">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#riemann" class="md-nav__link">
+    <span class="md-ellipsis">
+      Riemann引理及其应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      局部化定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dini" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dini判别法及其推论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirichlet-jordan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dirichlet-Jordan判别法
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourier_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier级数的逐项求积分和逐项求导
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Fourier级数的逐项求积分和逐项求导">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      积分公式的拓展
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      逐项求导和逐项求积分
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weierstrass" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weierstrass第二逼近定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fourier_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fourier级数的一致收敛性
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="fourier">Fourier级数与其应用</h1>
+<p>在 Taylor 级数当中，如果以线性代数的观点来看，对于 <span class="arithmatex">\(f(x)\)</span> ，有 Taylor 级数</p>
+<div class="arithmatex">\[
+f(x)=\displaystyle\sum\limits_{n=0}^\infty a_n x^n
+\]</div>
+<p>这说明这样的 <span class="arithmatex">\(f(x)\)</span> 可以被这组基 <span class="arithmatex">\(\{1,x,x^2,\cdots\}\)</span> 线性表示. </p>
+<p>接下来的 Fourier 级数形如<br />
+$$<br />
+\frac{a_0}{2}+\displaystyle\sum\limits_{n=1}^\infty (a_n\cos nx+b_n \sin nx)<br />
+$$<br />
+也就是基为 <span class="arithmatex">\(\{1,\sin x,\cos x,\sin 2x , \cos 2x,\cdots\}\)</span> . 下面我们要研究的就是 Fourier 级数的存在性与性质.</p>
+<h2 id="fourier_1">Fourier级数</h2>
+<h3 id="_1">三角函数系的正交性</h3>
+<p>Fourier 级数所处理的线性空间是由 <span class="arithmatex">\([a,b]\)</span> 上所有<strong>可积与绝对可积</strong>的函数组成的，那么为了表示方便作如下约定：</p>
+<ul>
+<li>“可积”的含义是函数有界则为 Riemann 可积，函数无界则为广义积分收敛；</li>
+<li>“可积与绝对可积”表示 <span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(|f(x)|\)</span> 均“可积”.</li>
+</ul>
+<p>从高等代数中，我们学习了<strong>内积</strong>的概念，定义可积函数 <span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(g(x)\)</span> 的内积为</p>
+<p>$$<br />
+\int_a^b f(x)g(x)\mathrm{d}x<br />
+$$<br />
+那么不难验证其构成内积空间. 因此正交的概念就可以自然引出了：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：函数正交性</p>
+<p>设 <span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上<strong>可积</strong>，如果 $$ \int_a^b f(x)g(x)\mathrm{d}x=0, $$<br />
+那么就称 <span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(g(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上<strong>正交</strong>，如果函数列 <span class="arithmatex">\(\{f_n(x)\}\)</span> 中的任意两个函数正交，则称这个函数列是一个<strong>正交函数系</strong>. </p>
+</div>
+<p>现在考虑<strong>三角函数系</strong>：<br />
+$$<br />
+{1,\cos x,\sin x,\cos 2x,\sin  2x,\cdots, \cos nx,\sin nx ,\cdots}<br />
+$$<br />
+有如下定理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理1：三角函数系为正交函数系</p>
+<p>三角函数系为 <span class="arithmatex">\([-\pi,\pi]\)</span> 上的一个正交函数系.</p>
+</div>
+<p>对于常数函数，有<br />
+$$<br />
+\int_{-\pi}^{\pi} \cos nx \mathrm{d}x = 0, \int_{-\pi}^{\pi}\sin nx \mathrm{d}x=0<br />
+$$<br />
+从而 <span class="arithmatex">\(1\)</span> 与所有的 <span class="arithmatex">\(\sin nx\)</span> 与 <span class="arithmatex">\(\cos nx\)</span> 都正交.<br />
+利用积化和差公式可以计算得出如下的结果：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\int_{-\pi}^\pi \sin nx \cos mx \mathrm{d}x = 0\\
+&amp;\int_{-\pi}^\pi \cos nx \cos mx \mathrm{d}x = \pi \delta_{nm} \\
+&amp;\int_{-\pi}^\pi \sin nx \sin mx \mathrm{d}x = \pi \delta_{nm}.
+\end{aligned}
+\]</div>
+<p>其中用到的 <strong>Kronecker 符号</strong> <br />
+$$<br />
+\delta_{nm} = <br />
+\begin{cases}<br />
+0,&amp;n\neq m \\ <br />
+1, &amp;n = m.<br />
+\end{cases}<br />
+$$<br />
+故结论成立. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<p>进行上述的计算后有如下常用公式：</p>
+<div class="arithmatex">\[
+\int_{-\pi}^{\pi} 1^2 \mathrm{d}x = 2\pi
+\]</div>
+<p>以及</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\int_{-\pi}^\pi \cos^2 nx \mathrm{d}x = \pi \\
+\int_{-\pi}^\pi \sin^2 nx \mathrm{d}x = \pi 
+\end{aligned}
+\]</div>
+<h3 id="fourier_2">Fourier系数</h3>
+<p>设一个周期 <span class="arithmatex">\(2\pi\)</span> 的函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(\mathbb{R}\)</span> 上展开称为一致收敛的三角级数<br />
+$$<br />
+f(x) = \frac{a_0}{2}+\displaystyle\sum\limits_{n=1}^\infty(a_n \cos nx+ b_n \sin  nx).<br />
+$$<br />
+在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上逐项求积分得到<br />
+$$<br />
+a_0 = \frac{1}{\pi}\int_{-\pi}^\pi f(x)\mathrm{d}x.<br />
+$$<br />
+对于其他系数，我们根据上一节的正交性，对于 <span class="arithmatex">\(\cos nx\)</span> 的系数，我们可以乘上 <span class="arithmatex">\(\cos nx\)</span> 再逐项积分，对于 <span class="arithmatex">\(\sin mx\)</span> 也一致，从而有</p>
+<div class="admonition note">
+<p class="admonition-title">定理：Euler-Fourier 公式</p>
+<div class="arithmatex">\[\begin{cases}a_m =\displaystyle\frac{1}{\pi}\int_{-\pi}^\pi f(x)\cos mx \mathrm{d}x,m = 0,1,2,\cdots \\ b_n = \displaystyle\frac{1}{\pi}\int_{-\pi}^\pi f(x)\sin mx \mathrm{d}x, n = 1,2,3,\cdots\end{cases}\]</div>
+</div>
+<p>由于三角函数有界，上述积分一定有意义，将求出的 <span class="arithmatex">\(\{a_n\}\)</span> 和 <span class="arithmatex">\(\{b_n\}\)</span> 称为 <span class="arithmatex">\(f(x)\)</span> 的 <strong>Fourier 系数</strong>，并且记为<br />
+$$<br />
+f(x) \sim \frac{a_0}{2}+\displaystyle\sum\limits_{n=1}^\infty(a_n \cos nx+ b_n \sin  nx).<br />
+$$<br />
+此时不管右侧级数收敛域，也不管是否收敛到 <span class="arithmatex">\(f(x)\)</span> ，我们都称为 <span class="arithmatex">\(f(x)\)</span> 的 <strong>Fourier 级数</strong>.</p>
+<p>同时，对于奇函数和偶函数，上述公式还可简化：</p>
+<div class="admonition note">
+<p class="admonition-title">公式：奇函数与偶函数情形</p>
+<p><span class="arithmatex">\(f(x)\)</span> 为偶函数时，<span class="arithmatex">\(b_n=0,n=1,2,\cdots\)</span> ，也就有 $$ f(x)\sim \frac{a_0}{2}+\displaystyle\sum\limits_{n=1}^\infty a_n \cos nx $$<br />
+<span class="arithmatex">\(f(x)\)</span> 为奇函数时，<span class="arithmatex">\(a_n=0,n=0,1,2,\cdots\)</span> ，也就有 $$ f(x)\sim\displaystyle\sum\limits_{n=1}^\infty b_n \sin nx. $$</p>
+</div>
+<h3 id="bessel">Bessel不等式</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：Bessel不等式</p>
+<p>设周期为 <span class="arithmatex">\(2\pi\)</span> 的函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上可积和绝对可积，其 Fourier 系数 <span class="arithmatex">\(\{a_n\},\{b_n\}\)</span> 由 Euler-Fourier 公式给出，则<br />
+$$ \frac{a_0^2}{2}+\displaystyle\sum\limits_{n=1}^\infty (a_n^2+b_n^2)\leqslant \frac{1}{\pi}\int_{-\pi}^{\pi}f^2(x)\mathrm{d}x. $$</p>
+</div>
+<p>纯计算：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;0\leqslantslant\frac{1}{\pi}\int_{-\pi}^{\pi}[f(x)-S_{n}(x)]^{2}\mathrm{d}x \\
+&amp;=\frac{1}{\pi}\int_{-\pi}^{\pi}\left[f(x)-\frac{a_0}{2}-\sum_{k=1}^{n}(a_k\cos kx+b_k\sin kx)\right]^2\mathrm{d}x \\
+&amp;=\frac{1}{\pi}\int_{-\pi}^{\pi}\left[f^2(x)+\frac{a_0^2}{4}+\sum_{k=1}^n(a_k^2\cos^2kx+b_k^2\sin^2kx)\right]\mathrm{d}x \\
+&amp;-\frac{1}{\pi}\int_{-\pi}^{\pi}\left[a_{0}f(x)+2\sum_{k=1}^{n}f(x)(a_{k}\cos kx+b_{k}\sin kx)\right]\mathrm{d}x \\
+&amp;+\frac{1}{\pi}\int_{-\pi}^{\pi}a_{0}\left[\sum_{k=1}^{n}(a_{k}\cos kx+b_{k}\sin kx)\right]\mathrm{d}x \\
+&amp;+\frac{1}{\pi}\int_{-\pi}^{\pi}2\left(\sum_{i=1}^{n}\sum_{k=1}^{n}a_{i}b_{k}\cos ix\sin kx\right)\mathrm{d}x \\
+&amp;+\frac{1}{\pi}\int_{-\pi}^{\pi}2\left[\sum_{i&lt;k}(a_{i}a_{k}\cos ix\cos kx+b_{i}b_{k}\sin ix\sin kx)\right]\mathrm{d}x \\
+&amp;=\frac{1}{\pi}\int_{-\pi}^{\pi}f^2(x)\mathrm{d}x-\left[\frac{a_{0}^{2}}{2}+\sum_{k=1}^{n}(a_{k}^{2}+b_{k}^{2})\right].
+\end{aligned}
+\]</div>
+<p>注意上式的 <span class="arithmatex">\(i\)</span> 不是复数 <span class="arithmatex">\(i\)</span> （在本笔记当中虚数单位 <span class="arithmatex">\(\mathrm{i}\)</span> 是正体而非斜体），令 <span class="arithmatex">\(n\to \infty\)</span> 即可证明不等式. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<p>如果不等式取等，就可以获得 Parseval 等式，在后续将会进一步阐述.</p>
+<h3 id="computer-lab">Computer Lab</h3>
+<p>利用Mathematica计算Fourier系数并进行绘图可使用如下代码：<br />
+计算正弦系数可以利用如下代码：</p>
+<p><div class="highlight"><span class="filename">Mathematica</span><pre><span></span><code><span class="n">FourierSinSeries</span><span class="p">[</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div><br />
+也就是以 <span class="arithmatex">\(t\)</span> 为自变量计算 <span class="arithmatex">\(f(t)=\frac{t}{2}\)</span> 的五项正弦系数，可得<br />
+<div class="highlight"><span class="filename">Mathematica</span><pre><span></span><code><span class="n">Sin</span><span class="p">[</span><span class="n">t</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="w"> </span><span class="n">Sin</span><span class="p">[</span><span class="mi">2</span><span class="w"> </span><span class="n">t</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">3</span><span class="w"> </span><span class="n">Sin</span><span class="p">[</span><span class="mi">3</span><span class="w"> </span><span class="n">t</span><span class="p">]</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">4</span><span class="w"> </span><span class="n">Sin</span><span class="p">[</span><span class="mi">4</span><span class="w"> </span><span class="n">t</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">5</span><span class="w"> </span><span class="n">Sin</span><span class="p">[</span><span class="mi">5</span><span class="w"> </span><span class="n">t</span><span class="p">]</span>
+</code></pre></div></p>
+<p>我们也可对运算结果直接绘图，对于前五项的 Fourier 系数：<br />
+<div class="highlight"><span class="filename">mathematica</span><pre><span></span><code><span class="n">FourierSinSeries</span><span class="p">[</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">FourierCosSeries</span><span class="p">[</span><span class="n">t</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">]</span>
+</code></pre></div></p>
+<p>绘图有<br />
+<div class="highlight"><span class="filename">Mathematica</span><pre><span></span><code><span class="n">Plot</span><span class="p">[</span><span class="err">%</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">-3</span><span class="w"> </span><span class="n">Pi</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">Pi</span><span class="p">}]</span>
+</code></pre></div></p>
+<p>![[../../../../../assets/Fourier分析/Fourier级数/Fourier级数-20231218.png|500]]</p>
+<p>如果更多项的话，可以绘制出更有意思的图像：<br />
+<div class="highlight"><span class="filename">Mathematica</span><pre><span></span><code><span class="n">FourierSinSeries</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">FourierCosSeries</span><span class="p">[</span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="n">t</span><span class="p">,</span><span class="w"> </span><span class="mi">50</span><span class="p">]</span>
+<span class="n">Plot</span><span class="p">[</span><span class="err">%</span><span class="p">,{</span><span class="n">t</span><span class="p">,</span><span class="mi">-3</span><span class="w"> </span><span class="n">Pi</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="n">Pi</span><span class="p">}]</span>
+</code></pre></div></p>
+<p>![[Fourier级数-20231218-3.png|500]]</p>
+<h2 id="fourier_3">Fourier级数的收敛性</h2>
+<h3 id="_2">部分和</h3>
+<p>将 Fourier 级数的部分和记为 <span class="arithmatex">\(S_n(x)\)</span> 并固定 <span class="arithmatex">\(x_0\)</span> ，利用 Euler-Fourier 公式有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+S_n(x_0) &amp;= \frac{a_0}{2}+\sum\limits_{k=1}^n (a_k \cos k x_0+b_k \sin k x_0)\\
+&amp;= \frac{1}{\pi}\int_{-\pi}^{\pi}f(t)\left[\frac{1}{2}+\sum\limits_{k=1}^n (\cos kt \cos k x_0+\sin kt \sin k x_0)\right]\mathrm{d}t \\
+&amp;=\frac{1}{\pi}\left[\frac{1}{2}+\sum\limits_{k=1}^n \cos k(t-x_0)\right]\mathrm{d}t.
+\end{aligned}
+\]</div>
+<p>由积化和差公式有<br />
+$$<br />
+2\sin\frac{\alpha}{2}\left(\frac{1}{2}\sum\limits_{k=1}^n \cos k \alpha\right) = \sin\frac{2n+1}{2}\alpha.<br />
+$$<br />
+当 <span class="arithmatex">\(\sin \frac{\alpha}{2}\neq 0\)</span> 时，得到</p>
+<div class="arithmatex">\[
+\frac{1}{2}+\sum\limits_{k=1}^n\cos k \alpha = \frac{\displaystyle\sin\frac{2n+1}{2}\alpha}{2\sin \displaystyle\frac{\alpha}{2}}\tag{1}
+\]</div>
+<p>当 <span class="arithmatex">\(\sin \frac{\alpha}{2}=0\)</span> 时，设 <span class="arithmatex">\(\alpha\in [-\pi,\pi)\)</span> ，将上式理解为 <span class="arithmatex">\(\alpha\to 0\)</span> 时候的极限值，由于左侧连续，仍然成立。</p>
+<p>从而我们计算得出<br />
+$$<br />
+S_n(x_0) = \frac{1}{\pi}\int_{-\pi}^\pi f(t)\frac{\sin\frac{2n+1}{2}(t-x_0)}{2\sin \frac{t-x_0}{2}}\mathrm{d}t<br />
+$$</p>
+<p>为了探究收敛性，我们需要估计部分和与极限值之间的距离。<br />
+令 <span class="arithmatex">\(u = t-x_0\)</span> ，利用周期性，上式化为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+S_n(x_0) &amp;= \frac{1}{\pi}\int_{-\pi-x_0}^{\pi -x_0}f(u+x_0)\frac{\sin \frac{2n+1}{2}u}{2\sin \frac{u}{2}}\mathrm{d}u\\
+&amp;= \frac{1}{\pi}\int_{-\pi}^\pi f(u+ x_0)\frac{\sin \frac{2n+1}{2}u}{2\sin\frac{u}{2} }\mathrm{d}u\\
+&amp;=\frac{1}{\pi}\int_0^\pi[f(x_0+u)+f(x_0-u)]\frac{\sin\frac{2n+1}{2}u}{2\sin \frac{u}{2}}\mathrm{d}u
+\end{aligned}
+\]</div>
+<p>对 (1) 积分可得</p>
+<div class="arithmatex">\[
+\frac{1}{\pi}\int_0^\pi \frac{\displaystyle\sin \frac{2n+1}{2}u}{2\sin \displaystyle\frac{u}{2}}\mathrm{d}u=\frac{1}{2}
+\]</div>
+<p>把 <span class="arithmatex">\(S_n(x_0)\)</span> 可能的极限值记为 <span class="arithmatex">\(S\)</span> ，记</p>
+<div class="arithmatex">\[
+\varphi(u) = f(x_0+u)+f(x_0-u)-2S
+\]</div>
+<p>则有</p>
+<div class="arithmatex">\[
+S_n(x_0)-S = \frac{1}{\pi}\int_0^\pi \varphi(u)\frac{\displaystyle\sin\frac{2n+1}{2}u}{2\sin \displaystyle\frac{u}{2}}\mathrm{d}u
+\]</div>
+<p>为了使 <span class="arithmatex">\(S_n(x)\)</span> 收敛，有引理：</p>
+<div class="admonition note">
+<p class="admonition-title">引理：Fourier级数收敛的充要条件</p>
+<p>设周期为 <span class="arithmatex">\(2\pi\)</span> 的函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上可积和绝对可积，则 <span class="arithmatex">\(f(x)\)</span> 的 Fourier 级数在 <span class="arithmatex">\(x_0\)</span> 收敛到 <span class="arithmatex">\(S\)</span> 的充要条件是<br />
+$$ \lim_{n\to \infty}\int_0^\pi \varphi(u)\frac{\displaystyle \sin \frac{2n+1}{2}u}{\displaystyle2\sin \frac{u}{2}}\mathrm{d}u=0. $$</p>
+</div>
+<h3 id="cesarofejer">Cesaro和与Fejer定理</h3>
+<h4 id="cesaro">Cesaro求和</h4>
+<h3 id="_3">局部化定理</h3>
+<h4 id="riemann">Riemann引理及其应用</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：Riemann引理</p>
+<p>设函数 <span class="arithmatex">\(f (x)\)</span> 在区间 <span class="arithmatex">\([a,b]\)</span> 上可积和绝对可积，则有<br />
+$$ \begin{aligned}\lim_{\lambda\to +\infty}\int_a^b f(x)\sin \lambda x \mathrm{d}x=0 \\ \lim_{\lambda\to +\infty}\int_a^b f(x)\cos  \lambda x\mathrm{d}x=0 \end{aligned} $$</p>
+</div>
+<p>先证明第二个结论：<br />
+由于 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上绝对可积，因此 <span class="arithmatex">\(f(x)\)</span> 有界，故存在常数 <span class="arithmatex">\(M\)</span> 使得 <span class="arithmatex">\(|f(x)|\leqslant M\)</span> 成立. </p>
+<p>记 <span class="arithmatex">\(n = [\sqrt{\lambda}]\)</span> ，则当 <span class="arithmatex">\(\lambda\to \infty\)</span> 的时候 <span class="arithmatex">\(n\to \infty\)</span> 成立，考虑将区间 <span class="arithmatex">\([a,b]\)</span> 作 <span class="arithmatex">\(n\)</span> 等分，分点为<br />
+$$<br />
+x_i = a+\frac{i}{n}(b-a) \quad (i=0,1,\cdots, n)<br />
+$$<br />
+记 <span class="arithmatex">\(\omega_i\)</span> 为 <span class="arithmatex">\(f\)</span> 在小区间 <span class="arithmatex">\([x_{i-1},x_i]\)</span> 上的振幅，那么由于 <span class="arithmatex">\(f\)</span> 是可积的，所以有</p>
+<div class="arithmatex">\[
+\lim_{n\to \infty} \sum\limits_{i=1}^n \omega_i \Delta x_i = 0,
+\]</div>
+<p>这里 <span class="arithmatex">\(\Delta x_i = x_i-x_{i-1}\)</span> ，注意到</p>
+<div class="arithmatex">\[
+\left|\int_{x_{i-1}}^{x_i} \cos \lambda x \mathrm{d}x\right| = \frac{1}{\lambda}|\sin \lambda x_{i-1}-\sin \lambda x_i|\leqslant \frac{2}{\lambda}
+\]</div>
+<p>以及</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\int_a^b f(x)\cos \lambda x \mathrm{d}x = \\
+ &amp;\sum\limits_{i=1}^n\int_{x_{i-1}}^{x_i}(f(x)-f(x_{i-1}))\cos \lambda x \mathrm{d}x +\sum\limits_{i=1}^n f(x_{i-1})\int_{x_{i-1}}^{x_i}\cos \lambda x \mathrm{d}x
+\end{aligned}
+\]</div>
+<p>从而利用有界性有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\left|\int_{a}^b f(x) \cos  \lambda x \mathrm{d}x\right|&amp;\leqslant \sum\limits_{i=1}^n \omega_i \Delta x_i +\frac{2n}{\lambda}M \\
+&amp;\leqslant \sum\limits_{i=1}^n \omega_i \Delta x_i +\frac{2}{\sqrt{\lambda}}M\to 0
+\end{aligned}
+\]</div>
+<p>从而 Riemann 可积的情形有 Riemann 引理成立.</p>
+<hr />
+<p>再设 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上反常绝对可积，不妨设 <span class="arithmatex">\(b\)</span> 是 <span class="arithmatex">\(f\)</span> 唯一的瑕点，那么对任意的 <span class="arithmatex">\(\varepsilon&gt;0\)</span> ，存在 <span class="arithmatex">\(\eta&gt;0\)</span> 使得<br />
+$$<br />
+\int_{b-\eta}^b |f(x)|\mathrm{d}x&lt;\frac{\varepsilon}{2}.<br />
+$$<br />
+由于 <span class="arithmatex">\(f\)</span> 在 <span class="arithmatex">\([a,b- \eta]\)</span> 上 Riemann 可积，此时根据刚才的结果可知存在 <span class="arithmatex">\(\lambda_0&gt;0\)</span> 使得 <span class="arithmatex">\(\lambda&gt;\lambda_0\)</span> 的时候有<br />
+$$<br />
+\left|\int_a^{b-\eta}f(x)\cos \lambda x \mathrm{d}x\right|&lt;\frac{\varepsilon}{2}.<br />
+$$<br />
+于是当 <span class="arithmatex">\(\lambda&gt;\lambda_0\)</span> 时，有<br />
+$$<br />
+\left|\int_a^b f(x)\cos \lambda x \mathrm{d}x\right|\leqslant \left|\int_a^{b-\eta}f(x)\cos \lambda x \mathrm{d}x\right|+\int_{b-\eta}^b |f(x)|\mathrm{d}x&lt; \varepsilon<br />
+$$<br />
+上述不等式对于 <span class="arithmatex">\(b= +\infty\)</span> 的情形也成立，这就证明了 Riemann 引理在 <span class="arithmatex">\(\cos\)</span> 的情形下成立，对于第一个结论同理可证. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">推论</p>
+<p>设 <span class="arithmatex">\(\{a_n\}\)</span> 和 <span class="arithmatex">\(\{b_n\}\)</span> 为某个可积且绝对可积函数的 Fourier 系数，那么<br />
+$$ \lim_{n\to \infty} a_n = \lim_{n\to \infty} b_n = 0. $$</p>
+</div>
+<p>下面应用 Riemann 引理计算积分：</p>
+<div class="admonition question">
+<p class="admonition-title">例题：Dirichlet积分</p>
+<p>证明：<br />
+$$ \int_0^{+\infty} \dfrac{\sin x}{x}\mathrm{d}x = \frac{\pi}{2}. $$</p>
+</div>
+<p>利用等式：</p>
+<div class="arithmatex">\[
+\frac{1}{2}+\sum\limits_{k=1}^n\cos kt = \frac{\displaystyle\sin\left(n+\frac{1}{2}\right)t}{\displaystyle2\sin\frac{t}{2}}
+\]</div>
+<p>两侧对 <span class="arithmatex">\(t\)</span> 在 <span class="arithmatex">\([0,\pi]\)</span> 上积分，得到：</p>
+<div class="arithmatex">\[
+\frac{\pi}{2} = \int_0^\pi \frac{\displaystyle\sin \left(n+\frac{1}{2}\right)t}{2\sin \displaystyle\frac{t}{2}}\mathrm{d}t.
+\]</div>
+<p>上式对于任意的 <span class="arithmatex">\(n\)</span> 均成立.</p>
+<p>我们将上述的积分写为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\int_0^\pi \frac{\displaystyle\sin \left(n+\frac{1}{2}\right)t}{2\sin \displaystyle\frac{t}{2}}\mathrm{d}t = \\
+&amp; \int_0^\pi \left(\frac{1}{2\sin (t/2)}-\frac{1}{t}\right)\sin \left(n+\frac{1}{2}\right)t \mathrm{d}t+\int_0^\pi \frac{\displaystyle\sin \left(n+\frac{1}{2}\right)t}{t}\mathrm{d}t.
+\end{aligned}
+\]</div>
+<p>由于</p>
+<p>$$<br />
+\lim_{t\to 0} \left(\frac{1}{2\sin(t/2)}-\frac{1}{t}\right) = 0<br />
+$$<br />
+可对右式第一个积分应用 Riemann 引理，从而可得趋于 <span class="arithmatex">\(0\)</span> ，因而有</p>
+<div class="arithmatex">\[
+\lim_{n\to \infty}\int_0^\pi \frac{\displaystyle\sin \left(n+\frac{1}{2}\right)t}{2\sin \displaystyle\frac{t}{2}}\mathrm{d}t =\lim_{n\to \infty}\int_0^\pi\frac{\displaystyle\sin \left(n+\frac{1}{2}\right)t}{t}\mathrm{d}t \xrightarrow[~]{x = (n+\frac{1}{2})t}\int_0^{+\infty}\frac{\sin x}{x}\mathrm{d}x
+\]</div>
+<p>从而可得<br />
+$$<br />
+\int_0^{+\infty} \frac{\sin x}{x}\mathrm{d}x = \frac{\pi}{2}.<br />
+$$<br />
+从而命题成立. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h4 id="_4">局部化定理</h4>
+<p>利用 Riemann 引理，我们可以证明 Fourier 级数收敛的充要条件等价于<br />
+$$<br />
+\lim_{n\to \infty} \int_0^{\pi}\varphi(u)\frac{\displaystyle\sin \frac{2n+1}{2}u}{u}\mathrm{d}u = 0.<br />
+$$<br />
+这个由 Dirichlet 积分的推导过程即可得到，从而我们由如下的定理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：局部化定理</p>
+<p>设周期为 <span class="arithmatex">\(2\pi\)</span> 的函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上可积和绝对可积，则 <span class="arithmatex">\(f(x)\)</span> 的 Fourier 级数在点 <span class="arithmatex">\(x_0\)</span> 的敛散性仅由 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(x_0\)</span> 的任意小邻域内的值决定，它收敛到 <span class="arithmatex">\(S\)</span> 的充要条件是：存在 <span class="arithmatex">\(0&lt;\delta\leqslant \pi\)</span> 使得<br />
+$$ \lim_{n\to \infty}\int_0^\delta \varphi(u)\frac{\displaystyle\sin\frac{2n+1}{2}u}{u}\mathrm{d}u=0. $$</p>
+</div>
+<p>尽管 Fourier 系数需要依靠整个区间上的积分计算，但是 <span class="arithmatex">\(S(x)\)</span> 是否收敛到 <span class="arithmatex">\(f(x)\)</span> 仅由这个点上的 <span class="arithmatex">\(f(x)\)</span> 的性质决定.</p>
+<h3 id="dini">Dini判别法及其推论</h3>
+<div class="admonition note">
+<p class="admonition-title">Dini判别法（Fourier级数）</p>
+<p>设周期为 <span class="arithmatex">\(2\pi\)</span> 的函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上可积和绝对可积，对于点 <span class="arithmatex">\(x_0\)</span> 和实数 <span class="arithmatex">\(S\)</span> ，记 <span class="arithmatex">\(\varphi(u)=f(x_0+u)+f(x_0-u)-2S.\)</span> 如果存在 <span class="arithmatex">\(0&lt;\delta\leqslant \pi\)</span>，使得 <span class="arithmatex">\(\displaystyle\frac{\varphi(u)}{u}\)</span> 在 <span class="arithmatex">\([0,\delta]\)</span> 上可积和绝对可积，则 <span class="arithmatex">\(f(x)\)</span> 的 Fourier 级数在 <span class="arithmatex">\(x_0\)</span> 处收敛到 <span class="arithmatex">\(S\)</span> .</p>
+</div>
+<p>根据 Riemann 引理可知<br />
+$$<br />
+\lim_{n\to \infty}\int_0^\delta \frac{\varphi(u)}{u}\sin\frac{2n+1}{2}u \mathrm{d}u = 0.<br />
+$$<br />
+再由<strong>局部化定理</strong>可得收敛. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">推论1：Lipschitz判别法</p>
+<p>设周期为 <span class="arithmatex">\(2\pi\)</span> 的函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上可积和绝对可积，在点 <span class="arithmatex">\(x_0\)</span> 的左右极限都存在，又设存在常数 <span class="arithmatex">\(L&gt;0\)</span>，<span class="arithmatex">\(\alpha&gt;0\)</span> 和 <span class="arithmatex">\(0&lt;\delta\leqslant \pi\)</span> 使得当 <span class="arithmatex">\(0\leqslant u\leqslant \delta\)</span> 时有<br />
+$$ |f(x_0\pm u)-f(x_0\pm 0)|\leqslant L u^\alpha $$<br />
+即满足 <span class="arithmatex">\(\alpha\)</span> 阶 Lipschitz 条件.<br />
+则 <span class="arithmatex">\(f(x)\)</span> 的 Fourier 级数收敛到<br />
+$$ \frac{f(x_0+0)+f(x_0-0)}{2}. $$</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">推论2</p>
+<p>设周期为 <span class="arithmatex">\(2\pi\)</span> 的函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上可积和绝对可积，如果 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\(x_0\)</span> 可导或左、右导数都存在，则 <span class="arithmatex">\(\displaystyle\lim_{n\to \infty}S_n(x_0)=f(x_0).\)</span></p>
+</div>
+<h3 id="dirichlet-jordan">Dirichlet-Jordan判别法</h3>
+<div class="admonition note">
+<p class="admonition-title">引理：Dirichlet引理</p>
+<p>设 <span class="arithmatex">\(\psi(u)\)</span> 在区间 <span class="arithmatex">\((0,\delta]\)</span> 上是递增函数，<span class="arithmatex">\(\psi(0+0)=0\)</span> ，则<br />
+$$ \lim_{\lambda\to +\infty}\int_0^\delta \psi(u)\frac{\sin \lambda u}{u}\mathrm{d}u = 0. $$</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Dirichlet-Jordan 判别法</p>
+<p>设周期为 <span class="arithmatex">\(2\pi\)</span> 的函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上可积和绝对可积，若存在 <span class="arithmatex">\(\delta&gt;0\)</span>，使得 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([x_0-\delta,x_0)\)</span> 和 <span class="arithmatex">\((x_0,x_0+\delta]\)</span> 上都单调或者在这两个区间中都可以表示成两个递增函数之差，则 <span class="arithmatex">\(f(x)\)</span> 的 Fourier 级数在 <span class="arithmatex">\(x_0\)</span> 收敛到<br />
+$$ \frac{f(x_0+0)+f(x_0-0)}{2}. $$</p>
+</div>
+<p>Dirichlet-Jordan 判别法往往用于间断点的收敛值判断，如果间断点两侧为单调区间，那么很容易就能计算出这个点的收敛值.</p>
+<h2 id="fourier_4">Fourier级数的逐项求积分和逐项求导</h2>
+<p>（本节均略去证明）</p>
+<h3 id="_5">积分公式的拓展</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：更一般的Newton-Leibniz公式</p>
+<p>设 <span class="arithmatex">\(f(x)\)</span> 为 <span class="arithmatex">\([a,b]\)</span> 上的连续函数，除了有限个点之外处处可导，且 <span class="arithmatex">\(f'(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上可积，则如下 Newton-Leibniz 公式成立：<br />
+$$ \int_a^b f'(x)\mathrm{d}x = f(b)-f(a). $$</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理：更一般的分部积分公式</p>
+<p>设函数 <span class="arithmatex">\(f(x)\)</span> 和 <span class="arithmatex">\(g(x)\)</span> 都在 <span class="arithmatex">\([a,b]\)</span> 上可积和绝对可积. 记 <span class="arithmatex">\(F(x) = \int_a^x f(t)\mathrm{d}t,G(x)=\int_a^x g(t)\mathrm{d}t\)</span>，则<br />
+$$ \int_a^bf(x)G(x)\mathrm{d}x = [F(x)G(x)]\Bigg|_a^b - \int_a^b F(x)g(x)\mathrm{d}x. $$</p>
+</div>
+<h3 id="_6">逐项求导和逐项求积分</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：逐项求积分</p>
+<p>设周期为 <span class="arithmatex">\(2\pi\)</span> 的函数 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上可积和绝对可积，其 Fourier 级数为<br />
+$$ f(x)\sim \frac{a_0}{2} +\displaystyle\sum\limits_{n=1}^\infty (a_n \cos nx +b_n \sin nx), $$<br />
+则对任意的 <span class="arithmatex">\(x\in (-\infty,+\infty)\)</span> 都成立：<br />
+$$ \int_0^x f(t)\mathrm{d}t = \frac{a_0x}{2} + \displaystyle\sum\limits_{n=1}^\infty \int_0^x(a_n \cos nt+b_n \sin nt)\mathrm{d}t. $$</p>
+</div>
+<p>这个定理相对较强，因为我们<strong>无需知道</strong> <span class="arithmatex">\(f(x)\)</span> <strong>是否等于其 Fourier 级数</strong>，只要可积与绝对可积，那么其原函数和 Fourier 级数相等.</p>
+<div class="admonition note">
+<p class="admonition-title">定理：逐项求导</p>
+<p>设 <span class="arithmatex">\(f(x)\)</span> 是周期为 <span class="arithmatex">\(2\pi\)</span> 的<strong>连续</strong>函数，其 Fourier 级数为<br />
+$$ f(x)\sim \frac{a_0}{2}+\displaystyle\sum\limits_{n=1}^\infty (a_n \cos nx+b_n \sin nx). $$<br />
+如果 <span class="arithmatex">\(f(x)\)</span> 在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上除有限个点之外处处可导，且 <span class="arithmatex">\(f'(x)\)</span> 在 <span class="arithmatex">\([-\pi,\pi]\)</span> 上可积和绝对可积，则对任意 <span class="arithmatex">\(x\in (-\infty,+\infty)\)</span> 成立<br />
+$$ f(x)=\frac{a_0}{2}+\displaystyle\sum\limits_{n=1}^\infty (a_n \cos nx+b_n \sin nx). $$<br />
+且 <span class="arithmatex">\(f'(x)\)</span> 的 Fourier 级数可由 <span class="arithmatex">\(f(x)\)</span> 的 Fourier 级数逐项求导得到，即<br />
+$$ f'(x)\sim\displaystyle\sum\limits_{n=1}^\infty (nb_n\cos nx-n a_n \sin nx). $$</p>
+</div>
+<p>即 <span class="arithmatex">\(f(x)\)</span> 连续且除有限点外处处可导，<span class="arithmatex">\(f'(x)\)</span> 可积和绝对可积，那么 <span class="arithmatex">\(f(x)\)</span> 与其 Fourier 级数相等且可以逐项求导.</p>
+<div class="admonition question">
+<p class="admonition-title">例题：求级数的和</p>
+<p>求级数 $$ \displaystyle\sum\limits_{n=1}^\infty \frac{1}{n^2} $$<br />
+的和.</p>
+</div>
+<p>对 <span class="arithmatex">\(f(x) = |x|,-\pi\leqslant x\leqslant \pi\)</span> 求 Fourier 级数，由 Dirichlet-Jordan 判别法可知级数收敛于 <span class="arithmatex">\(f(x)\)</span> .<br />
+则<br />
+$$<br />
+|x| =\frac{a_0}{2}+\displaystyle\sum\limits_{n=1}^\infty (a_n \cos nx+b_n \sin nx).<br />
+$$<br />
+可求得 <span class="arithmatex">\(b_n = 0\)</span> ，对于 <span class="arithmatex">\(a_n\)</span> 有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+a_n  &amp;= \frac{1}{\pi}\int_{-\pi}^\pi |x|\cos x \mathrm{d}x \\ 
+&amp;= \begin{cases}0,n\equiv 0\pmod{2}  \\  -\dfrac{4}{n^2\pi},n\equiv 1 \pmod{2}.\end{cases}
+\end{aligned}
+\]</div>
+<p>因此<br />
+$$<br />
+|x| = \frac{\pi}{2}- \frac{4}{\pi} \displaystyle\sum\limits_{k=1}^\infty \frac{1}{(2k-1)^2}\cos (2k-1)x.<br />
+$$<br />
+令 <span class="arithmatex">\(x = 0\)</span> 即可得到<br />
+$$<br />
+\displaystyle\sum\limits_{k=1}^\infty \frac{1}{(2k-1)^2} =\frac{\pi^2}{8}.<br />
+$$<br />
+而<br />
+$$<br />
+\begin{aligned}\displaystyle\sum\limits_{n=1}^\infty \frac{1}{n^2} &amp;= \displaystyle\sum\limits_{n=1}^\infty\frac{1}{(2n-1)^2}+\frac{1}{4}\displaystyle\sum\limits_{n=1}^\infty\frac{1}{n^2} \end{aligned}<br />
+$$<br />
+从而可以计算得级数为<br />
+$$<br />
+\displaystyle\sum\limits_{n=1}^\infty \frac{1}{n^2} = \frac{\pi^2}{6}.<br />
+$$<br />
+<span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h3 id="weierstrass">Weierstrass第二逼近定理</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：Weierstrass第二逼近定理</p>
+<p>设 <span class="arithmatex">\(f(x)\)</span> 为以 <span class="arithmatex">\(2\pi\)</span> 为周期的连续函数，那么对于任何 <span class="arithmatex">\(\varepsilon&gt;0\)</span> 都存在多项式 <br />
+$$ T_n(x) = \frac{a_0}{2}+\displaystyle\sum\limits_{n=1}^\infty (a_n\cos nx +b_n \sin nx). $$<br />
+满足<br />
+$$ |f(x)-T_n(x)|&lt;\varepsilon,\forall x\in [0,2\pi]. $$</p>
+</div>
+<h2 id="fourier_5">Fourier级数的一致收敛性</h2>
+<div class="admonition note">
+<p class="admonition-title">定理：Fourier级数的一致收敛</p>
+<p>若 <span class="arithmatex">\(f(x)\)</span> 连续且分段光滑，则 <span class="arithmatex">\(f(x)\)</span> 的 Fourier 级数在 <span class="arithmatex">\((-\infty,+\infty)\)</span> 上绝对收敛和一致收敛到 <span class="arithmatex">\(f(x)\)</span> .</p>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  <h2 id="__comments">Comments</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="xiong-ZH-zq/xzqbear-math-notes"
+        data-repo-id="R_kgDOK7C15g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOK7C15s4Cb365"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
