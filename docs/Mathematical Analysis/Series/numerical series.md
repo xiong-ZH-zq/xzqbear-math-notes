@@ -6,7 +6,7 @@ comments: true
 ## 级数
 >[!note] 定义：级数
 >我们把无穷多项相加的表达式
-> $$ \sum\limits_{n=1}^\infty=u_1+u_2+\cdots+u_n+\cdots $$ 
+> $$ \sum\limits_{n=1}^\infty u_n=u_1+u_2+\cdots+u_n+\cdots $$ 
 >称为一个**无穷级数**，简称**级数**。
 
 ## 级数的收敛性和基本性质
@@ -143,7 +143,7 @@ $$
 >也可直接描述为：
 > $$ \displaystyle\sum\limits_{n=1}^\infty f(n)收敛(发散)\iff \int_1^{+\infty}f(x)\mathrm{d}x收敛(发散) $$ 
 
-![Cauchy积分判别法](../../imgs/数项级数-20231218-9.png)
+![Cauchy积分判别法](../../imgs/数项级数-20231218-9.png){width="300"}
 原理其实非常简单，积分值可以被两个级数夹逼，从而有
  $$ 
 \sum\limits_{k=1}^n f(k)\leq \int_1^n f(x)\mathrm{d}x\leq \sum\limits_{k=2}^nf(k-1)
@@ -319,7 +319,7 @@ Abel 求和该怎么去简单记忆？或者说有没有更直观的理解？
 实际上就是微分法则 $\mathrm{d}(uv)=u \mathrm{d}v+v \mathrm{d}u$ 的一个逆向应用。如果我们仿照这样的思路应用在离散情形，
 
 从几何图形的层面上，它其实直观到令人难以置信：
-![Abel求和几何解释](../../imgs/数项级数-20231218-10.png)
+![Abel求和几何解释](../../imgs/数项级数-20231218-10.png){width="300"}
 
 我们来看长为 $a_k$ 宽为 $b_k$ 的长方形列，它们的面积之和就是我们想要的结果，现在来看横向切出来的部分，我们可以发现这就是 Abel 公式右式的结果（对照图片来看）.
 
