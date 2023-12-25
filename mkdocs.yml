@@ -2,6 +2,7 @@ site_name: xzqbear math notes
 repo_url: https://github.com/xiong-ZH-zq/xzqbear-math-notes
 repo_name: xzqbear-math-notes
 theme:
+  language: zh
   name: material
   custom_dir: overrides
   palette: 
@@ -20,6 +21,8 @@ theme:
       primary: blue grey
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
   font:
     text: PT Serif
   icon:
@@ -45,6 +48,19 @@ plugins:
   - search
   - callouts    # transform obsidian callout to material admonition
   - glightbox
+  - tags
+  - blog:
+      enabled: true
+      blog_dir: ./blog 
+      blog_toc: true
+      post_date_format: full
+      post_dir: "{blog}/articles"
+      categories: true
+      categories_name: Categories
+      archive_name: "归档"
+      post_slugify: !!python/object/apply:pymdownx.slugs.slugify
+        kwds:
+          case: lower
 extra_javascript:
   - javascripts/katex.js 
   # - javascripts/mathjax.js
@@ -59,21 +75,20 @@ extra_css:
 extra: 
   attachments: "imgs"
 
-nav: 
-  - Home: 
-    - Intro: index.md
-    - mkdocs搭建流程:  mkdocs notes/site build.md
-  - NKU抽象代数:
-    - 群论: abstract algebra/group theory/group.md
-  - NKU数学分析:
-    - 积分学:
-      - 广义积分/反常积分: Mathematical Analysis/Integration/Improper Integration.md
-    - 级数: 
-      - 数项级数: Mathematical Analysis/Series/numerical series.md
-      - 函数项级数: Mathematical Analysis/Series/function series.md
-      - 幂级数: Mathematical Analysis/Series/Power Series.md
-    - Fourier分析初步:
-      - Fourier级数: Mathematical Analysis/Primary Fourier Analysis/Fourier Series.md
-  - NKU复变函数:
-    - 单复变函数论:
-      - 复数及其性质: Complex Analysis/Single Complex Analysis/Complex Number.md
+# nav: 
+#   - Home: 
+#     - Intro: index.md
+#   - NKU抽象代数:
+#     - 群论: abstract algebra/group theory/group.md
+#   - NKU数学分析:
+#     - 积分学:
+#       - 广义积分/反常积分: Mathematical Analysis/Integration/Improper Integration.md
+#     - 级数: 
+#       - 数项级数: Mathematical Analysis/Series/numerical series.md
+#       - 函数项级数: Mathematical Analysis/Series/function series.md
+#       - 幂级数: Mathematical Analysis/Series/Power Series.md
+#     - Fourier分析初步:
+#       - Fourier级数: Mathematical Analysis/Primary Fourier Analysis/Fourier Series.md
+#   - NKU复变函数:
+#     - 单复变函数论:
+#       - 复数及其性质: Complex Analysis/Single Complex Analysis/Complex Number.md

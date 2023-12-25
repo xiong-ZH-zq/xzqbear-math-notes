@@ -118,7 +118,7 @@ $$
 
 $$
 \begin{aligned}
-&0\leqslantslant\frac{1}{\pi}\int_{-\pi}^{\pi}[f(x)-S_{n}(x)]^{2}\mathrm{d}x \\
+&0\leqslant\frac{1}{\pi}\int_{-\pi}^{\pi}[f(x)-S_{n}(x)]^{2}\mathrm{d}x \\
 &=\frac{1}{\pi}\int_{-\pi}^{\pi}\left[f(x)-\frac{a_0}{2}-\sum_{k=1}^{n}(a_k\cos kx+b_k\sin kx)\right]^2\mathrm{d}x \\
 &=\frac{1}{\pi}\int_{-\pi}^{\pi}\left[f^2(x)+\frac{a_0^2}{4}+\sum_{k=1}^n(a_k^2\cos^2kx+b_k^2\sin^2kx)\right]\mathrm{d}x \\
 &-\frac{1}{\pi}\int_{-\pi}^{\pi}\left[a_{0}f(x)+2\sum_{k=1}^{n}f(x)(a_{k}\cos kx+b_{k}\sin kx)\right]\mathrm{d}x \\
@@ -156,15 +156,16 @@ FourierSinSeries[t/2, t, 5] + FourierCosSeries[t/2, t, 5]
 Plot[%, {t, -3 Pi, 3 Pi}]
 ```
 
-![[../../../../../assets/Fourier分析/Fourier级数/Fourier级数-20231218.png|500]]
+![Fourier级数对应图像](../../imgs/Fourier级数/Fourier级数-20231218.png){width="300"}
 
 如果更多项的话，可以绘制出更有意思的图像：
+
 ```mathematica title="Mathematica"
 FourierSinSeries[t, t, 50] + FourierCosSeries[t, t, 50]
 Plot[%,{t,-3 Pi, 3 Pi}]
 ```
 
-![[Fourier级数-20231218-3.png|500]]
+![Fourier级数对应图像](../../imgs/Fourier级数/Fourier级数-20231218-3.png){width="300"}
 
 ## Fourier级数的收敛性
 ### 部分和
