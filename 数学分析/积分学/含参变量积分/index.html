@@ -1,0 +1,2149 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../../Fourier%E5%88%86%E6%9E%90%E5%88%9D%E6%AD%A5/Fourier%E7%BA%A7%E6%95%B0/">
+      
+      
+        <link rel="next" href="../%E5%B9%BF%E4%B9%89%EF%BC%88%E5%8F%8D%E5%B8%B8%EF%BC%89%E7%A7%AF%E5%88%86/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>含参变量的积分 - xzqbear math notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.184 1.143v-.001l1.422 2.464a1.75 1.75 0 0 1-.757 2.451L3.104 11.713a1.75 1.75 0 0 1-2.275-.702l-.447-.775a1.75 1.75 0 0 1 .53-2.32L11.682.573a1.748 1.748 0 0 1 2.502.57Zm-4.709 9.32h-.001l2.644 3.863a.75.75 0 1 1-1.238.848l-1.881-2.75v2.826a.75.75 0 0 1-1.5 0v-2.826l-1.881 2.75a.75.75 0 1 1-1.238-.848l2.049-2.992a.746.746 0 0 1 .293-.253l1.809-.87a.749.749 0 0 1 .944.252ZM9.436 3.92h-.001l-4.97 3.39.942 1.63 5.42-2.61Zm3.091-2.108h.001l-1.85 1.26 1.505 2.605 2.016-.97a.247.247 0 0 0 .13-.151.247.247 0 0 0-.022-.199l-1.422-2.464a.253.253 0 0 0-.161-.119.254.254 0 0 0-.197.038ZM1.756 9.157a.25.25 0 0 0-.075.33l.447.775a.25.25 0 0 0 .325.1l1.598-.769-.83-1.436-1.465 1Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"PT Serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="xzqbear math notes" class="md-header__button md-logo" aria-label="xzqbear math notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            xzqbear math notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              含参变量的积分
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/xiong-ZH-zq/xzqbear-math-notes" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xzqbear-math-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../blog/" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%8D%95%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%A4%8D%E6%95%B0%E4%B8%8E%E5%85%B6%E6%80%A7%E8%B4%A8/" class="md-tabs__link">
+          
+  
+  复变函数
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/%E7%8E%AF%E8%AE%BA/%E5%9B%9B%E5%85%83%E6%95%B0%E4%BD%93/" class="md-tabs__link">
+          
+  
+  抽象代数
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Fourier%E5%88%86%E6%9E%90%E5%88%9D%E6%AD%A5/Fourier%E7%BA%A7%E6%95%B0/" class="md-tabs__link">
+          
+  
+  数学分析
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="xzqbear math notes" class="md-nav__button md-logo" aria-label="xzqbear math notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    xzqbear math notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/xiong-ZH-zq/xzqbear-math-notes" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xzqbear-math-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    归档
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            归档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../blog/archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    复变函数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            复变函数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    单复变函数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            单复变函数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%8D%95%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%A4%8D%E6%95%B0%E4%B8%8E%E5%85%B6%E6%80%A7%E8%B4%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复数及其性质
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%8D%95%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E8%A7%A3%E6%9E%90%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    解析函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    抽象代数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            抽象代数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    环论
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            环论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/%E7%8E%AF%E8%AE%BA/%E5%9B%9B%E5%85%83%E6%95%B0%E4%BD%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    四元数体
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/%E7%8E%AF%E8%AE%BA/%E7%8E%AF%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    环的定义与基本性质
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    数学分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            数学分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fourier分析初步
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Fourier分析初步
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Fourier%E5%88%86%E6%9E%90%E5%88%9D%E6%AD%A5/Fourier%E7%BA%A7%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier级数与其应用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    积分学
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            积分学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    含参变量的积分
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    含参变量的积分
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      含参变量常义积分
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      含参变量常义积分的性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="含参变量常义积分的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续性定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      可导性定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      利用连续性与可导性解定积分
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      可变限的情形
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可变限的情形">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      可变限积分连续性定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      可变限积分求导
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%B9%BF%E4%B9%89%EF%BC%88%E5%8F%8D%E5%B8%B8%EF%BC%89%E7%A7%AF%E5%88%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    广义积分
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    级数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            级数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BA%A7%E6%95%B0/%E5%87%BD%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数项级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BA%A7%E6%95%B0/%E5%B9%82%E7%BA%A7%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    幂级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E7%BA%A7%E6%95%B0/%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数项级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      含参变量常义积分
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      含参变量常义积分的性质
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="含参变量常义积分的性质">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      连续性定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      可导性定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      利用连续性与可导性解定积分
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      可变限的情形
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可变限的情形">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      可变限积分连续性定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      可变限积分求导
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">含参变量的积分</h1>
+<h2 id="_2">含参变量常义积分</h2>
+<div class="admonition note">
+<p class="admonition-title">定义：含参变量常义积分</p>
+<p>设 <span class="arithmatex">\(D\subseteq \mathbb{R}^n\)</span> ，<span class="arithmatex">\(n+1\)</span> 元函数 <span class="arithmatex">\(f(x,T)\)</span> 定义在 <span class="arithmatex">\([a,b]\times D\)</span> 上，并且对任意 <span class="arithmatex">\(T\in D\)</span> ，<span class="arithmatex">\(f(x,T)\)</span> 作为 <span class="arithmatex">\(x\)</span> 的函数在 <span class="arithmatex">\([a,b]\)</span> 上 Riemann 可积. 我们记<br />
+$$ \varphi(T)=\int_a^b f(x,T)\mathrm{d}x $$<br />
+则 <span class="arithmatex">\(\varphi(T)\)</span> 是定义在 <span class="arithmatex">\(D\)</span> 上的 <span class="arithmatex">\(n\)</span> 元函数，上式的右侧称为一个<strong>含参变量常义积分</strong>，其中 <span class="arithmatex">\(T\)</span> 为<strong>参变量</strong>.</p>
+</div>
+<p>在二元的情形下，我们可以写为</p>
+<div class="arithmatex">\[
+\varphi(y) = \int_{a}^{b}f(x,y)\mathrm{d}x
+\]</div>
+<p>事实上，我们已经在重积分的部分见过这个积分了，例如对于二重积分，我们可以化为累次积分（Fubini定理）：</p>
+<div class="arithmatex">\[
+\iint_D f(x,y)\mathrm{d}x \mathrm{d}y = \int_{c}^{d}\mathrm{d}y\int_a^b f(x,y)\mathrm{d}x
+\]</div>
+<h2 id="_3">含参变量常义积分的性质</h2>
+<h3 id="_4">连续性定理</h3>
+<p>这个部分以二元的函数为例，多元函数以此类推。</p>
+<div class="admonition note">
+<p class="admonition-title">定理：连续性定理</p>
+<p>设二元函数 <span class="arithmatex">\(f(x,y)\)</span> 在 <span class="arithmatex">\([a,b]\times [c,d]\)</span> 上连续，则以 <span class="arithmatex">\(x\)</span> 为参变量的常义积分<br />
+$$ F(x)=\int_c^d f(x,y)\mathrm{d}y $$<br />
+在 <span class="arithmatex">\([a,b]\)</span> 上连续.</p>
+</div>
+<p>证明每个点 <span class="arithmatex">\(x_0\in [a,b]\)</span> 都有 <span class="arithmatex">\(F(x)\)</span> 连续即可：<br />
+作估计：</p>
+<div class="arithmatex">\[
+|F(x)-F(x_0)|\leq \int_c^d |f(x,y)-f(x_0,y)|\mathrm{d}y.
+\]</div>
+<p>而对 <span class="arithmatex">\(f(x,y)\)</span> ，由于在闭集上连续，有一致连续，因此对于 <span class="arithmatex">\(\forall \varepsilon&gt;0\)</span> ，存在 <span class="arithmatex">\(\delta&gt;0\)</span> ，当 <span class="arithmatex">\(|x-x_0|&lt;\delta\)</span> 时有<br />
+$$<br />
+|f(x,y)-f(x_0,y)|&lt;\varepsilon.<br />
+$$<br />
+故对于任意的 <span class="arithmatex">\(x\in O_\delta(x_0)\cap [a,b]\)</span> 都有：<br />
+$$<br />
+|F(x)-F(x_0)|&lt; \varepsilon(d-c).<br />
+$$<br />
+从而可知 <span class="arithmatex">\(F(x)\)</span> 连续. 对于多元的情形同理. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">Remark.</p>
+<p>对于 <span class="arithmatex">\(\displaystyle\lim_{x\to x_0} F(x) = F(x_0)\)</span> 有<br />
+$$ \lim_{x\to x_0}\int_c^d f(x,y)\mathrm{d}y = \int_c^d f(x_0,y)\mathrm{d}y = \int_c^d \lim_{x\to x_0}f(x,y)\mathrm{d}y. $$<br />
+也就是积分运算可与极限运算交换.</p>
+</div>
+<h3 id="_5">可导性定理</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：可导性定理</p>
+<p>设 <span class="arithmatex">\(f(x,y)\)</span> 和 <span class="arithmatex">\(f_x(x,y)\)</span> 在 <span class="arithmatex">\([a,b]\times [c,d]\)</span> 上连续，则 <span class="arithmatex">\(F(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上可导，且有<br />
+$$ F'(x)=\int_c^d f_x(x,y)\mathrm{d}y. $$</p>
+</div>
+<p>作估计：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\left|\frac{\Delta F}{\Delta x}-\int_c^d f_x(x_0,y)\mathrm{d}y\right|&amp;= \left|\int_c^d   [f_x(x_0+\theta \Delta x,y)-f_x(x_0,y)]\mathrm{d}y\right|\\
+&amp;\leq   \int_c^d  \left| f_x(x_0+\theta \Delta x,y)-f_x(x_0,y)\right|\mathrm{d}y
+\end{aligned} 
+\]</div>
+<p>从而利用一致连续性有</p>
+<div class="arithmatex">\[
+|f_x(x_0+\theta \Delta x,y)-f_x(x_0,y)|&lt;\frac{\varepsilon}{d-c}.
+\]</div>
+<p>进而<br />
+$$<br />
+\left|\frac{\Delta F}{\Delta x}-\int_c^d f_x(x_0,y)\mathrm{d}y\right|&lt;\varepsilon.<br />
+$$<br />
+因此命题成立. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h3 id="_6">利用连续性与可导性解定积分</h3>
+<div class="admonition question">
+<p class="admonition-title">例题</p>
+<p>求 $$ I = \int_0^1 \frac{x^b-x^a}{\ln x}\mathrm{d}x,a&gt;0,b&gt;0. $$</p>
+</div>
+<p>首先我们需要判断是否为常义积分，只有 <span class="arithmatex">\(x=0\)</span> 和 <span class="arithmatex">\(1\)</span> 有可能，但是通过求极限发现为可去奇点，从而为常义积分.</p>
+<p>固定 <span class="arithmatex">\(a\)</span> ，以 <span class="arithmatex">\(b\)</span> 为参变量，对于函数：<br />
+$$<br />
+I(b) = \int_0^1 \frac{x^b-x^a}{\ln x}\mathrm{d}x<br />
+$$<br />
+求它对 <span class="arithmatex">\(b\)</span> 的导数，得到<br />
+$$<br />
+I'(b) = \int_0^1 x^b \mathrm{d}x = \frac{1}{b+1}.<br />
+$$<br />
+利用 <span class="arithmatex">\(I(a)=0\)</span> ，最后有<br />
+$$<br />
+I(b) = \ln (b+1)-\ln (a+1).<br />
+$$<br />
+<span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h2 id="_7">可变限的情形</h2>
+<p>我们现在来看<br />
+$$<br />
+F(x)=\int_{c(x)}^{d(x)} f(x,y)\mathrm{d}y.<br />
+$$<br />
+的可变限的情形.</p>
+<p>这种类型在重积分的时候也已经看到过了，此处不难理解。</p>
+<h3 id="_8">可变限积分连续性定理</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：连续性定理（可变限积分）</p>
+<p>设 <span class="arithmatex">\(f(x,y)\)</span> 于 <span class="arithmatex">\([a,b]\times[\overline{c},\overline{d}]\)</span> 上连续，函数 <span class="arithmatex">\(c(x),d(x)\)</span> 于 <span class="arithmatex">\([a,b]\)</span> 上连续，且其值不越过区间 <span class="arithmatex">\([\overline{c},\overline{d}]\)</span> ，则含参变量积分：<br />
+$$ F(x) = \int_{c(x)}^{d(x)}f(x,y)\mathrm{d}y $$<br />
+在 <span class="arithmatex">\([a,b]\)</span> 上连续.</p>
+</div>
+<p>设 <span class="arithmatex">\(\Delta d = d(x)-d(x_0)\)</span> 和 <span class="arithmatex">\(\Delta c = c(x)-c(x_0)\)</span> ，那么对于任意 <span class="arithmatex">\(x\in [a,b]\)</span> 有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+F(x) - F(x_0) &amp;= \int_{c(x_0)+\Delta c}^{d(x_0)+\Delta d}f(x,y)\mathrm{d}x-\int_{c(x_0)}^{d(x_0)}f(x_0,y)\mathrm{d}y   \\
+&amp;=\int_{c(x_0)}^{d(x_0)}[f(x,y)-f(x_0,y)]\mathrm{d}x +\int_{c(x_0)+\Delta c}^{c(x_0)} f(x,y)\mathrm{d}y\\
+&amp;+\int_{d(x_0)}^{d(x_0)+\Delta d}f(x,y)\mathrm{d}y.
+\end{aligned}
+\]</div>
+<p>当 <span class="arithmatex">\(x\to x_0\)</span> 时，由于 <span class="arithmatex">\(c,d\)</span> 均连续，可以推出上述式子趋于 <span class="arithmatex">\(0\)</span> . <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h3 id="_9">可变限积分求导</h3>
+<p>Leibniz积分法则已经给我们定理的一个描述了，下面仅给证明：<br />
+设三元函数：<br />
+$$<br />
+\varphi(x,c,d) = \int_c^d f(x,y)\mathrm{d}y.<br />
+$$<br />
+三个偏导数为：<br />
+$$<br />
+\begin{aligned}<br />
+&amp; \varphi_1' = \int_c^d f_x(x,y)\mathrm{d}y\<br />
+&amp; \varphi_2' = -f(x,c)\<br />
+&amp; \varphi_3' = f(x,d)<br />
+\end{aligned}<br />
+$$<br />
+它们都存在且连续，因此 <span class="arithmatex">\(\varphi(x,c,d)\)</span> 连续可微，从而对<br />
+$$<br />
+F(x) = \varphi(x,c(x),d(x))<br />
+$$<br />
+求导可得：<br />
+$$<br />
+F'(x) = \varphi_1'+\varphi_2'c'+\varphi_3' d'.<br />
+$$<br />
+再代入前面的偏导数即可. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition question">
+<p class="admonition-title">例题：NKU教材习题19T3(3)</p>
+<p>对下面的含参变量积分求导：<br />
+$$ F(x) = \int_x^{\frac{\pi}{2}}\frac{\cos (x+y)}{x+y}\mathrm{d}y. \quad (x&gt;0) $$</p>
+</div>
+<p>可导性由于分母恒大于 <span class="arithmatex">\(0\)</span> 显然成立. 利用公式直接求导有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+F'(x) &amp;= \int_x^{\frac{\pi}{2}}-\frac{(x+y)\sin(x+y)+\cos(x+y)}{(x+y)^2}\mathrm{d}y-\frac{\cos 2x}{2x} \\
+&amp;=\int_x^{\frac{\pi}{2}}\mathrm{d}\left(\frac{\cos(x+y)}{x+y}\right)-\frac{\cos 2x}{2x}\\
+&amp;=-\frac{2\sin x}{\pi+2x}-\frac{\cos 2x}{x}
+\end{aligned}
+\]</div>
+<p><span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h1 id="_10">含参变量广义积分</h1>
+<p>如果我们还想研究</p>
+<div class="arithmatex">\[
+F(x) = \int_a^{+\infty} f(x,y)\mathrm{d}y
+\]</div>
+<p>这样的含参变量广义积分的性质，此时我们可以尝试从连续性入手：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+|F(x)-F(x_0)| &amp;\leqslant \int_c^d |f(x,y)-f(x_0,y)|\mathrm{d}y \\
+&amp;+\left|\int_d^{+\infty}f(x,y)\mathrm{d}y\right|+\left|\int_d^{+\infty} f(x_0,y)\mathrm{d}y\right|.
+\end{aligned}
+\]</div>
+<p>此时第二项的判断是有困难的，因为我们需要让其对任意 <span class="arithmatex">\(x\)</span> ，都能达到充分小，此时我们需要<strong>一致收敛</strong>的概念。</p>
+<h2 id="_11">含参变量广义积分的一致收敛</h2>
+<div class="admonition note">
+<p class="admonition-title">定义：含参变量广义积分的一致收敛</p>
+<p>若对 <span class="arithmatex">\(\forall \varepsilon&gt;0\)</span> ，存在 <span class="arithmatex">\(d_\varepsilon\geq c\)</span> ，对于任意的 <span class="arithmatex">\(d\geq d_\varepsilon\)</span> ，<span class="arithmatex">\(\forall x\in I\)</span> 都有：<br />
+$$ \left|\int_d^{+\infty} f(x,y)\mathrm{d}y\right|&lt;\varepsilon, $$<br />
+则称以 <span class="arithmatex">\(+\infty\)</span> 为奇点的含参变量 <span class="arithmatex">\(x\)</span> 的广义积分 <span class="arithmatex">\(\displaystyle\int_c^{+\infty} f(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 上<strong>一致收敛</strong> .</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">例题1：证明含参变量广义积分收敛</p>
+<p>证明：以 <span class="arithmatex">\(+\infty\)</span> 为奇点的 <span class="arithmatex">\(I(b) = \displaystyle\int_0^{+\infty} \mathrm{e}^{-x}\sin b x^2 \mathrm{d}x\)</span> 在 <span class="arithmatex">\(b\in (-\infty,+\infty)\)</span> 上一致收敛.</p>
+</div>
+<p>直接利用定义对余积分估计：<br />
+$$<br />
+\left|\int_d^{+\infty} \mathrm{e}^{-x}\sin bx^2 \mathrm{d}x\right|\leq \int_d^{+\infty}\mathrm{e}^{-x}\mathrm{d}x = \mathrm{e}^{-d}.<br />
+$$<br />
+取 <span class="arithmatex">\(d_\varepsilon &gt;\max\left\{0, \displaystyle\ln \frac{1}{\varepsilon}\right\}\)</span> 即可. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition question">
+<p class="admonition-title">类题</p>
+<p>证明：<span class="arithmatex">\(F(s) = \displaystyle\int_0^{+\infty} \mathrm{e}^{-sx}\cdot \frac{\sin x}{x}\mathrm{d}x\)</span> 在 <span class="arithmatex">\(s\in [\lambda,M]\)</span> 上一致收敛，其中 <span class="arithmatex">\(0&lt;\lambda &lt;M\)</span> .</p>
+</div>
+<p>注意：此题实际上也揭示了<strong>含参变量广义积分内闭一致收敛</strong>的概念.</p>
+<div class="admonition question">
+<p class="admonition-title">例题：<span class="arithmatex">\(\Gamma\)</span> 函数的内闭一致收敛</p>
+<p>证明：积分 $$ \Gamma(s) = \int_0^{+\infty} t^{s-1}\mathrm{e}^{-t}\mathrm{d}t $$<br />
+在 <span class="arithmatex">\(s\in (0,+\infty)\)</span> 上内闭一致收敛.</p>
+</div>
+<p>此时有两个奇点 <span class="arithmatex">\(0\)</span> 和 <span class="arithmatex">\(+\infty\)</span> ，将积分分拆为：<br />
+$$<br />
+\int_0^{+\infty} t^{s-1}\mathrm{e}^{-t}\mathrm{d}t = \int_0^1 t^{s-1}\mathrm{e}^{-t}\mathrm{d}t+\int_1^{+\infty} t^{s-1}\mathrm{e}^{-t}\mathrm{d}t.<br />
+$$</p>
+<p>考虑区间 <span class="arithmatex">\([\lambda,M]\)</span> ，其中 <span class="arithmatex">\(\lambda&gt;0\)</span> ，那么第一个积分的余积分可估计为：<br />
+$$<br />
+\left|\int_0^\delta t^{s-1}\mathrm{e}^{-t}\mathrm{d} t \right|\leq \int_0^\delta t^{\lambda-1}\mathrm{d}t = \frac{1}{\lambda} \delta^\lambda <br />
+$$</p>
+<p>当 <span class="arithmatex">\(\delta\to 0^+\)</span> 时，极限为 <span class="arithmatex">\(0\)</span> ，因此第一个积分在该闭区间上一致收敛.</p>
+<p>对于第二个积分：<br />
+$$<br />
+\lim_{t\to +\infty} \frac{t^{M-1}}{\mathrm{e}^{-\frac{t}{2}}} = 0.<br />
+$$<br />
+因此在 <span class="arithmatex">\([1,+\infty)\)</span> 上 <span class="arithmatex">\(t^{M-1}\mathrm{e}^{-t/2}\)</span> 有界，从而可估计：<br />
+$$<br />
+\left|\int_d^{+\infty} t^{s-1}\mathrm{e}^{-t}\mathrm{d}t\right|\leq K \int_d^{+\infty}\mathrm{e}^{-t/2}\mathrm{d}t=2K \mathrm{e}^{-d/2}<br />
+$$<br />
+进而可知第二个积分一致收敛，因此合并可知内闭一致收敛. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<p>对含参变量瑕积分，同样有一致收敛：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：瑕积分收敛</p>
+<p>若对 <span class="arithmatex">\(\forall \varepsilon&gt;0\)</span> <span class="arithmatex">\(\exists \delta_\varepsilon&gt;0\)</span> ，对于 <span class="arithmatex">\(\forall \delta\in (0,\delta_\varepsilon]\)</span>， <span class="arithmatex">\(\forall x\in I\)</span> ：<br />
+$$ \left|\int_c^{c+\delta}f(x,y)\mathrm{d}y\right|&lt;\varepsilon. $$<br />
+则称以 <span class="arithmatex">\(c\)</span> 为奇点的含参变量 <span class="arithmatex">\(x\)</span> 的广义积分 <span class="arithmatex">\(\displaystyle\int_c^d f(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 上一致收敛.</p>
+</div>
+<h2 id="_12">一致收敛判别法</h2>
+<h3 id="cauchy">Cauchy一致收敛准则</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：Cauchy一致收敛准则</p>
+<p>含参变量 <span class="arithmatex">\(x\)</span> 的广义积分 <span class="arithmatex">\(\displaystyle\int_c^{+\infty}f(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 上一致收敛的充要条件是：对 <span class="arithmatex">\(\forall \varepsilon&gt;0\)</span> ，<span class="arithmatex">\(\exists d_\varepsilon\)</span> ，<span class="arithmatex">\(\forall d,d'\geq d_\varepsilon\)</span> ，对于 <span class="arithmatex">\(\forall x\in I\)</span> 都有：<br />
+$$ \left|\int_d^{d'}f(x,y)\mathrm{d}y\right|&lt;\varepsilon. $$</p>
+</div>
+<h3 id="weierstrass">Weierstrass判别法</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：Weierstrass判别法</p>
+<p>设含参变量 <span class="arithmatex">\(x\)</span> 的广义积分 <span class="arithmatex">\(\displaystyle\int_c^{+\infty} f(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 上收敛，又设有非负函数 <span class="arithmatex">\(F(y),y\geq c\)</span> ，使得当 <span class="arithmatex">\(x\in I,y\geq c\)</span> 时成立 <span class="arithmatex">\(|f(x,y)|\leq F(y)\)</span> ，且 <span class="arithmatex">\(\displaystyle\int_c^{+\infty}F(y)\mathrm{d}y\)</span> 收敛，则 <span class="arithmatex">\(\displaystyle\int_c^{+\infty}f(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 上一致收敛.</p>
+</div>
+<h3 id="a-d">A-D判别法</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：Abel判别法</p>
+<p>若含参变量广义积分：<br />
+$$ \int_c^{+\infty} u(x,y)v(x,y)\mathrm{d}y $$<br />
+满足以下条件，则 <span class="arithmatex">\(x\in I\)</span> 上该积分一致收敛：<br />
+1. <span class="arithmatex">\(u(x,y)\)</span> 关于 <span class="arithmatex">\(y\)</span> 单调，且在 <span class="arithmatex">\(x\in I\)</span> 和 <span class="arithmatex">\(y\in [c,+\infty)\)</span> 上一致有界.<br />
+2.  <span class="arithmatex">\(\displaystyle\int_c^{+\infty}v(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 上一致收敛.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理：Dirichlet判别法</p>
+<p>若含参变量广义积分：<br />
+$$ \int_c^{+\infty} u(x,y)v(x,y)\mathrm{d}y $$<br />
+满足以下条件，则 <span class="arithmatex">\(x\in I\)</span> 上该积分一致收敛：<br />
+1. <span class="arithmatex">\(u(x,y)\)</span> 关于 <span class="arithmatex">\(y\)</span> 单调且关于 <span class="arithmatex">\(x\in I\)</span> 一致收敛于 <span class="arithmatex">\(0\)</span> ，且 <span class="arithmatex">\(\displaystyle\int_c^{+\infty} u(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 上一致收敛.<br />
+2. <span class="arithmatex">\(\displaystyle\int_c^{+\infty}v(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 和 <span class="arithmatex">\(d\in [c,+\infty)\)</span> 上一致有界.</p>
+</div>
+<p>简单概括：</p>
+<ul>
+<li>Abel: 函数<strong>单调一致有界</strong>，另一函数<strong>积分一致收敛</strong>；</li>
+<li>Dirichlet: 函数<strong>单调一致收敛于</strong> <span class="arithmatex">\(0\)</span> 且对应积分<strong>一致收敛</strong>，另一函数<strong>积分一致有界</strong>；</li>
+</ul>
+<h1 id="_13">含参变量积分的性质</h1>
+<p>现在回到先前的问题，也就是探究运算符的交换问题，此时我们需要探讨广义积分符号 <span class="arithmatex">\(\displaystyle\int_c^{+\infty}\)</span> 能否与极限运算、求导运算、积分运算交换.</p>
+<h2 id="_14">含参变量广义积分连续性定理</h2>
+<div class="admonition note">
+<p class="admonition-title">定理：连续性定理</p>
+<p>设 <span class="arithmatex">\(f(x,y)\)</span> 于 <span class="arithmatex">\(I\times [c,+\infty)\)</span> 上连续，参变量 <span class="arithmatex">\(x\)</span> 的广义积分 <span class="arithmatex">\(F(x) = \displaystyle\int_c^{+\infty} f(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 上<strong>内闭一致收敛</strong>，则 <span class="arithmatex">\(F\in C(I)\)</span> .</p>
+</div>
+<p>对于点 <span class="arithmatex">\(x_0\in I\)</span> ，取 <span class="arithmatex">\(I\)</span> 中的一个内闭区间 <span class="arithmatex">\(I_1\)</span> ，使得 <span class="arithmatex">\(x_0,x\in I_1\)</span> ，按一致收敛的定义，对 <span class="arithmatex">\(\forall \varepsilon&gt;0,\exists d_\varepsilon&gt;c\)</span> ，<span class="arithmatex">\(\forall d&gt;d_\varepsilon\)</span> ，对于 <span class="arithmatex">\(\forall x\in I_1\)</span> 都有：<br />
+$$<br />
+\left| \int_d^{+\infty} f(x,y)\mathrm{d}y\right|<br />
+&lt;\frac{\varepsilon}{3}<br />
+$$<br />
+固定 <span class="arithmatex">\(d\)</span> ，作分拆：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+|F(x)-F(x_0)|&amp;\leq \left|\int_c^d [f(x,y)-f(x_0,y)]\mathrm{d}y\right| \\
+&amp;+ \left|\int_d^{+\infty} f(x,y)\mathrm{d}y\right|+\left|\int_d^{+\infty} f(x_0,y)\mathrm{d}y\right|
+\end{aligned}
+\]</div>
+<p>则当 <span class="arithmatex">\(x\in I_1\)</span> 时后两项分别小于 <span class="arithmatex">\(\dfrac{\varepsilon}{3}\)</span> ，对第一项由于二元连续可知也可小于 <span class="arithmatex">\(\dfrac{\varepsilon}{3}\)</span> ，从而成立 <span class="arithmatex">\(|F(x)-F(x_0)|&lt;\varepsilon\)</span> . <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<p>上述的定理表明了<strong>内闭一致收敛</strong>可以保证极限符号和广义积分符号可以换序. </p>
+<div class="admonition question">
+<p class="admonition-title">例题：连续性定理的应用</p>
+<p>证明：积分<br />
+$$ F(s) = \int_0^{+\infty}s \mathrm{e}^{-sy}\mathrm{d}y $$<br />
+在 <span class="arithmatex">\(s\in [0,1]\)</span> 上不一致收敛.</p>
+</div>
+<p>假设一致收敛，那么考虑 <span class="arithmatex">\(s = 0\)</span> 处的性质，<span class="arithmatex">\(F(0)  =0\)</span> ，但是当 <span class="arithmatex">\(s\to 0\)</span> 时，我们发现：<br />
+$$<br />
+F(s) = -\mathrm{e}^{-sy}\bigg|_{y=0}^{y = +\infty} = 1<br />
+$$<br />
+这就说明 <span class="arithmatex">\(0\)</span> 为间断点，从而与连续性定理相矛盾，故不一致连续. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h2 id="_15">积分顺序交换</h2>
+<div class="admonition note">
+<p class="admonition-title">定理：积分顺序交换定理</p>
+<p>在连续性定理的条件下，若区间 <span class="arithmatex">\(I = [a,b]\)</span> ，则  $$ \int_a^b F(x)\mathrm{d}x = \int_a^b \mathrm{d}x\int_c^{+\infty}f(x,y)\mathrm{d}y = \int_c^{+\infty}\mathrm{d}y \int_a^b f(x,y)\mathrm{d}x. $$</p>
+</div>
+<p>任取 <span class="arithmatex">\(d&gt;c\)</span> ，记 <span class="arithmatex">\(F_d(x) = \displaystyle\int_c^d f(x,y)\mathrm{d}y\)</span> ，则有：<br />
+$$<br />
+\int_a^b F_d(x)\mathrm{d}x = \int_a^b \mathrm{d}x\int_c^d f(x,y)\mathrm{d}y = \int_c^d \mathrm{d}y\int_a^b f(x,y)\mathrm{d}x<br />
+$$<br />
+即 Fubini 定理. 我们可以写出：<br />
+$$<br />
+|F_d(x)-F(x)| = \left|\int_c^d f-\int_c^{+\infty}f \right| = \left|\int_d^{+\infty} f\right|.<br />
+$$<br />
+连续性定理的条件下，可见一致收敛的条件就是 <span class="arithmatex">\(F_d(x)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上一致收敛于 <span class="arithmatex">\(F(x)\)</span> . 令 <span class="arithmatex">\(d\to +\infty\)</span> ，这样就有：<br />
+$$<br />
+\lim_{d\to +\infty} \int_a^b F_d(x)\mathrm{d}x = \int_a^b F(x)\mathrm{d}x<br />
+$$<br />
+从而也就是我们要证的结论. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h2 id="_16">求导与积分交换</h2>
+<div class="admonition note">
+<p class="admonition-title">定理：求导与积分交换定理</p>
+<p>设：<br />
+1. 二元函数 <span class="arithmatex">\(f(x,y)\)</span> 及其偏导函数 <span class="arithmatex">\(f_x(x,y)\)</span> 在 <span class="arithmatex">\(I\times [c,+\infty)\)</span> 上<strong>连续</strong>；<br />
+2. 积分 <span class="arithmatex">\(\displaystyle\int_c^{+\infty} f_x(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 上<strong>内闭一致收敛</strong>；<br />
+3. 存在点 <span class="arithmatex">\(x_0\in I\)</span> 使得积分 <span class="arithmatex">\(\displaystyle\int_c^{+\infty}f(x_0,y)\mathrm{d}y\)</span> 收敛.</p>
+<p>则 <span class="arithmatex">\(F(x) = \displaystyle\int_c^{+\infty} f(x,y)\mathrm{d}y\)</span> 在 <span class="arithmatex">\(x\in I\)</span> 上<strong>内闭一致收敛</strong>，在 <span class="arithmatex">\(I\)</span> 上可微，且有<br />
+$$F'(x) = \int_c^{+\infty}f_x(x,y)\mathrm{d}y. $$</p>
+</div>
+<p>证明略，与之前的交换性证明是类似的.</p>
+<h2 id="_17">利用含参变量积分方法计算积分</h2>
+<h3 id="dirichlet">Dirichlet积分</h3>
+<p>利用含参变量积分方法计算积分的关键在于以下几点：</p>
+<ol>
+<li>如何引入<strong>参变量</strong>？</li>
+<li>使用哪个性质最佳？</li>
+</ol>
+<p>接下来从 Dirichlet 积分的计算来进行方法学习：</p>
+<div class="admonition question">
+<p class="admonition-title">例题：Dirichlet积分</p>
+<p>计算 Dirichlet 积分<br />
+$$ \int_0^{+\infty} \frac{\sin x}{x}\mathrm{d}x. $$</p>
+</div>
+<p><strong>解法 I</strong>：<br />
+考虑引入参变量，此处使用<strong>收敛因子法</strong>，即考虑：<br />
+$$<br />
+F(s) = \int_0^{+\infty}\mathrm{e}^{-sx}\frac{\sin x}{x}\mathrm{d}x, s\geq 0.<br />
+$$</p>
+<div class="admonition tip">
+<p class="admonition-title">方法：收敛因子法</p>
+<p>引入一个改进收敛情况的因子的方法称为<strong>收敛因子法</strong>，本题当中引入的 <span class="arithmatex">\(\mathrm{e}^{-sx}\)</span> 即为收敛因子，它使得积分能在运算之后保持收敛，方便我们进行下一步计算.</p>
+</div>
+<p>然后我们考虑积分号下求导，若允许积分号下的求导，那么</p>
+<div class="arithmatex">\[
+F'(s) = \int_0^{+\infty} \left(\mathrm{e}^{-sx}\frac{\sin x}{x}\right)_s'\mathrm{d}x = \int_0^{+\infty} -\mathrm{e}^{-sx}\sin x \mathrm{d}x = -\frac{1}{1+s^2}
+\]</div>
+<p>于是有</p>
+<p>$$<br />
+F(s) = -\arctan s+C<br />
+$$<br />
+其中 <span class="arithmatex">\(C\)</span> 是待定常数. <br />
+下面考虑计算 <span class="arithmatex">\(C\)</span> ，由 <span class="arithmatex">\(F(s)\)</span> 的表达式有<br />
+$$<br />
+|F(s)|\leq \int_0^{+\infty} \mathrm{e}^{-sx}\mathrm{d}x = \frac{1}{s}.<br />
+$$<br />
+从而有 <span class="arithmatex">\(F(+\infty)=0\)</span> ，因此常数 <span class="arithmatex">\(C = \frac{\pi}{2}\)</span> ，这样就确定了 <span class="arithmatex">\(F(s)\)</span> ，最后可以从 <span class="arithmatex">\(F(s)\)</span> 于 <span class="arithmatex">\(s = 0\)</span> 右连续可以推出<br />
+$$<br />
+F(0) = \lim_{s\to 0^+} F(x) = \frac{\pi}{2}<br />
+$$<br />
+因此<br />
+$$<br />
+\int_0^{+\infty} \frac{\sin x}{x} \mathrm{d}x = \frac{\pi}{2}<br />
+$$<br />
+余下的部分就是要验证能否求导，考虑验证 <span class="arithmatex">\(\displaystyle\int_0^{+\infty} \mathrm{e}^{-sx}\sin x \mathrm{d}x\)</span> 在 <span class="arithmatex">\(s&gt;0\)</span> 上是否内闭一致收敛. 由估计：<br />
+$$<br />
+\left|\int_d^{+\infty} \mathrm{e}^{-sx}\sin x \mathrm{d}x\right|\leq \int_d^{+\infty} \mathrm{e}^{-\delta x}\mathrm{d}x = \frac{1}{\delta}\mathrm{e}^{-\delta d}.<br />
+$$<br />
+可见当 <span class="arithmatex">\(d\)</span> 充分大的时候，左边的积分可以小于事先给定的 <span class="arithmatex">\(\varepsilon&gt;0\)</span> ，因此内闭一致收敛. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span> </p>
+<div class="admonition warning">
+<p class="admonition-title">注</p>
+<p>对于类似问题，<strong>验证</strong>这一步一般放在最后，这是因为不知道是否能成功，只有成功才需要验证中间过程是否合理.</p>
+</div>
+<hr />
+<p><strong>解法 II</strong>：下面的方法依旧依赖收敛因子，考虑二元函数<br />
+$$<br />
+J(s,a) = \int_0^{+\infty}\mathrm{e}^{-sx}\cdot\frac{\sin ax}{x}\mathrm{d}x<br />
+$$<br />
+其中 <span class="arithmatex">\(s\geq 0\)</span> 且 <span class="arithmatex">\(a\geq 0\)</span> .</p>
+<p>固定 <span class="arithmatex">\(s&gt;0\)</span> 以 <span class="arithmatex">\(a\)</span> 为参变量，由于 <span class="arithmatex">\(\mathrm{e}^{-sx}\)</span> 为优势函数，从而利用 Weierstrass 判别法判定得到积分对 <span class="arithmatex">\(a\geq 0\)</span> 一致收敛，因此 <span class="arithmatex">\(J(s,a)\)</span> 对 <span class="arithmatex">\(a\geq 0\)</span> 连续.</p>
+<p><span class="arithmatex">\(J(s,a)\)</span> 对 <span class="arithmatex">\(a\)</span> 可求偏导数，从而有<br />
+$$<br />
+\frac{\partial J}{\partial a} = \int_0^{\infty}\mathrm{e}^{-sx}\sin ax \mathrm{d}x.<br />
+$$<br />
+这个是 Laplace 变换的积分，可以直接得到结果为<br />
+$$<br />
+J_a = \frac{s}{s^2+a^2}<br />
+$$<br />
+因此<br />
+$$<br />
+J(s,a) = \int_0^a \frac{s \mathrm{d}t}{s^2+t^2} = \arctan \frac{a}{s}<br />
+$$<br />
+然后固定 <span class="arithmatex">\(a&gt;0\)</span> 将 <span class="arithmatex">\(s\)</span> 作为参变量，则易知 <span class="arithmatex">\(s\geq 0\)</span> 时一致收敛，从而连续，于是<br />
+$$<br />
+J(0,a) = \lim_{s\to 0^+}\arctan \frac{a}{s} = \frac{\pi}{2}<br />
+$$<br />
+因此结果为 <span class="arithmatex">\(\displaystyle\frac{\pi}{2}\)</span>. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span> </p>
+<h3 id="gauss">Gauss积分与其衍生</h3>
+<div class="admonition question">
+<p class="admonition-title">例题：一维Gauss积分</p>
+<p>计算：<br />
+$$ \int_0^{+\infty}\mathrm{e}^{-x^2}\mathrm{d}x. $$</p>
+</div>
+<p>考虑累次积分：</p>
+<div class="arithmatex">\[
+I = \int_0^R \mathrm{e}^{-x^2}\mathrm{d}x\int_0^R \mathrm{e}^{-y^2}\mathrm{d}y = \iint_D \mathrm{e}^{-(x^2+y^2)}\mathrm{d}x \mathrm{d}y
+\]</div>
+<p>其中 <span class="arithmatex">\(D = \{(x,y)|0\leq x \leq R,0\leq y\leq R\}\)</span> ，即正方形.</p>
+<p>考虑利用夹逼的方法，取如下两个半圆夹住该区域：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;D_1 =  \{(x,y)|0\leq x^2+y^2\leq R\},\\
+&amp;D_2 =  \{(x,y)|0\leq x^2+y^2\leq \sqrt{2}R\}
+\end{aligned}
+\]</div>
+<p>从而有<br />
+$$<br />
+\iint_{D_1}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}x \mathrm{d}y\leq I\leq \iint_{D_2}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}x \mathrm{d}y.<br />
+$$<br />
+而这两个积分都是可以求解出来的，以第一个积分为例<br />
+$$<br />
+\iint_{D_1}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}x \mathrm{d}y = \int_0^{\frac{\pi}{2}}\mathrm{d}\theta\int_0^R r \mathrm{e}^{-r^2}\mathrm{d}r.<br />
+$$<br />
+也就是利用极坐标代换，令 <span class="arithmatex">\(R\to \infty\)</span> 时，可以算出积分为 <span class="arithmatex">\(\displaystyle \frac{\pi}{4}\)</span> ，右侧算出来也是 <span class="arithmatex">\(\displaystyle \frac{\pi}{4}\)</span> .</p>
+<p>故一维 Gauss 积分的值为：<br />
+$$<br />
+\int_0^{+\infty}\mathrm{e}^{-x^2}\mathrm{d}x = \sqrt{I} = \frac{\sqrt{\pi}}{2}.<br />
+$$<br />
+<span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h1 id="betagamma">Beta函数和Gamma函数</h1>
+<h2 id="_18">特殊函数的定义</h2>
+<div class="admonition note">
+<p class="admonition-title">定义：<span class="arithmatex">\(\mathrm{B}\)</span> 函数和 <span class="arithmatex">\(\Gamma\)</span> 函数</p>
+<p><span class="arithmatex">\(\mathrm{B}\)</span> 函数定义为如下的含参变量积分：<br />
+$$ \mathrm{B}(p,q) = \int_0^1 x^{p-1}(1-x)^{q-1}\mathrm{d}x $$</p>
+<p><span class="arithmatex">\(\Gamma\)</span> 函数定义为如下的含参变量积分：<br />
+$$ \Gamma(s) = \int_0^{+\infty}x^{s-1}\mathrm{e}^{-x}\mathrm{d}x. $$</p>
+</div>
+<p>这两个特殊函数可以用来表示很多不定积分、含参变量积分和微分方程的解。</p>
+<div class="admonition question">
+<p class="admonition-title">例题：求 <span class="arithmatex">\(\Gamma\)</span> 函数的值</p>
+<p>求解 <span class="arithmatex">\(\Gamma(\frac{1}{2}).\)</span></p>
+</div>
+<p>写出<br />
+$$<br />
+\Gamma\left(\frac{1}{2}\right) = \int_{0}^{+\infty}x^{- \frac{1}{2}}\mathrm{e}^{-x}\mathrm{d}x<br />
+$$<br />
+令 <span class="arithmatex">\(t = \sqrt{x}\)</span> ，从而有<br />
+$$<br />
+2\int_0^{+\infty}\mathrm{e}^{-t^2}\mathrm{d}t=\sqrt{\pi}.<br />
+$$<br />
+即 <span class="arithmatex">\(\Gamma\left(\frac{1}{2}\right)= \sqrt{\pi}\)</span> . <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<p>由于 <span class="arithmatex">\(\Gamma\)</span> 函数的值相对不好求，如果最后得到的是含未知参数的 <span class="arithmatex">\(\Gamma\)</span> 函数的结果，可以考虑直接使用 <span class="arithmatex">\(\Gamma\)</span> 函数表示， <span class="arithmatex">\(\Gamma(\frac{1}{2})\)</span> 的值也是需要记忆的.</p>
+<h2 id="_19">基本性质</h2>
+<h3 id="gamma"><span class="arithmatex">\(\Gamma\)</span> 函数的性质</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：递推公式</p>
+<p>对任意 <span class="arithmatex">\(s&gt;0\)</span> 都有 <span class="arithmatex">\(\Gamma(s+1) = s \Gamma(s)\)</span> ，特别的， <span class="arithmatex">\(\Gamma(n+1) = n!\)</span> （这也说明 <span class="arithmatex">\(\Gamma\)</span> 函数是阶乘的合理推广）.</p>
+</div>
+<p>$$<br />
+\begin{aligned}<br />
+\Gamma(s+1) &amp;= \int_0^{+\infty}x^{s}\mathrm{e}^{-x}\mathrm{d}x \<br />
+&amp;=-x^s \mathrm{e}^{-x}\bigg|_{0}^{+\infty} +s\int_0^{+\infty}x^{s-1}\mathrm{e}^{-x}\mathrm{d}x \<br />
+&amp; = s \Gamma(s)<br />
+\end{aligned}<br />
+$$<br />
+从而递推公式成立. 同时利用 <span class="arithmatex">\(\Gamma(1) = 1\)</span> 即可得到阶乘推广. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理：下凸函数</p>
+<p><span class="arithmatex">\(\ln \Gamma(s)\)</span> 在 <span class="arithmatex">\((0,+\infty)\)</span> 上为下凸函数.</p>
+</div>
+<p>此处考虑利用定义证明：对任意的 <span class="arithmatex">\(s,t&gt;0\)</span> 和 <span class="arithmatex">\(0&lt;\lambda&lt;1\)</span> ，有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\Gamma(\lambda s+(1-\lambda)t) \\
+&amp;=\int_0^{+\infty} (x^{s-1}\mathrm{e}^{-x})^\lambda(x^{t-1}\mathrm{e}^{-x})^{1-\lambda}\mathrm{d}x,\\
+\end{aligned}
+\]</div>
+<p>从而由 Hölder 不等式可得，对于任意 <span class="arithmatex">\(A&gt;0\)</span> 均有：<br />
+$$<br />
+\int_0^A f(x)g(x)\mathrm{d}x\leq \left(\int_0^A |f(x)|^p \mathrm{d}x\right)^{\frac{1}{p}}\left(\int_0^A |g(x)|^q \mathrm{d} x\right)^{\frac{1}{q}}<br />
+$$<br />
+代入有<br />
+$$<br />
+\Gamma(\lambda s+ (1-\lambda)t)\leq \Gamma(s)^\lambda \Gamma(t)^{1-\lambda}<br />
+$$<br />
+从而加上对数即可得知为下凸函数. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理：余元公式*</p>
+<div class="arithmatex">\[\displaystyle\Gamma(s)\Gamma(1-s) = \frac{\pi}{\sin \pi s},0&lt;s&lt;1\]</div>
+</div>
+<p>利用下面的 <span class="arithmatex">\(\Gamma\)</span> 和 <span class="arithmatex">\(\mathrm{B}\)</span> 函数的关系，可得<br />
+$$<br />
+\Gamma(s)\Gamma(1-s) = \mathrm{B}(s,1-s) = \int_0^1 \left(\frac{x}{1-x}\right)^s \frac{\mathrm{d}x}{x}.<br />
+$$<br />
+作代换 <span class="arithmatex">\(t = \displaystyle\frac{x}{1-x}\)</span> ，则 <span class="arithmatex">\(x=\displaystyle\frac{t}{1+t}\)</span>  ，代入有<br />
+$$<br />
+\Gamma(s)\Gamma(1-s) = \int_0^{+\infty}\frac{t^{s-1}}{1+t}\mathrm{d}t.<br />
+$$<br />
+这个积分需要通过 Euler 积分来导出，算出来的结果为 <span class="arithmatex">\(\displaystyle\frac{\pi}{\sin \pi s}\)</span> . <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition question">
+<p class="admonition-title">例题：余元公式的应用</p>
+<p>计算积分：<br />
+$$ \int_0^1 \ln\Gamma(x)\mathrm{d}x $$</p>
+</div>
+<p>利用区间再现和余元公式：<br />
+$$<br />
+\int_0^1 \ln \Gamma(x)\mathrm{d}x = \frac{1}{2}\int_0^1 \ln[ \Gamma(x)\Gamma(1-x)]\mathrm{d}x = \int_0^1 \ln \left(\frac{\pi}{\sin \pi x}\right)\mathrm{d}x<br />
+$$<br />
+根据 Euler 积分即可得出结果为：<span class="arithmatex">\(\dfrac{1}{2}\ln 2\pi\)</span> . <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理：Legendre倍元公式*</p>
+<div class="arithmatex">\[\displaystyle\Gamma(s)\Gamma\left(s+ \frac{1}{2}\right) = \frac{\pi}{2^{2s-1}}\Gamma(2s).\]</div>
+</div>
+<p>利用 <span class="arithmatex">\(\Gamma(\frac{1}{2})\)</span> 的值可以改写为<br />
+$$<br />
+\frac{\Gamma(s)\Gamma(s)}{\Gamma(2s)} = \frac{1}{2^{2s-1}}\frac{\Gamma(\frac{1}{2})\Gamma(s)}{\Gamma(s+ \frac{1}{2})}.<br />
+$$<br />
+从而也就是 <span class="arithmatex">\(\mathrm{B}(s,s) = \displaystyle\frac{1}{2^{2s-1}}\mathrm{B}\left(\frac{1}{2},s\right)\)</span> .</p>
+<p>下面证明这个式子：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathrm{B}(s,s) &amp;= 2\int_0^{\frac{1}{2}}[x(1-x)]^{s-1}\mathrm{d}x\\
+&amp;=2\int_0^{\frac{1}{2}}\left[\left(\frac{1}{2}\right)^2 - \left(x-\frac{1}{2}\right)^2\right]^{s-1}\mathrm{d}x
+\end{aligned}
+\]</div>
+<p>设 <span class="arithmatex">\(\displaystyle u = 4(x- \frac{1}{2})^2\)</span> 可得<br />
+$$<br />
+\mathrm{B}(s,s) = \frac{2}{2^{2s}}\int_0^1(1-u)^{s-1} u^{- \frac{1}{2}}\mathrm{d}u.<br />
+$$<br />
+就是我们要证明的式子. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h3 id="mathrmb"><span class="arithmatex">\(\mathrm{B}\)</span> 函数的性质</h3>
+<div class="admonition note">
+<p class="admonition-title">定理：对称性</p>
+<div class="arithmatex">\[\mathrm{B}(p,q) = \mathrm{B}(q,p)\]</div>
+</div>
+<p>直接利用区间再现即可：<br />
+$$<br />
+\mathrm{B}(p,q) = \int_0^1 x^p(1-x)^q \mathrm{d}x = \int_0^1(1-x)^p x^q \mathrm{d}x = \mathrm{B}(q,p)<br />
+$$<br />
+<span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理：<span class="arithmatex">\(\mathrm{B}\)</span> 函数递推公式</p>
+<div class="arithmatex">\[\begin{aligned}\mathrm{B}(p,q+1) = \frac{q}{p+q}\mathrm{B}(p,q) \\ \mathrm{B}(p+1,q) = \frac{p}{p+q}\mathrm{B}(p,q).\end{aligned}\]</div>
+</div>
+<p>对任意 <span class="arithmatex">\(p&gt;0,q&gt;0\)</span> 有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\mathrm{B}(p,q+1) &amp;= \int_0^1 x^{p-1}(1-x)^q \mathrm{d}x \\
+&amp;= \int_0^1 x^{p-1}(1-x)(1-x)^{q-1}\mathrm{d}x \\
+&amp; = \int_0^1 x^{p-1}(1-x)^{q-1} \mathrm{d}x-\int_0^1 x^{p}(1-x)^{q-1} \mathrm{d}x\\
+&amp;=\mathrm{B}(p,q) - \frac{p}{q} \mathrm{B}(p,q+1).
+\end{aligned}
+\]</div>
+<p>从而可得第一式，第二式利用对称性即可从第一式导出. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition note">
+<p class="admonition-title">定理：<span class="arithmatex">\(\mathrm{B}\)</span> 函数和 <span class="arithmatex">\(\Gamma\)</span> 函数的关系</p>
+<p>$$ \mathrm{B}(p,q) = \frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)} $$<br />
+由此可知 <span class="arithmatex">\(\mathrm{B}(p,q)\)</span> 在 <span class="arithmatex">\(p&gt;0,q&gt;0\)</span> 时具有任意阶连续偏导数.</p>
+</div>
+<p>证明概述：<br />
+首先考虑 <span class="arithmatex">\(p&gt;1\)</span> 和 <span class="arithmatex">\(q&gt;1\)</span> 的情形，由于 <span class="arithmatex">\(\Gamma(p) = \displaystyle\lim_{A\to +\infty }2\int_0^A x^{2p-1}\mathrm{e}^{-x^2}\)</span> ，而对任意的 <span class="arithmatex">\(A&gt;0\)</span> 有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;\int_0^A x^{2p-1}\mathrm{e}^{-x^2}\mathrm{d}x\int_0^A y^{2q-1}\mathrm{e}^{-y^2}\mathrm{d}y \\
+&amp;= \iint_{H(A)}x^{2p-1}y^{2q-1}\mathrm{e}^{-(x^2+y^2)}\mathrm{d}x \mathrm{d}y.
+\end{aligned}
+\]</div>
+<p>其中 <span class="arithmatex">\(H(A) = [0,A]\times[0,A]\)</span> ，记<br />
+$$<br />
+D(A) = {(x,y)|x^2+y^2\leq A^2,x\geq 0,y\geq 0}<br />
+$$<br />
+也就是先前计算 Gauss 积分的一个夹逼方法，此时再利用极坐标计算可得：<br />
+$$<br />
+\Gamma(p)\Gamma(q) = \lim_{A\to +\infty} 4\iint_{H(A)}f(x,y)\mathrm{d}x \mathrm{d}y = B(p,q)\Gamma(p+q).<br />
+$$<br />
+而对 <span class="arithmatex">\(p&gt;0\)</span> 和 <span class="arithmatex">\(q&gt;0\)</span> 的情形，考虑递推公式，借用 <span class="arithmatex">\(p+1&gt;1,q+1&gt;1\)</span> 作为桥梁即可. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h2 id="stirling">Stirling公式</h2>
+<div class="admonition note">
+<p class="admonition-title">定理：Stirling公式</p>
+<p>对于 <span class="arithmatex">\(\Gamma\)</span> 函数有<br />
+$$ \Gamma(s+1)\sim \left(\frac{s}{\mathrm{e}}\right)^s \sqrt{2 \pi s}\quad (s\to +\infty) $$</p>
+</div>
+<h2 id="laplacefresnel">Laplace积分和Fresnel积分</h2>
+<h3 id="laplace">Laplace积分</h3>
+<div class="admonition question">
+<p class="admonition-title">例题：Laplace积分</p>
+<p>求 Laplace 积分：<br />
+$$ I(a) = \int_0^{+\infty}\frac{\cos ax}{1+x^2}\mathrm{d}x,a\geq 0. $$</p>
+</div>
+<p>由于 <span class="arithmatex">\(\displaystyle \frac{1}{1+x^2}\)</span> 为优势函数，从而易知 <span class="arithmatex">\(a\geq 0\)</span> 的时候积分一致收敛.</p>
+<p>为了方便求导，我们需要证明下式对于 <span class="arithmatex">\(a\in (0,\infty)\)</span> 内闭一致收敛：<br />
+$$<br />
+I'(a) = -\int_0^{+\infty}\frac{x\sin ax}{1+x^2}\mathrm{d}x.<br />
+$$</p>
+<p>由于 <span class="arithmatex">\(\sin ax\)</span> 积分内闭一致收敛，且另一个因子和参变量无关，单调趋于 <span class="arithmatex">\(0\)</span> ，从而由 Dirichlet 判别法可知内闭一致收敛.</p>
+<p>我们发现 <span class="arithmatex">\(I'(a)\)</span> 的收敛情况不如 <span class="arithmatex">\(I(a)\)</span> ，因此不能再求导，我们<strong>分离出收敛较慢的部分</strong> <span class="arithmatex">\(\displaystyle \frac{1}{x}\)</span> ，于是 <span class="arithmatex">\(a&gt;0\)</span> 时有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+I'(a) &amp;= -\int_0^{+\infty}\left(\frac{1}{x}-\frac{1}{x(1+x^2)}\right)\sin ax \mathrm{d}x\\
+&amp;= - \frac{\pi}{2}+\int_0^{+\infty}\frac{\sin ax}{x(1+x^2)}\mathrm{d}x
+\end{aligned}
+\]</div>
+<p>我们发现又可以求导了，从而<br />
+$$<br />
+I''(a) = I(a)<br />
+$$<br />
+这是一个微分方程，解这个二阶微分方程可以得到<br />
+$$<br />
+I(a) = C_1 \mathrm{e}^a+C_2 \mathrm{e}^{-a}<br />
+$$</p>
+<p>由于原式关于 <span class="arithmatex">\(a\)</span> 都有界，<span class="arithmatex">\(C_1=0\)</span> ，再利用连续性 <span class="arithmatex">\(I(0)=C_2=\displaystyle \frac{\pi}{2}\)</span> .</p>
+<p>因此 <span class="arithmatex">\(I(a) =\displaystyle \frac{\pi}{2}\mathrm{e}^{-a}\)</span> . <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h3 id="fresnel">Fresnel积分</h3>
+<div class="admonition question">
+<p class="admonition-title">例题：Fresnel积分</p>
+<p>求<br />
+$$ I = \int_0^{+\infty}\sin x^2 \mathrm{d}x $$<br />
+和<br />
+$$ J = \int_0^{+\infty}\cos x^2 \mathrm{d}x $$</p>
+</div>
+<p>这里我们不考虑用复变函数围道积分的方法，而用含参变量积分的方法.</p>
+<p>仅给出 <span class="arithmatex">\(I\)</span> 的计算过程，<span class="arithmatex">\(J\)</span> 类似.</p>
+<p>作变换 <span class="arithmatex">\(x^2 = t\)</span> ，积分变为<br />
+$$<br />
+I = \int_0^{+\infty}\frac{\sin t}{2 \sqrt{t}}\mathrm{d}t.<br />
+$$<br />
+由 Dirichlet 判别法，可以知道广义积分收敛. 引入收敛因子<br />
+$$<br />
+I(\alpha) = \int_0^{+\infty}\frac{\sin t}{2 \sqrt{t}}\mathrm{e}^{-\alpha t}\mathrm{d}t, \quad \alpha\geq 0<br />
+$$<br />
+当 <span class="arithmatex">\(\alpha=0\)</span> 时广义积分收敛，且 <span class="arithmatex">\(\mathrm{e}^{-\alpha t}\)</span> 单调且一致有界，根据 Abel 判别法可知一致收敛，因此 <span class="arithmatex">\(\alpha\in [0,+\infty)\)</span> 上连续.</p>
+<p>我们下面考虑求出表达式，令 <span class="arithmatex">\(0&lt;a&lt;b\)</span> ，对于 <span class="arithmatex">\(\alpha&gt;0\)</span> 定义<br />
+$$<br />
+I_{a,b}(\alpha) = \int_a^b\frac{\sin t}{2 \sqrt{t}}\mathrm{e}^{-\alpha t}\mathrm{d}t<br />
+$$<br />
+利用 Gauss 积分代入有<br />
+$$<br />
+I_{a,b}(\alpha) = \frac{1}{\sqrt{\pi}}\int_a^b \mathrm{d}t\int_0^{+\infty}\mathrm{e}^{-t(u^2+\alpha)\sin t}\mathrm{d}u<br />
+$$<br />
+里层的广义积分在 <span class="arithmatex">\(t\in [a,b]\)</span> 上一致收敛，交换积分顺序可得<br />
+$$<br />
+I_{a,b}(\alpha) =  \frac{1}{\sqrt{\pi}}\int_0^{+\infty}\mathrm{d}u\int_a^b \mathrm{e}^{-t(u^2+\alpha)}\sin t \mathrm{d}t.<br />
+$$<br />
+此时这个积分可以算出来.</p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  <h2 id="__comments">评论</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="xiong-ZH-zq/xzqbear-math-notes"
+        data-repo-id="R_kgDOK7C15g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOK7C15s4Cb365"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../../javascripts/katex.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
