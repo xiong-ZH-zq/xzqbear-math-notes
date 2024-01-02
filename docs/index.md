@@ -17,4 +17,6 @@ hide:
 
 如果喜欢这个笔记存放站，欢迎给一个 Star :material-star: 或者 Fork :fontawesome-solid-code-fork: 这个仓库。
 
-本站公式采用 $\mathrm{\LaTeX}$ 公式（具体一些是 KaTeX），同时绘图使用 TikZJax 或 Python 等工具导出.
+本站公式采用 $\mathrm{\LaTeX}$ 公式（具体一些是 KaTeX），同时绘图使用 TikZJax 或 Python 等工具导出. 相对复杂的图形一般用 Axglyph 手绘并转为 SVG 图像. 例如下图即为一个 SVG 图像.
+
+![example.svg](./imgs/example.svg){width="300"}
