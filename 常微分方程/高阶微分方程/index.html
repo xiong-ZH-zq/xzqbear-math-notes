@@ -1,0 +1,2717 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%AA%E8%AE%BA/">
+      
+      
+        <link rel="next" href="../../%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/%E7%8E%AF%E8%AE%BA/%E5%9B%9B%E5%85%83%E6%95%B0%E4%BD%93/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.2">
+    
+    
+      
+        <title>高阶微分方程 - xzqbear math notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.50c56a3b.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+  
+  
+    
+    
+  
+  
+  <style>:root{--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M14.184 1.143v-.001l1.422 2.464a1.75 1.75 0 0 1-.757 2.451L3.104 11.713a1.75 1.75 0 0 1-2.275-.702l-.447-.775a1.75 1.75 0 0 1 .53-2.32L11.682.573a1.748 1.748 0 0 1 2.502.57Zm-4.709 9.32h-.001l2.644 3.863a.75.75 0 1 1-1.238.848l-1.881-2.75v2.826a.75.75 0 0 1-1.5 0v-2.826l-1.881 2.75a.75.75 0 1 1-1.238-.848l2.049-2.992a.746.746 0 0 1 .293-.253l1.809-.87a.749.749 0 0 1 .944.252ZM9.436 3.92h-.001l-4.97 3.39.942 1.63 5.42-2.61Zm3.091-2.108h.001l-1.85 1.26 1.505 2.605 2.016-.97a.247.247 0 0 0 .13-.151.247.247 0 0 0-.022-.199l-1.422-2.464a.253.253 0 0 0-.161-.119.254.254 0 0 0-.197.038ZM1.756 9.157a.25.25 0 0 0-.075.33l.447.775a.25.25 0 0 0 .325.1l1.598-.769-.83-1.436-1.465 1Z"/></svg>');}</style>
+
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"PT Serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
+    
+      <link rel="stylesheet" href="https://tikzjax.com/v1/fonts.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="xzqbear math notes" class="md-header__button md-logo" aria-label="xzqbear math notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            xzqbear math notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              高阶微分方程
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="cyan" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/xiong-ZH-zq/xzqbear-math-notes" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xzqbear-math-notes
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%8D%95%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86/" class="md-tabs__link">
+          
+  
+  复变函数
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E5%88%9D%E7%AD%89%E8%A7%A3%E6%B3%95/" class="md-tabs__link">
+          
+  
+  常微分方程
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/%E7%8E%AF%E8%AE%BA/%E5%9B%9B%E5%85%83%E6%95%B0%E4%BD%93/" class="md-tabs__link">
+          
+  
+  抽象代数
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/Fourier%E5%88%86%E6%9E%90%E5%88%9D%E6%AD%A5/Fourier%E7%BA%A7%E6%95%B0/" class="md-tabs__link">
+          
+  
+  数学分析
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="xzqbear math notes" class="md-nav__button md-logo" aria-label="xzqbear math notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    xzqbear math notes
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/xiong-ZH-zq/xzqbear-math-notes" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    xzqbear-math-notes
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    归档
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            归档
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/archive/2023/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2023
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    复变函数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            复变函数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    单复变函数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            单复变函数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%8D%95%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复变函数积分
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%8D%95%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%A4%8D%E6%95%B0%E4%B8%8E%E5%85%B6%E6%80%A7%E8%B4%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    复数及其性质
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%8D%95%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E8%A7%A3%E6%9E%90%E5%87%BD%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    解析函数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    常微分方程
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            常微分方程
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E4%B8%80%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%9A%84%E5%88%9D%E7%AD%89%E8%A7%A3%E6%B3%95/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    一阶微分方程的初等解法
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B%E7%BB%AA%E8%AE%BA/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    微分方程绪论
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    高阶微分方程
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    高阶微分方程
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性微分方程的一般理论
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性微分方程的一般理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性微分方程的一般定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      齐次线性微分方程解的性质与结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="齐次线性微分方程解的性质与结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性微分算子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wronsky" class="md-nav__link">
+    <span class="md-ellipsis">
+      叠加原理、Wronsky行列式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      非齐次线性微分方程与常数变易法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非齐次线性微分方程与常数变易法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      常数变易法的基本原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      已知基本解组求通解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      常系数线性微分方程的解法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常系数线性微分方程的解法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      复值函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      常系数线性微分方程及其求解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常系数线性微分方程及其求解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      特征根为单根的情形
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      特征根有重根的情形
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Euler方程及其求解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      常系数非齐次线性微分方程与比较系数法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常系数非齐次线性微分方程与比较系数法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fxp_nxmathrmealpha-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型一：\(f(x)=P_n(x)\mathrm{e}^{\alpha x}\) 的类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ftleftatcosbeta-tbtsinbeta-trightmathrmealpha-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型二：\(f(t)=\left[A(t)\cos\beta t+B(t)\sin\beta t\right]\mathrm{e}^{\alpha t}\) 类型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      一般的高阶微分方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一般的高阶微分方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      可降阶的方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可降阶的方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      不显含低阶导和原函数的方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      不显含自变量的方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      已知部分特解的齐次线性方程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      二阶线性微分方程的幂级数解法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liouville" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liouville公式及其应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Liouville公式及其应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liouville_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liouville公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liouville_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liouville公式的应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Liouville公式的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      探究线性方程解的性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    抽象代数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            抽象代数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    环论
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            环论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/%E7%8E%AF%E8%AE%BA/%E5%9B%9B%E5%85%83%E6%95%B0%E4%BD%93/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    四元数体
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%BD%E8%B1%A1%E4%BB%A3%E6%95%B0/%E7%8E%AF%E8%AE%BA/%E7%8E%AF%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    环的定义与基本性质
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+      
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    数学分析
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            数学分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Fourier分析初步
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Fourier分析初步
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/Fourier%E5%88%86%E6%9E%90%E5%88%9D%E6%AD%A5/Fourier%E7%BA%A7%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fourier级数与其应用
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    积分学
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            积分学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E7%A7%AF%E5%88%86%E5%AD%A6/%E5%90%AB%E5%8F%82%E5%8F%98%E9%87%8F%E7%A7%AF%E5%88%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    含参变量的积分
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E7%A7%AF%E5%88%86%E5%AD%A6/%E5%B9%BF%E4%B9%89%EF%BC%88%E5%8F%8D%E5%B8%B8%EF%BC%89%E7%A7%AF%E5%88%86/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    广义积分
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_3" id="__nav_6_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    级数
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_3">
+            <span class="md-nav__icon md-icon"></span>
+            级数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E7%BA%A7%E6%95%B0/%E5%87%BD%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    函数项级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E7%BA%A7%E6%95%B0/%E5%B9%82%E7%BA%A7%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    幂级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/%E7%BA%A7%E6%95%B0/%E6%95%B0%E9%A1%B9%E7%BA%A7%E6%95%B0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    数项级数
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性微分方程的一般理论
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="线性微分方程的一般理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性微分方程的一般定义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      齐次线性微分方程解的性质与结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="齐次线性微分方程解的性质与结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      线性微分算子
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wronsky" class="md-nav__link">
+    <span class="md-ellipsis">
+      叠加原理、Wronsky行列式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      非齐次线性微分方程与常数变易法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="非齐次线性微分方程与常数变易法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      常数变易法的基本原理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      已知基本解组求通解
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      常系数线性微分方程的解法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常系数线性微分方程的解法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      复值函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      常系数线性微分方程及其求解
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常系数线性微分方程及其求解">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      特征根为单根的情形
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      特征根有重根的情形
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#euler" class="md-nav__link">
+    <span class="md-ellipsis">
+      Euler方程及其求解
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      常系数非齐次线性微分方程与比较系数法
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常系数非齐次线性微分方程与比较系数法">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fxp_nxmathrmealpha-x" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型一：\(f(x)=P_n(x)\mathrm{e}^{\alpha x}\) 的类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ftleftatcosbeta-tbtsinbeta-trightmathrmealpha-t" class="md-nav__link">
+    <span class="md-ellipsis">
+      类型二：\(f(t)=\left[A(t)\cos\beta t+B(t)\sin\beta t\right]\mathrm{e}^{\alpha t}\) 类型
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      一般的高阶微分方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="一般的高阶微分方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      可降阶的方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="可降阶的方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      不显含低阶导和原函数的方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      不显含自变量的方程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      已知部分特解的齐次线性方程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      二阶线性微分方程的幂级数解法
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#liouville" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liouville公式及其应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Liouville公式及其应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#liouville_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liouville公式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#liouville_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Liouville公式的应用
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Liouville公式的应用">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      探究线性方程解的性质
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="_1">高阶微分方程</h1>
+<h2 id="_2">线性微分方程的一般理论</h2>
+<h3 id="_3">线性微分方程的一般定义</h3>
+<p>给出一系列定义：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：线性微分方程</p>
+<p>对于一个 <span class="arithmatex">\(n\)</span> 阶的线性微分方程有如下形式：$$ \frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1(t)\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_{n-1}(t)\frac{\mathrm{d}x}{\mathrm{d}t}+a_n(t)x=f(t) $$<br />
+其中 <span class="arithmatex">\(a_i(t)\)</span> 以及 <span class="arithmatex">\(f(t)\)</span> 均为 <span class="arithmatex">\(t\in[a,b]\)</span> 上的<strong>连续函数</strong>。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定义：齐次线性微分方程和非齐次线性微分方程</p>
+<p>如果上面的 <span class="arithmatex">\(f(t)\equiv0\)</span> 则称为 <span class="arithmatex">\(n\)</span> 阶齐次线性微分方程，简称<strong>齐次线性微分方程</strong>，除此之外为<strong>非齐次线性微分方程</strong>.</p>
+</div>
+<p>根据<strong>存在唯一性定理</strong>（此处在后续得以解释），对于任一 <span class="arithmatex">\(t_0\in[a,b]\)</span> 以及任意的 <span class="arithmatex">\(x_0,x_0^{(1)},\cdots,x_0^{(n-1)}\)</span> ，方程存在唯一解 <span class="arithmatex">\(x=\varphi(t)\)</span> 定义于 <span class="arithmatex">\([a,b]\)</span> 上。</p>
+<p>可以知道齐次线性微分方程一定有 <span class="arithmatex">\(x=0\)</span> 的解，但是我们仍需寻找是否有除此之外的解，因此探究齐次线性微分方程解的结构与性质是非常必要的。</p>
+<h3 id="_4">齐次线性微分方程解的性质与结构</h3>
+<h4 id="_5">线性微分算子</h4>
+<div class="admonition note">
+<p class="admonition-title">定义：线性微分算子</p>
+<p>形如下式的算子：$$ L[y] = y^{(n)}+a_1(x)y^{(n-1)}+\cdots+a_{n-1}(x)y'+a_n(x)y. $$<br />
+称为<strong>线性微分算子</strong>.</p>
+</div>
+<h4 id="wronsky">叠加原理、Wronsky行列式</h4>
+<div class="admonition note">
+<p class="admonition-title">定理：叠加原理</p>
+<p>如果 <span class="arithmatex">\(x_1(t),x_2(t),\cdots,x_k(t)\)</span> 为线性微分方程的 <span class="arithmatex">\(k\)</span> 个解，则它们的线性组合：<br />
+$$ c_1x_1(t)+c_2x_2(t)+\cdots+c_kx_k(t) $$<br />
+也是该方程的解，其中 <span class="arithmatex">\(c_i\)</span> 为任意常数。</p>
+</div>
+<p>如果 <span class="arithmatex">\(k=n\)</span> 则恰好为<br />
+$$<br />
+c_1x_1(t)+c_2x_2(t)+\cdots+c_nx_n(t)<br />
+$$<br />
+它是否是通解？或者说它是否还能继续简化？为了接下来的讨论，可以引入高等代数的内容方便讨论。</p>
+<p>首先是线性相关和线性无关的概念，这是比较简单的，实际上就是将高等代数中的向量换成了函数而已。</p>
+<div class="admonition note">
+<p class="admonition-title">定义：函数组线性相关与线性无关</p>
+<p>如果存在不全为0的常数 <span class="arithmatex">\(c_1,c_2,\cdots,c_k\)</span> 使得恒等式<br />
+$$ \sum\limits_{i=1}^kc_ix_i(t)\equiv0 $$<br />
+对于所有 <span class="arithmatex">\(t\in[a,b]\)</span> 成立，那么就称 <span class="arithmatex">\(x_1(t),\cdots,x_k(t)\)</span> 这些函数是<strong>线性相关</strong>的。否则为<strong>线性无关</strong>。</p>
+</div>
+<p>与高等代数向量的相应性质也类似：若其中一个函数恒等于0，则必然线性相关。</p>
+<p>如果仅有两个函数 <span class="arithmatex">\(x_1(t),x_2(t)\)</span> 构成函数组且 <span class="arithmatex">\(\displaystyle\frac{x_1(t)}{x_2(t)}\)</span> 或 <span class="arithmatex">\(\displaystyle\frac{x_2(t)}{x_1(t)}\)</span> 在区间上有定义，那么充要条件可以改写为<br />
+$$<br />
+\displaystyle\frac{x_1(t)}{x_2(t)} \equiv C\vee \displaystyle\frac{x_2(t)}{x_1(t)}\equiv C<br />
+$$<br />
+其中 <span class="arithmatex">\(C\)</span> 为常数。</p>
+<p>下面引入 Wronsky 行列式：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：Wronsky行列式</p>
+<p>由定义在 <span class="arithmatex">\(t\in[a,b]\)</span> 上的 <span class="arithmatex">\(k\)</span> 个可微 <span class="arithmatex">\(k-1\)</span> 次函数 <span class="arithmatex">\(x_1(t),\cdots,x_k(t)\)</span> 所作成的行列式<br />
+$$ \begin{aligned}\begin{vmatrix}x_1(t) &amp; x_2(t) &amp; \cdots &amp; x_k(t) \\ x_1'(t) &amp; x_2'(t) &amp; \cdots &amp; x_k'(t) \\ \vdots &amp; \vdots &amp; ~ &amp; \vdots \\ x_1^{(k-1)}(t) &amp; x_2^{(k-1)}(t) &amp; \cdots &amp; x_k^{(k-1)}(t)\end{vmatrix}\end{aligned} $$<br />
+称为这些函数的 <strong>Wronsky 行列式</strong>，记为 <span class="arithmatex">\(W(t)\)</span> .</p>
+</div>
+<p>Wronsky 行列式与这些函数的线性相关性有什么关系？来看下面的定理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：函数组线性相关使Wronsky行列式为0</p>
+<p>若函数 <span class="arithmatex">\(x_1(t),\cdots,x_n(t)\)</span> 在 <span class="arithmatex">\(a\leq t\leq b\)</span> 上线性相关，则在 <span class="arithmatex">\([a,b]\)</span> 上它们的 Wronsky行列式 <span class="arithmatex">\(W(t)\equiv0\)</span> .</p>
+</div>
+<p>根据线性相关有线性组合式：<br />
+$$<br />
+\sum\limits_{i=1}^nc_ix_i(t)=0<br />
+$$<br />
+其中 <span class="arithmatex">\(c_i\)</span> 不全为0.</p>
+<p>对左边不断求导有如下的线性方程组：<br />
+$$<br />
+WC=O<br />
+$$<br />
+其中 <span class="arithmatex">\(C=(c_1,c_2,\cdots,c_n)^T\)</span> 且 <span class="arithmatex">\(W\)</span> 为 Wronsky 行列式，从而由 Cramer 法则易知，如果 <span class="arithmatex">\(C\)</span> 要有非零解必有 <span class="arithmatex">\(|W|=0\)</span> ，从而命题成立。</p>
+<p>需要注意的是这个定理的逆命题并不成立，<strong>不能通过 Wronsky 行列式是否为 0 判断函数组是否线性相关</strong>. 我们可以比较简单地给出一个 Wronsky 行列式为 <span class="arithmatex">\(0\)</span> 但是线性无关的例子：</p>
+<div class="admonition question">
+<p class="admonition-title">反例：线性无关但是Wronsky行列式处处为 <span class="arithmatex">\(0\)</span></p>
+<p>函数组： $$ \varphi_1(x) = \begin{cases}x^2,x\geq 0 \\ 0,x&lt;0.\end{cases} $$和 $$ \varphi_2(x) = \begin{cases}0,x\geq 0 \\ x^2,x&lt;0.\end{cases} $$  在区间 <span class="arithmatex">\(\mathbb{R}\)</span> 上线性无关，但 Wronsky 行列式恒为 <span class="arithmatex">\(0\)</span> .</p>
+</div>
+<p>那么 Wronsky 行列式与线性方程的解的关系为何？考虑以下两个定理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：线性无关的解的Wronsky行列式不为0</p>
+<p>如果齐次线性微分方程的解 <span class="arithmatex">\(x_1(t),x_2(t),\cdots,x_n(t)\)</span> 在 <span class="arithmatex">\([a,b]\)</span> 上线性无关，则 Wronsky 行列式 <span class="arithmatex">\(W\)</span> 在这个区间上的任何点都不为0，即 <span class="arithmatex">\(W(t)\neq0(a\leq t\leq b)\)</span>.</p>
+</div>
+<p>反证法：设存在 <span class="arithmatex">\(t_0\)</span> 使得 <span class="arithmatex">\(W(t_0)=0\)</span> ，考虑齐次线性方程组</p>
+<div class="arithmatex">\[
+WC = 0
+\]</div>
+<p>系数行列式 <span class="arithmatex">\(W(t_0)=0\)</span> 说明存在<strong>非零解</strong> <span class="arithmatex">\(C\)</span>，构造函数<br />
+$$<br />
+x(t)=XC<br />
+$$<br />
+其中 <span class="arithmatex">\(X=(x_1(t),x_2(t),\cdots,x_n(t))\)</span> ，根据叠加原理 <span class="arithmatex">\(x(t)\)</span> 是齐次微分方程的解，因此满足初值条件 <span class="arithmatex">\(x(t_0)=0\)</span>.<br />
+但是 <span class="arithmatex">\(x=0\)</span> 也是方程满足初值条件的解，由于解的唯一性，即可知道 <span class="arithmatex">\(x(t)\equiv0\)</span> ，因此<br />
+$$<br />
+XC\equiv0<br />
+$$<br />
+但是 <span class="arithmatex">\(C\neq O\)</span> ，因此与线性无关的假设矛盾，定理得证。 </p>
+<p>根据上面两个定理，可以指出：由齐次线性微分方程的 <span class="arithmatex">\(n\)</span> 个解构成的 Wronsky 行列式有且仅有两种情况：</p>
+<ul>
+<li><strong>恒等于零</strong>；</li>
+<li>在方程系数连续的区间内<strong>处处不为零</strong>.</li>
+</ul>
+<p>由存在唯一性定理，设初值条件为 <span class="arithmatex">\(W(t_0)=I_n\)</span> ，那么解一定存在且唯一，行列式不为 0，则 <span class="arithmatex">\(n\)</span> 个解一定是线性无关的。因此有下面的定理：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：齐次线性微分方程解的存在性</p>
+<p><span class="arithmatex">\(n\)</span> 阶齐次线性微分方程一定存在 <span class="arithmatex">\(n\)</span> 个线性无关的解。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">定理：通解结构</p>
+<p>如果 <span class="arithmatex">\(x_1(t),x_2(t),\cdots,x_n(t)\)</span> 为齐次线性微分方程中 <span class="arithmatex">\(n\)</span> 个线性无关的解，则通解可表示为<br />
+$$ x=\sum\limits_{i=1}^nc_ix_i(t)\tag{1} $$<br />
+其中 <span class="arithmatex">\(c_i\)</span> 为任意常数，且该通解包含了所有解。</p>
+</div>
+<p>首先易知 (1) 是齐次线性微分方程的解，包含任意 <span class="arithmatex">\(n\)</span> 个常数，所以是一个通解，因此只需要证明：<strong>任意给一个初值条件</strong>：<br />
+$$<br />
+x(t_0)=x_0,x'(t_0)=x_0',\cdots,x^{(n-1)}(t_0)=x_0^{(n-1)}<br />
+$$<br />
+都能够确定 <span class="arithmatex">\(c_i\)</span> 的值使得能满足初值条件。</p>
+<p>设 <span class="arithmatex">\(X_0=(x_0,x_0',\cdots,x_0^{(n-1)})\)</span>，则有线性方程组：<br />
+$$<br />
+W(t_0)C=X_0<br />
+$$<br />
+根据 <span class="arithmatex">\(W(t_0)\)</span> 行列式不等于0，有唯一解，取相应的唯一解即可。</p>
+<div class="admonition note">
+<p class="admonition-title">推论</p>
+<p><span class="arithmatex">\(n\)</span> 阶齐次线性微分方程的所有解构成一个 <span class="arithmatex">\(n\)</span> 维线性空间。</p>
+</div>
+<p>齐次线性方程组的 <span class="arithmatex">\(n\)</span> 个线性无关解称为方程的一个<strong>基本解组</strong>，特别地，当 <span class="arithmatex">\(W(t_0)=1\)</span> 的时候称其为<strong>标准基本解组</strong>。</p>
+<h3 id="_6">非齐次线性微分方程与常数变易法</h3>
+<h4 id="_7">常数变易法的基本原理</h4>
+<p>现在再看非齐次的一般情形，一般的非齐次线性微分方程可以记为：</p>
+<div class="arithmatex">\[
+\frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1(t)\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_{n-1}(t)\frac{\mathrm{d}x}{\mathrm{d}t}+a_n(t)x=f(t)
+\]</div>
+<p>而齐次线性微分方程只是一个特例，与高等代数中齐次与非齐次线性方程组的情形类似，我们有如下的性质：</p>
+<ul>
+<li>如果 <span class="arithmatex">\(\overline{x}(t)\)</span> 是非齐次线性微分方程的解，而 <span class="arithmatex">\(x(t)\)</span> 为齐次线性微分方程的解，那么 <span class="arithmatex">\(\overline{x}(t)+x(t)\)</span> 就是非齐次线性微分方程的一个解。</li>
+<li>非齐次线性微分方程的任意两个解之差一定为齐次线性微分方程的解。</li>
+</ul>
+<p>然后类似非齐次线性方程组，我们同样有非齐次线性微分方程的解的结构：</p>
+<div class="admonition note">
+<p class="admonition-title">定理：非齐次线性微分方程的解</p>
+<p>设 <span class="arithmatex">\(x_1(t),x_2(t),\cdots,x_n(t)\)</span> 为齐次线性微分方程的基本解组，而 <span class="arithmatex">\(\overline{x}(t)\)</span> 为非齐次线性微分方程的一个特解，那么非齐次线性微分方程的通解可表示为：<br />
+$$ x=c_1x_1(t)+c_2x_2(t)+\cdots+c_nx_n(t)+\overline{x}(t). $$<br />
+其中 <span class="arithmatex">\(c_i\)</span> 为任意常数。这个通解包含了所有的解。</p>
+</div>
+<p>利用上述的两条性质即可证明。</p>
+<p>先考虑如何利用基本解组解出非齐次线性微分方程的解，我们先回忆一下一阶线性微分方程的解法：<br />
+$$<br />
+\frac{\mathrm{d}y}{\mathrm{d}x}=P(x)y+Q(x)<br />
+$$<br />
+我们使用的是常数变易法进行推导的，也就是说考虑<br />
+$$<br />
+y=C(x)\mathrm{e}^{\tiny\displaystyle\int P(x)\mathrm{d}x }<br />
+$$<br />
+我们首先可以知道的是，如果我们将一阶线性微分方程化为我们在本篇里比较熟悉的形式，就会长这样：<br />
+$$<br />
+y'-P(x)y=Q(x)<br />
+$$<br />
+那么如果 <span class="arithmatex">\(Q(x)=0\)</span> ，这就会是我们比较熟悉的<strong>变量分离方程</strong>。变量分离方程实际上就是一阶的齐次线性方程。变量分离方程的解就是齐次线性方程的一个通解，现在转化成一阶非齐次线性方程再解就需要常数变易法，我们把这样的思路推广，有理由认为高阶的线性微分方程同样是利用<strong>常数变易法</strong>，并且也会有更高维的基本解组。因此设：<br />
+$$<br />
+x = \sum\limits_{i=1}^n c_i(t)x_i(t)<br />
+$$<br />
+如法炮制，求导有：</p>
+<div class="arithmatex">\[
+x' = \sum\limits_{i=1}^n(c_i(t)x'_i(t)+c'_i(t)x_i(t))
+\]</div>
+<p>我们没办法消去 <span class="arithmatex">\(c'_i\)</span> ，这就会导致我们会面对另一个微分方程，这将是我们不想面对的，所以不妨认为包含 <span class="arithmatex">\(c'_i\)</span> 的项求和之后为0。因此有</p>
+<p>$$<br />
+x'=\sum\limits_{i=1}^nc_i(t)x_i'(t)<br />
+$$<br />
+反复求导并认定含有 <span class="arithmatex">\(c_i'\)</span> 的项求和为0，由此可得<br />
+$$<br />
+W(t)C(t)=(x,x',\cdots,x^{(n-1)})^{\mathrm{T}}<br />
+$$<br />
+这是一个线性方程组，由于 <span class="arithmatex">\(|W|\neq0\)</span> 所以方程组的解唯一，解出 <span class="arithmatex">\(C\)</span> 并积分可得各项系数，从而获得通解。</p>
+<h4 id="_8">已知基本解组求通解</h4>
+<p>本节比较常见的题目主要是给一个齐次线性微分方程的基本解组，要求非齐次线性微分方程的通解。</p>
+<div class="admonition question">
+<p class="admonition-title">例题1</p>
+<p>求方程<br />
+$$ x''+x=\frac{1}{\cos t} $$<br />
+的通解，已知它对应的齐次线性微分方程的基本解组为 <span class="arithmatex">\(\cos t,\sin t\)</span> .</p>
+</div>
+<h2 id="_9">常系数线性微分方程的解法</h2>
+<p>关于一阶线性微分方程，前面探讨过一般解的结构之后，我们只要有以下两个内容，就可以写出一般解了：</p>
+<ul>
+<li>对应的齐次线性微分方程的<strong>通解</strong></li>
+<li>非齐次线性微分方程的一个<strong>特解</strong><br />
+现在我们来探讨通解的求得。</li>
+</ul>
+<p>事实上，对于<strong>一般的线性微分方程</strong>，我们没有普遍的解法（为什么一般的一阶线性微分方程有解？），但是<strong>常系数线性微分方程</strong>是可以解决的，因此我们先从常系数微分方程开始。</p>
+<h3 id="_10">复值函数</h3>
+<p>我们先引入线性微分方程的复值解的概念：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：复值解</p>
+<p>如果定义于 <span class="arithmatex">\(a\leq t\leq b\)</span> 上的<strong>实变量复值函数</strong> <span class="arithmatex">\(x=z(t)\)</span> 满足<br />
+$$ \frac{\mathrm{d}^nz(t)}{\mathrm{d}t^n}+a_1(t)\frac{\mathrm{d}^{n-1}z(t)}{\mathrm{d}t^{n-1}}+\cdots+a_{n-1}(t)\frac{\mathrm{d}z(t)}{\mathrm{d}t}+a_n(t)z(t)=f(t) $$<br />
+对于 <span class="arithmatex">\(a\leq t\leq b\)</span> 恒成立。那么就称这个复值函数为方程对应的<strong>复值解</strong>。</p>
+</div>
+<p>并且有如下两个重要结论：</p>
+<div class="admonition note">
+<p class="admonition-title">结论1</p>
+<p>如果非齐次线性微分方程的系数均为实值函数，而 <span class="arithmatex">\(x=z(t)=\varphi(t)+\mathrm{i}\psi(t)\)</span> 为方程的复值解， 则 <span class="arithmatex">\(z(t)\)</span> 的实部 <span class="arithmatex">\(\varphi(t)\)</span>、虚部 <span class="arithmatex">\(\psi(t)\)</span> 和共轭复值函数 <span class="arithmatex">\(\bar{z}(t)\)</span> 也为方程的解。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">结论2</p>
+<p>若方程<br />
+$$ \frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1(t)\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_{n-1}(t)\frac{\mathrm{d}x}{\mathrm{d}t}+a_n(t)x=u(t)+\mathrm{i}v(t) $$<br />
+有复值解 <span class="arithmatex">\(x=U(t)+\mathrm{i}V(t)\)</span>，这里 <span class="arithmatex">\(a_i(t)(i=1,2,\cdots,n)\)</span> 及 <span class="arithmatex">\(u(t),v(t)\)</span> 都是实函数，那么这个解的实部 <span class="arithmatex">\(U(t)\)</span> 和虚部 <span class="arithmatex">\(V(t)\)</span> 分别是方程<br />
+$$ \frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1(t)\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_{n-1}(t)\frac{\mathrm{d}x}{\mathrm{d}t}+a_n(t)x=u(t) $$<br />
+和<br />
+$$ \frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1(t)\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_{n-1}(t)\frac{\mathrm{d}x}{\mathrm{d}t}+a_n(t)x=v(t) $$<br />
+的解。</p>
+</div>
+<h3 id="_11">常系数线性微分方程及其求解</h3>
+<div class="admonition note">
+<p class="admonition-title">定义：常系数线性微分方程</p>
+<p>如果一个线性微分方程的系数均为常数，则称为<strong>常系数线性微分方程</strong>。</p>
+</div>
+<p>下面考虑齐次常系数微分方程的求解，也就是如下形式的方程：</p>
+<div class="arithmatex">\[ 
+L[x]\equiv\frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1(t)\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_{n-1}(t)\frac{\mathrm{d}x}{\mathrm{d}t}+a_n(t)x=0 \tag{2.1}
+\]</div>
+<p>我们还是从最简单的常系数齐次线性微分方程开始：<br />
+$$<br />
+\frac{\mathrm{d}x}{\mathrm{d}t}+ax=0<br />
+$$<br />
+变量分离方程的通解为 <span class="arithmatex">\(x=c \mathrm{e}^{-at}\)</span> ，这也启示我们对于方程 (2.1) 可以有如下指数函数形式的解：<br />
+$$<br />
+x=\mathrm{e}^{\lambda t}<br />
+$$<br />
+其中 <span class="arithmatex">\(\lambda\)</span> 为待定系数，且有 <span class="arithmatex">\(\lambda\in\mathbb{C}\)</span> .</p>
+<p>代入之后我们发现：<br />
+$$<br />
+L[\mathrm{e}^{\lambda t}]=\left(\lambda^n+\sum\limits_{i=1}^n\lambda^{n-i}a_{i}\right)\mathrm{e}^{\lambda t}=F(\lambda)\mathrm{e}^{\lambda t}<br />
+$$<br />
+从而 <span class="arithmatex">\(\mathrm{e}^{\lambda t}\)</span> 为解的充要条件就是 <span class="arithmatex">\(F(\lambda)=0\)</span> ，我们将这个方程称为<strong>特征方程</strong>，根为<strong>特征值</strong>。下面分两种情形讨论。</p>
+<h4 id="_12">特征根为单根的情形</h4>
+<p>如果特征根全为单根，那么我们就有了如下 <span class="arithmatex">\(n\)</span> 个彼此不相等的根：<br />
+$$<br />
+\mathrm{e}^{\lambda_1t},\mathrm{e}^{\lambda_2 t},\cdots,\mathrm{e}^{\lambda_nt}<br />
+$$<br />
+现在我们需要知道它线性无关，才能确定它能构成基本解组。利用 Wronsky 行列式进行判断，有：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+W(t)&amp;=
+\begin{vmatrix}
+\mathrm{e}^{\lambda_1t} &amp; \mathrm{e}^{\lambda_2t} &amp; \cdots &amp; \mathrm{e}^{\lambda_nt} \\ \lambda_1\mathrm{e}^{\lambda_1t} &amp; \lambda_2\mathrm{e}^{\lambda_2t} &amp; \cdots &amp; \lambda_n\mathrm{e}^{\lambda_nt} \\ \vdots &amp; \vdots &amp; ~ &amp; \vdots  \\ \lambda_1^{n-1}\mathrm{e}^{\lambda_1t} &amp; \lambda_2^{n-1}\mathrm{e}^{\lambda_2t} &amp; \cdots &amp; \lambda_n^{n-1}\mathrm{e}^{\lambda_nt}
+\end{vmatrix}\\
+&amp;=\mathrm{e}^{(\lambda_1+\lambda_2+\cdots+\lambda_n)t}
+\begin{vmatrix}
+1 &amp; 1 &amp; \cdots &amp; 1 \\ \lambda_1 &amp; \lambda_2 &amp; \cdots &amp; \lambda_n \\ \vdots &amp; \vdots  &amp; ~ &amp; \vdots \\ \lambda_1^{n-1} &amp; \lambda_2^{n-1} &amp; \cdots &amp; \lambda_n^{n-1}
+\end{vmatrix}
+\end{aligned}
+\]</div>
+<p>最后的行列式是一个 Vander Monde 行列式，由于特征根为单根，从而不为0，于是 <span class="arithmatex">\(W(t)\neq0\)</span> ，线性无关成立。<br />
+结论简单总结为</p>
+<div class="admonition note">
+<p class="admonition-title">总结：特征根为单根的情形</p>
+<p>如果特征根均为单根，那么有通解：<br />
+$$ x=\sum\limits_{i=1}^nc_i \mathrm{e}^{\lambda_it} $$<br />
+其中若有复根 <span class="arithmatex">\(\lambda_1=\alpha+\mathrm{i}\beta,\lambda_2=\alpha-\mathrm{i}\beta\)</span>，取实部：<br />
+$$ \mathrm{e}^{\alpha t}\cos\beta t,\quad \mathrm{e}^{\alpha t}\sin\beta t $$<br />
+为实值解即可。</p>
+</div>
+<h4 id="_13">特征根有重根的情形</h4>
+<p>设特征方程有 <span class="arithmatex">\(k\)</span> 重根 <span class="arithmatex">\(\lambda=\lambda_1\)</span> ，则<br />
+$$<br />
+F(\lambda_1)=F'(\lambda_1)=\cdots=F^{(k-1)}(\lambda_1),F^{(k)}(\lambda_1)\neq0<br />
+$$<br />
+(1) 如果 <span class="arithmatex">\(\lambda_1=0\)</span>：<br />
+这说明原来的特征方程有因子 <span class="arithmatex">\(\lambda^k\)</span> ，从而<br />
+$$<br />
+a_n=a_{n-1}=\cdots=a_{n-k+1}=0<br />
+$$<br />
+也就是说特征方程的形式为：<br />
+$$<br />
+\lambda^n+a_1 \lambda^{n-1}+\cdots+a_{n-k}\lambda^k=0<br />
+$$<br />
+这个特征方程对应的齐次线性方程组变为：<br />
+$$<br />
+\frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_{n-k}\frac{\mathrm{d}^kx}{\mathrm{d}t^k}=0<br />
+$$<br />
+容易知道 <span class="arithmatex">\(1,t,\cdots,t^{k-1}\)</span> 是这个方程的解（最低阶导数都有 <span class="arithmatex">\(k\)</span> 阶），并且容易验证是线性无关的，这样一来，<span class="arithmatex">\(k\)</span> 重零根就对应于方程的 <span class="arithmatex">\(k\)</span> 个线性无关解 <span class="arithmatex">\(1,t,\cdots,t^{k-1}\)</span> .</p>
+<p>(2) 如果 <span class="arithmatex">\(\lambda_1\neq0\)</span> ：<br />
+对 <span class="arithmatex">\(x\)</span> 作变量代换： <span class="arithmatex">\(x=y \mathrm{e}^{\lambda_1 t}\)</span> ，从而有<br />
+$$<br />
+x^{(m)}=(y \mathrm{e}^{\lambda_1t})^{(m)}=\mathrm{e}^{\lambda_1t}\sum\limits_{k=0}^m\frac{m!}{k!(m-k)!}\lambda_1^ky^{(m-k)}<br />
+$$<br />
+这是 <span class="arithmatex">\(\mathrm{e}^{\lambda_1t}\)</span> 与一个 <span class="arithmatex">\(y\)</span> 的线性微分方程相乘的形式，即：<br />
+$$<br />
+L[y \mathrm{e}^{\lambda_1t}]=\left(\sum\limits_{k=0}^{n}\frac{\mathrm{d}^{n-k}y}{\mathrm{d}t^{n-k}}b_k\right)\mathrm{e}^{\lambda_1t}=L[y]\mathrm{e}^{\lambda_1t}<br />
+$$<br />
+从而原来 <span class="arithmatex">\(x\)</span> 对应的微分方程变为 <span class="arithmatex">\(y\)</span> 的微分方程：</p>
+<div class="arithmatex">\[
+L_1[y]\equiv\sum\limits_{k=0}^{n}b_k\frac{\mathrm{d}^{n-k}y}{\mathrm{d}t^{n-k}}=0
+\]</div>
+<p>这化为了另一个常系数线性微分方程，设其对应的特征方程为：<br />
+$$<br />
+G(\mu)\equiv\sum\limits_{k=0}^n\mu^{n-k}b_k,b_0=1<br />
+$$<br />
+直接计算有：<br />
+$$<br />
+F(\mu+\lambda_1)\mathrm{e}^{(\mu+\lambda_1)t}=L[\mathrm{e}^{(\mu+\lambda_1)t}]=L_1[\mathrm{e}^{\mu t}]\mathrm{e}^{\lambda_1t}<br />
+$$</p>
+<p>因此<br />
+$$<br />
+F(\mu+\lambda_1)=G(\mu)<br />
+$$<br />
+这就表明原来 <span class="arithmatex">\(\lambda=\lambda_1\)</span> 的根对应变为 <span class="arithmatex">\(\mu=0\)</span> ，而且重数相同，归结到第一类情况。</p>
+<div class="admonition note">
+<p class="admonition-title">总结：特征根有重根的情形</p>
+<p>记重根的重数为 <span class="arithmatex">\(k\)</span> .<br />
+1. 如果重根为0，那么这个重根对应了 <span class="arithmatex">\(k\)</span> 个线性无关的解：<br />
+$$ 1,t,t^2,\cdots,t^{k-1} $$<br />
+2. 如果重根不为0（记为 <span class="arithmatex">\(\lambda_1\)</span>），则可以作变量代换 <span class="arithmatex">\(x=y \mathrm{e}^{\lambda_1t}\)</span>，从而化归为第一类的情形。</p>
+</div>
+<p>以上方法称为<strong>Euler待定指数函数法</strong>，也称为<strong>特征值法</strong>。至此常系数齐次线性微分方程的求解就完毕了。</p>
+<h3 id="euler">Euler方程及其求解</h3>
+<p>Euler方程是一个可化为常系数线性微分方程的一类<strong>变系数微分方程</strong>，有如下定义：</p>
+<div class="admonition note">
+<p class="admonition-title">定义：Euler方程</p>
+<p>形式如<br />
+$$ \displaystyle x^{n}{\dfrac {\mathrm {d} ^{n}y}{\mathrm {d} x^{n}}}+a_{1}x^{n-1}{\dfrac {\mathrm {d} ^{n-1}y}{\mathrm {d} x^{n-1}}}+\cdots +a_{n-1}x{\dfrac {\mathrm {d} y}{\mathrm {d} x}}+a_{n}y=0 $$<br />
+的变系数线性微分方程称为 <strong>Euler 方程</strong>。</p>
+</div>
+<p>基本的解法就是采用 <span class="arithmatex">\(t=\ln|x|\)</span> 的换元，即 <span class="arithmatex">\(x=\pm\mathrm{e}^t\)</span> . （由于正负形式类似，下面讨论只考虑 <span class="arithmatex">\(x=\mathrm{e}^t\)</span> 的情形）</p>
+<p>对 <span class="arithmatex">\(x\)</span> 求导有</p>
+<div class="arithmatex">\[
+x^k\frac{\mathrm{d}^{k} y}{\mathrm{d}x^k}=\left(\frac{\mathrm{d}^k y}{\mathrm{d}t^k}+l_1\frac{\mathrm{d}^{k-1}y}{\mathrm{d}t^{k-1}}+\cdots+l_{k-1}\frac{\mathrm{d}y}{\mathrm{d}t}\right)
+\]</div>
+<p>这就表明 Euler 方程左侧的每一项都能化为常系数各阶导之和，从而化成了一个常系数线性微分方程。此时的自变量为 <span class="arithmatex">\(t\)</span> ，因而能待定指数函数 <span class="arithmatex">\(y=\mathrm{e}^{\lambda t}=x^t\)</span> ，也就是说对于 Euler 方程，可以直接认为有 <span class="arithmatex">\(x^t\)</span> 形式的解。接下来就是常系数线性微分方程的求解过程了。</p>
+<h3 id="_14">常系数非齐次线性微分方程与比较系数法</h3>
+<p>现在讨论常系数非齐次线性方程<br />
+$$<br />
+L[x]\equiv\frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_{n-1}\frac{\mathrm{d}x}{\mathrm{d}t}+a_{n}x=f(t)<br />
+$$<br />
+的求解。其中 <span class="arithmatex">\(f(t)\)</span> 为连续函数。</p>
+<p>有了前面的讨论，实际上根据方法链条来就行：</p>
+<ol>
+<li>Euler 待定指数函数法解齐次线性方程的基本解组；</li>
+<li>常数变易法求一个特解；</li>
+<li>写出通解的表达式；</li>
+<li>利用初值条件解待定常数.</li>
+</ol>
+<p>下面采用比较系数法解两类常微分方程.</p>
+<h4 id="fxp_nxmathrmealpha-x">类型一：<span class="arithmatex">\(f(x)=P_n(x)\mathrm{e}^{\alpha x}\)</span> 的类型</h4>
+<p>对于一个满足此类型的常系数非齐次线性微分方程：<br />
+$$<br />
+\frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_{n-1}\frac{\mathrm{d}x}{\mathrm{d}t}+a_nt=P_n(t)\mathrm{e}^{\lambda t}<br />
+$$<br />
+必有形如<br />
+$$<br />
+\widetilde{x}=t^k(B_0t^m+B_1t^{m-1}+\cdots+B_{m-1}t+B_m)\mathrm{e}^{\lambda t}<br />
+$$<br />
+的特解。这里 <span class="arithmatex">\(k\)</span> 为特征方程中 <span class="arithmatex">\(\lambda\)</span> 作为根的<strong>重数</strong>（如果 <span class="arithmatex">\(\lambda\)</span> 不为特征根，则有 <span class="arithmatex">\(k=0\)</span> ），而 <span class="arithmatex">\(B_0,B_1,\cdots,B_m\)</span> 为<strong>待定常数</strong>。需要通过比较系数确定。</p>
+<p>从 3 个情形切入：<br />
+(1) 当 <span class="arithmatex">\(\lambda=0\)</span> 且 <span class="arithmatex">\(\lambda=0\)</span> 不为特征根的时候：<br />
+此时的特解就是<br />
+$$<br />
+\widetilde{x}=B_0 t^m+B_1 t^{m-1}+\cdots+B_m<br />
+$$<br />
+此时代回方程，比较 <span class="arithmatex">\(t\)</span> 的系数可以逐一确定待定系数。</p>
+<p>(2) 当 <span class="arithmatex">\(\lambda=0\)</span> 且为 <span class="arithmatex">\(k\)</span> 重特征根时：<br />
+这就表明<br />
+$$<br />
+F(0)=F'(0)=\cdots =F^{(k-1)}(0)=0,F^{(k)}(0)\neq0<br />
+$$<br />
+对应到系数上就是<br />
+$$<br />
+a_n=a_{n-1}=\cdots=a_{n-k+1}=0<br />
+$$<br />
+此时方程将为<br />
+$$<br />
+\frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_{n-k}\frac{\mathrm{d}^kx}{\mathrm{d}t^k}=f(t)<br />
+$$<br />
+此时作变量代换 <span class="arithmatex">\(\displaystyle z=\frac{\mathrm{d}^kx}{\mathrm{d}t^k}\)</span> ，从而方程化为<br />
+$$<br />
+\frac{\mathrm{d}^{n-k}z}{\mathrm{d}t^{n-k}}+a_1\frac{\mathrm{d}^{n-k-1}z}{\mathrm{d}t^{n-k-1}}+\cdots+a_{n-k}z=f(t)<br />
+$$<br />
+对于上面的方程来说，此时 <span class="arithmatex">\(\lambda=0\)</span> 已经不为特征根，因此由第一种情形有特解<br />
+$$<br />
+\widetilde{z}=\widetilde{B}_0t^m+\widetilde{B}_1t^{m-1}+\cdots+\widetilde{B}_m<br />
+$$<br />
+由于我们仅需一个特解，所以简单起见直接考虑特解<br />
+$$<br />
+\widetilde{x}=t^k(\gamma_0t^m+\gamma_1t^{m-1}+\cdots+\gamma_m)<br />
+$$</p>
+<p>(3) 当 <span class="arithmatex">\(\lambda\neq 0\)</span> 时：<br />
+作变量代换 <span class="arithmatex">\(x=y \mathrm{e}^{\lambda t}\)</span> 可将方程化为</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\frac{\mathrm{d}^{n}y}{\mathrm{d}t^{n}}+A_{1}\frac{\mathrm{d}^{n-1}y}{\mathrm{d}t^{n-1}}+\cdots+A_{n-1}\frac{\mathrm{d}y}{\mathrm{d}t}+A_{n}y\\=b_{0}t^{m}+\cdots+b_{m},
+\end{aligned}
+\]</div>
+<p>此时特征方程的根 <span class="arithmatex">\(\lambda\)</span> 对应原来特征方程的零根，重数也相同。利用先前结论有<br />
+$$<br />
+\widetilde{x}=t^k(B_0 t^m+B_1t^{m-1}+\cdots+B_m)\mathrm{e}^{\lambda t}<br />
+$$<br />
+为方程的特解。</p>
+<div class="admonition note">
+<p class="admonition-title">总结：<span class="arithmatex">\(f(x)=P_n(x)\mathrm{e}^{\alpha x}\)</span>类型解法</p>
+<p>絮絮叨叨这么多之后，实际上特解统一为：<br />
+$$ \widetilde{x}=t^k(B_0 t^m+B_1t^{m-1}+\cdots+B_m)\mathrm{e}^{\lambda t} $$<br />
+其中 <span class="arithmatex">\(k\)</span> 为特征根的重数，<span class="arithmatex">\(\lambda\)</span> 为相应特征根，<span class="arithmatex">\(m\)</span> 为原来 <span class="arithmatex">\(P(x)\)</span> 的次数，待定系数通过求导代入比对系数可求。</p>
+</div>
+<p>再通过教材例题熟悉一遍流程：</p>
+<div class="admonition question">
+<p class="admonition-title">教材例题7</p>
+<p>求方程：<br />
+$$ {\frac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}}}-2{\frac{\mathrm{d}x}{\mathrm{d}t}}-3x=3t+1 $$<br />
+的通解。</p>
+</div>
+<p>(1) 首先求齐次线性微分方程 $$ {\frac{\mathrm{d}^{2}x}{\mathrm{d}t^{2}}}-2{\frac{\mathrm{d}x}{\mathrm{d}t}}-3x=0 $$ 的<strong>通解</strong>：</p>
+<p>特征方程<br />
+$$<br />
+\lambda^2-2\lambda-3=0<br />
+$$<br />
+有两个根 <span class="arithmatex">\(\lambda_1=3,\lambda_2=-1\)</span> ，则通解为<br />
+$$<br />
+x=c_1 \mathrm{e}^{3t}+c_2 \mathrm{e}^{-t}<br />
+$$</p>
+<ol>
+<li>再求非齐次线性微分方程的<strong>特解</strong>：<br />
+<span class="arithmatex">\(f(t)=(3t+1)\mathrm{e}^{0t}\)</span> ，此时 <span class="arithmatex">\(\lambda=0\)</span> ，因为 <span class="arithmatex">\(\lambda=0\)</span> 不为特征根，从而可取特解形如：<br />
+$$<br />
+\widetilde{x}=A+Bt<br />
+$$<br />
+求导代入原方程有<br />
+$$<br />
+-3Bt-2B-3A=3t+1<br />
+$$<br />
+比较系数一一对应有 <span class="arithmatex">\(\displaystyle B=-1,A=\frac{1}{3}\)</span> ，从而通解为<br />
+$$<br />
+x=c_1 \mathrm{e}^{3t}+c_2\mathrm{e}^{-t}-t+\frac{1}{3}<br />
+$$</li>
+</ol>
+<h4 id="ftleftatcosbeta-tbtsinbeta-trightmathrmealpha-t">类型二：<span class="arithmatex">\(f(t)=\left[A(t)\cos\beta t+B(t)\sin\beta t\right]\mathrm{e}^{\alpha t}\)</span> 类型</h4>
+<p>这个类型的通解有如下结论：有形如<br />
+$$<br />
+\widetilde{x}=t^{k}\bigl[P(t)\cos\beta t+Q(t)\sin\beta t\bigr]\mathrm{e}^{\alpha t}<br />
+$$<br />
+的特解。这里的 <span class="arithmatex">\(k\)</span> 是特征方程 <span class="arithmatex">\(F(\lambda)=0\)</span> 的根 <span class="arithmatex">\(\alpha+\mathrm{i}\beta\)</span> 的重数。然后求导进行比较系数即可。</p>
+<h2 id="_15">一般的高阶微分方程</h2>
+<p>高阶微分方程通常<strong>没有普遍解法</strong>，处理原则是<strong>降阶</strong>。下面进行分类讨论。</p>
+<h3 id="_16">可降阶的方程</h3>
+<h4 id="_17">不显含低阶导和原函数的方程</h4>
+<p>对于低阶导数不存在的方程类型：</p>
+<div class="arithmatex">\[
+F(t,x^{(k)},x^{(k+1)},\cdots,x^{(n)})=0
+\]</div>
+<p>考虑直接换元 <span class="arithmatex">\(y=x^{(k)}\)</span> 即有：</p>
+<div class="arithmatex">\[
+F(t,y,\cdots,y^{(n-k)})=0.
+\]</div>
+<p>这就完成了降阶的一个目的。</p>
+<div class="admonition question">
+<p class="admonition-title">例题：不含低阶导的方程</p>
+<p>解下列的常微分方程：<br />
+$$ \frac{\mathrm{d}^5x}{\mathrm{d}t^5}-\frac{1}{t}\frac{\mathrm{d}^4x}{\mathrm{d}t^4}=0. $$</p>
+</div>
+<p>令 <span class="arithmatex">\(y=x^{(4)}\)</span> 有：<br />
+$$<br />
+y'-\frac{1}{t}y=0<br />
+$$<br />
+这是变量分离方程，可得 <span class="arithmatex">\(y=ct\)</span> ，从而有 <span class="arithmatex">\(x\)</span> 的解。</p>
+<h4 id="_18">不显含自变量的方程</h4>
+<p>对于不显含 <span class="arithmatex">\(t\)</span> 的方程：<br />
+$$<br />
+F(x,x',\cdots,x^{(n)})=0<br />
+$$<br />
+此时将 <span class="arithmatex">\(x\)</span> 视为新的自变量， <span class="arithmatex">\(y=x'\)</span> ，那么最终方程将会降低一阶。</p>
+<p>在定性理论部分，这类方程也成为<strong>自治方程</strong>。</p>
+<div class="admonition question">
+<p class="admonition-title">例题：不显含自变量的方程（自治方程）</p>
+<p>解下列微分方程：<br />
+$$ xx''+(x')^2=0 $$</p>
+</div>
+<p>令 <span class="arithmatex">\(y=x'\)</span> 则有：<br />
+$$<br />
+y'x+y^2=0<br />
+$$<br />
+这个时候为一阶线性微分方程，直接计算即可。</p>
+<h4 id="_19">已知部分特解的齐次线性方程</h4>
+<p>对于齐次线性方程：</p>
+<div class="arithmatex">\[
+\frac{\mathrm{d}^nx}{\mathrm{d}t^n}+a_1(t)\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}}+\cdots+a_n(t)x=0
+\]</div>
+<p>如果我们知道方程的 <span class="arithmatex">\(k\)</span> 个<strong>线性无关特解</strong>我们能将这个方程降阶为 <span class="arithmatex">\(n-k\)</span> 阶方程，下面进行说明：<br />
+首先阐述操作流程：<br />
+现有特解 <span class="arithmatex">\(x_1,\cdots,x_k\)</span> 共 <span class="arithmatex">\(k\)</span> 个，那么显然每个都不为 <span class="arithmatex">\(0\)</span> ，那么设 <span class="arithmatex">\(x=x_ky\)</span> 并求导：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;x = x_ky \\
+&amp;x' = x_k'y+x_ky' \\
+&amp;x'' = x_k''y+2x_k'y'+x_ky''\\
+&amp;\quad\quad\vdots\\
+\end{aligned}
+\]</div>
+<p>代回可得：</p>
+<div class="arithmatex">\[
+\begin{aligned}
+x_ky^{(n)}+[nx_k'+a_1(t)x_k]+\cdots+[x_k^{(n)}+a_1(t)x_k^{(n-1)}+\cdots+a_n(t)x_k]y
+\\=0
+\end{aligned}
+\]</div>
+<p>最后一项的系数为 <span class="arithmatex">\(0\)</span> ，因而回到刚刚原函数不显含的类型，从而降阶。</p>
+<p>反复执行上面的操作，可以不断降阶。</p>
+<p>接下来证明这个操作的合理性，也就是说这个操作最终解出来的解是原方程的解。令 <span class="arithmatex">\(z=y'\)</span> 且方程除以 <span class="arithmatex">\(x_k\)</span>，从而有</p>
+<div class="arithmatex">\[
+z^{(n-1)}+b_1(t)z^{(n-2)}+\cdots+b_{n-1}(t)z=0
+\]</div>
+<p>这样的 <span class="arithmatex">\(n-1\)</span> 阶齐次线性微分方程。<br />
+根据变换有 <span class="arithmatex">\(z_i=\displaystyle(\frac{x_i}{x_k})'\)</span> ，假设对 <span class="arithmatex">\(k-1\)</span> 个解有关系式</p>
+<div class="arithmatex">\[
+\alpha_1z_1+\alpha_2z_2+\cdots+\alpha_{k-1}z_{k-1}=0
+\]</div>
+<p>积分可得</p>
+<div class="arithmatex">\[
+\alpha_1x_1+\alpha_2x_2+\cdots+\alpha_{k-1}x_{k-1}=\alpha_k x_k
+\]</div>
+<p>但是由于它们线性无关，可得各个系数为 <span class="arithmatex">\(0\)</span> ，从而 <span class="arithmatex">\(z_i\)</span> 之间<strong>也线性无关</strong>，降阶之后的线性无关性就保证了。</p>
+<p>特别地，对于 <span class="arithmatex">\(2\)</span> 阶的方程，只要知道一个特解我们就能解决这个方程。</p>
+<div class="admonition note">
+<p class="admonition-title">总结：齐次线性方程在已知特解的情况下求通解</p>
+<p>对于已知特解的齐次线性方程，若已知一个特解 <span class="arithmatex">\(x_1\)</span>，就能进行降阶有<br />
+$$ x=x_1\int y \mathrm{d}t $$<br />
+化为元 <span class="arithmatex">\(y\)</span> 的方程之后就变成了低阶的方程。</p>
+</div>
+<h2 id="_20">二阶线性微分方程的幂级数解法</h2>
+<p>在某些条件下，我们可以用幂级数来表示一个函数，也就是说，我们可以采用如下的方法解一个常微分方程：<br />
+首先，对于一个<strong>系数为多项式</strong>的一个线性方程，可以考虑有如下形式的特解：</p>
+<div class="arithmatex">\[
+y=\displaystyle\sum\limits_{n=0}^\infty a_n x^n
+\]</div>
+<div class="admonition question">
+<p class="admonition-title">例题</p>
+<p>求方程<br />
+$$ y''-xy=0 $$的通解.</p>
+</div>
+<p>我们设</p>
+<div class="arithmatex">\[
+y=\displaystyle\sum\limits_{n=0}^\infty a_n x^n
+\]</div>
+<p>为方程的解，这里 <span class="arithmatex">\(a_i\)</span> 为待定系数，将它对 <span class="arithmatex">\(x\)</span> 求导两次，有<br />
+$$<br />
+y'' = \displaystyle\sum\limits_{n=2}^\infty n(n-1)a_nx^{n-2}<br />
+$$<br />
+因此代回 <span class="arithmatex">\(y''=xy\)</span> 比对系数可得</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp;a_{3k}=\frac{a_0}{2\cdot 3\cdot 5\cdots (3k-1)\cdot 3k};\\
+&amp;a_{3k+1}=\frac{a_1}{3\cdot 4\cdot 6\cdots\cdot 3k\cdot(3k+1)};\\
+&amp;a_{3k+2}=0.
+\end{aligned}
+\]</div>
+<p>将 <span class="arithmatex">\(y\)</span> 表示为幂级数后发现收敛半径为无穷大，因此级数的和就是所要求的通解，包含 <span class="arithmatex">\(a_0\)</span> 和 <span class="arithmatex">\(a_1\)</span> 两个任意常数。</p>
+<h2 id="liouville">Liouville公式及其应用</h2>
+<h3 id="liouville_1">Liouville公式</h3>
+<div class="admonition note">
+<p class="admonition-title">Liouville公式</p>
+<p>在一般线性微分方程所示的方程中，设 <span class="arithmatex">\(x_1(t),x_2(t),\cdots,x_n(t)\)</span> 是方程在 <span class="arithmatex">\([a,b]\)</span> 上的任意 <span class="arithmatex">\(n\)</span> 个解，<span class="arithmatex">\(W(x)\)</span> 是它们的 Wronsky 行列式，则对于 <span class="arithmatex">\([a,b]\)</span> 上的任一 <span class="arithmatex">\(x_0\)</span> 都有<br />
+$$ W(t) = W(t_0)\exp\left({\displaystyle-\int_{t_0}^t a_1(s)\mathrm{d}s}\right) $$ </p>
+</div>
+<p>证明：<br />
+我们有 Wronsky 行列式：</p>
+<div class="arithmatex">\[
+W(t) = \begin{vmatrix}x_1 &amp; x_2  &amp; \cdots &amp; x_n \\ x_1' &amp; x_2' &amp; \cdots &amp; x_n' \\ \vdots &amp; \vdots &amp; ~ &amp; \vdots \\ x_1^{(n-1)} &amp; x_2^{(n-1)} &amp; \cdots &amp; x_n^{(n-1)} \end{vmatrix}
+\]</div>
+<p>利用行列式的求导法则，对行求导，我们可以发现除了最后一行求导之外的其他行求导都将导致行列式为 <span class="arithmatex">\(0\)</span> ，因此最后只剩下：</p>
+<div class="arithmatex">\[
+\frac{\mathrm{d} W(t)}{\mathrm{d}t} =  \begin{vmatrix}x_1 &amp; x_2  &amp; \cdots &amp; x_n \\ x_1' &amp; x_2' &amp; \cdots &amp; x_n' \\ \vdots &amp; \vdots &amp; ~ &amp; \vdots \\ x_1^{(n)} &amp; x_2^{(n)} &amp; \cdots &amp; x_n^{(n)} \end{vmatrix}
+\]</div>
+<p>注意倒数第二行是 <span class="arithmatex">\((n-2)\)</span> 阶导. 此时代入原方程并利用前 <span class="arithmatex">\(n-1\)</span> 行进行变换可得：<br />
+$$<br />
+\frac{\mathrm{d} W(t)}{\mathrm{d} t} = -a_1(t)W(t).<br />
+$$<br />
+这是一个变量分离方程，直接进行求解可得：<br />
+$$<br />
+W(t) = W(t_0)\exp\left(-\int_{t_0}^t a_1(s)\mathrm{d}s \right)<br />
+$$<br />
+因此 Liouville 公式成立 . <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<h3 id="liouville_2">Liouville公式的应用</h3>
+<h4 id="_21">探究线性方程解的性质</h4>
+<div class="admonition question">
+<p class="admonition-title">例题：Wronsky行列式的单调性</p>
+<p>设在方程 <span class="arithmatex">\(y'' + p(x)y'+q(x)y = 0\)</span> 中，<span class="arithmatex">\(p(x)\)</span> 在某区间 <span class="arithmatex">\(I\)</span> 上连续且恒不为零，试证：它的任意两个线性无关的解的 Wronsky 行列式是区间 <span class="arithmatex">\(I\)</span> 上的<strong>严格单调</strong>函数.</p>
+</div>
+<p>考虑 Liouville 公式<br />
+$$<br />
+W(x) = W(x_0)\exp\left(-\int_{x_0}^x p(s)\mathrm{d}s\right)<br />
+$$<br />
+两侧求导有：<br />
+$$<br />
+\frac{\mathrm{d}W(x)}{\mathrm{d}x} = -W(x_0)p(x)\exp\left(-\int_{x_0}^x p(s)\mathrm{d}s\right)<br />
+$$<br />
+由于 <span class="arithmatex">\(W(x_0)\neq 0\)</span> ，<span class="arithmatex">\(p(x)\neq 0\)</span> ，那么可知 <span class="arithmatex">\(W_x(x)\)</span> 恒为正或恒为负，从而可知 <span class="arithmatex">\(W(x)\)</span> 严格单调. <span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+<div class="admonition question">
+<p class="admonition-title">例题：Wronsky行列式之比</p>
+<p>试证明：二阶线性齐次方程的任意两个在区间 <span class="arithmatex">\([a,b]\)</span> 上的线性无关解组的 Wronsky 行列式之比是一个不为 <span class="arithmatex">\(0\)</span> 的常数.</p>
+</div>
+<p>设两个线性无关解组对应的两个 Wronsky 行列式为 <span class="arithmatex">\(W_1(x)\)</span> 和 <span class="arithmatex">\(W_2(x)\)</span> ，则根据 Liouville 公式：<br />
+$$<br />
+\begin{aligned}<br />
+W_1(x) = W_1(x_0)\exp\left(-\int_{x_0}^x a_1(s)\mathrm{d}s\right),\<br />
+W_2(x) = W_2(x_0)\exp\left(-\int_{x_0}^x a_1(s)\mathrm{d}s\right).<br />
+\end{aligned}<br />
+$$<br />
+所以：<br />
+$$<br />
+\frac{W_1(x)}{W_2(x)}  = \frac{W_1(x_0)}{W_2(x_0)}\neq 0.<br />
+$$<br />
+<span class="arithmatex">\(\rule{3pt}{10pt}\)</span></p>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  <h2 id="__comments">评论</h2>
+  <script src="https://giscus.app/client.js"
+        data-repo="xiong-ZH-zq/xzqbear-math-notes"
+        data-repo-id="R_kgDOK7C15g"
+        data-category="Announcements"
+        data-category-id="DIC_kwDOK7C15s4Cb365"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
+
+  <!-- Synchronize Giscus theme with palette -->
+  <script>
+    var giscus = document.querySelector("script[src*=giscus]")
+
+    /* Set palette on initial load */
+    var palette = __md_get("__palette")
+    if (palette && typeof palette.color === "object") {
+      var theme = palette.color.scheme === "slate" ? "dark" : "light"
+      giscus.setAttribute("data-theme", theme) 
+    }
+
+    /* Register event handlers after documented loaded */
+    document.addEventListener("DOMContentLoaded", function() {
+      var ref = document.querySelector("[data-md-component=palette]")
+      ref.addEventListener("change", function() {
+        var palette = __md_get("__palette")
+        if (palette && typeof palette.color === "object") {
+          var theme = palette.color.scheme === "slate" ? "dark" : "light"
+
+          /* Instruct Giscus to change theme */
+          var frame = document.querySelector(".giscus-frame")
+          frame.contentWindow.postMessage(
+            { giscus: { setConfig: { theme } } },
+            "https://giscus.app"
+          )
+        }
+      })
+    })
+  </script>
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.expand"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      
+        <script src="../../javascripts/katex.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+      
+        <script src="https://tikzjax.com/v1/tikzjax.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

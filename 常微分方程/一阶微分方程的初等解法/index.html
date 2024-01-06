@@ -1026,6 +1026,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%AB%98%E9%98%B6%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    高阶微分方程
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1853,7 +1874,7 @@ $$<br />
 <h3 id="bernoulli">Bernoulli方程</h3>
 <div class="admonition note">
 <p class="admonition-title">伯努利微分方程</p>
-<p>形如<span class="arithmatex">\(<span class="arithmatex">\(\frac{\mathrm{d}y}{\mathrm{d}x}=P(x)y+Q(x)y^n\)</span>\)</span><br />
+<p>形如 $$ \frac{\mathrm{d}y}{\mathrm{d}x}=P(x)y+Q(x)y^n $$<br />
 的方程被称为<strong>伯努利微分方程</strong>。这里 <span class="arithmatex">\(P(x)\)</span> 和 <span class="arithmatex">\(Q(x)\)</span> 是连续函数。</p>
 </div>
 <p>解决伯努利微分方程的步骤如下：<br />
@@ -1874,9 +1895,11 @@ $$<br />
 那么如果该微分方程可以写为一个二元函数 <span class="arithmatex">\(u(x,y)\)</span> 的全微分，即<span class="arithmatex">\(<span class="arithmatex">\(M(x,y)\mathrm{d}x+N(x,y)\mathrm{d}y=\frac{\partial u}{\partial x}\mathrm{d}x+\frac{\partial u}{\partial y}\mathrm{d}y\)</span>\)</span><br />
 那么就称其为<strong>恰当微分方程</strong>。其中 <span class="arithmatex">\(M(x,y),N(x,y)\)</span> 均为某矩形域内关于 <span class="arithmatex">\(x,y\)</span> 连续的函数。</p>
 </div>
-<p>首先，容易验证通解就是 <span class="arithmatex">\(u(x,y)=c\)</span> ，但是要解决两个问题：<br />
-1. 如何判别一个一阶微分方程是恰当微分方程？<br />
-2. 如何求出 <span class="arithmatex">\(u(x,y)\)</span> ？</p>
+<p>首先，容易验证通解就是 <span class="arithmatex">\(u(x,y)=c\)</span> ，但是要解决两个问题：</p>
+<ol>
+<li>如何判别一个一阶微分方程是恰当微分方程？</li>
+<li>如何求出 <span class="arithmatex">\(u(x,y)\)</span> ？</li>
+</ol>
 <p>首先考虑必要条件，由定义有：<br />
 $$<br />
 \frac{\partial u}{\partial x}=M(x,y),\frac{\partial u}{\partial y}=N(x,y)<br />
@@ -1952,8 +1975,8 @@ $$<br />
 对 <span class="arithmatex">\(y\)</span> 有同理，在此不赘述。</p>
 <div class="admonition note">
 <p class="admonition-title">总结：积分因子仅与 <span class="arithmatex">\(x\)</span> 或 <span class="arithmatex">\(y\)</span> 有关</p>
-<p>1.若有：$$ \frac{\left(\frac{\partial M}{\partial y}-\frac{\partial N}{\partial x}\right)}{N}=\psi(x) $$ 则积分因子仅与 <span class="arithmatex">\(x\)</span> 有关，且有$$ \mu(x)=\mathrm{e}^{\tiny\displaystyle\int\psi(x)\mathrm{d}x} $$<br />
-2. 若有 $$ -\frac{\displaystyle\left(\frac{\partial M}{\partial y}-\frac{\partial N}{\partial x}\right)}{M}=\varphi(y) $$ 则积分因子仅与 <span class="arithmatex">\(y\)</span> 有关，且有$$ \mu(y)=\mathrm{e}^{\displaystyle\tiny\int\varphi(y)\mathrm{d}y} $$</p>
+<p>1.若有：$$ \frac{\left(\frac{\partial M}{\partial y}-\frac{\partial N}{\partial x}\right)}{N}=\psi(x) $$ 则积分因子仅与 <span class="arithmatex">\(x\)</span> 有关，且有$$ \mu(x)=\exp\left(\int\psi(x)\mathrm{d}x\right) $$<br />
+2. 若有 $$ -\frac{\left(\frac{\partial M}{\partial y}-\frac{\partial N}{\partial x}\right)}{M}=\varphi(y) $$ 则积分因子仅与 <span class="arithmatex">\(y\)</span> 有关，且有$$ \mu(y)=\exp\left(\int\varphi(y)\mathrm{d}y\right) $$</p>
 </div>
 <p>如果积分因子与 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 都有关怎么办？这个时候需要进行分组，分为两个比较容易求积分因子的两组：</p>
 <div class="arithmatex">\[
